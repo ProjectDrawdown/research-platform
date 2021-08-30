@@ -11,6 +11,7 @@ cats:
 description: Can climate change be reversed? The Collaboratory is empowering
   global researchers to answer this question.
 link: http://colab.coop/
-projects: The Open Collaboratory
+projects:
+  - Test project
 ---
 Can climate change be reserved? The Collaboratory is empowering global researchers to answer this question.
