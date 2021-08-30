@@ -12,10 +12,10 @@ collections:
       file: "content/home.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
+        - { label: "Description", name: "description", widget: "string" }
+        - { label: "Link", name: "link", widget: "string"}
+        - label: 'Projects'
+          name: "projects"
           widget: list
           fields:
             - { label: "Name", name: "name", widget: "string"}
