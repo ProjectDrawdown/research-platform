@@ -8,5 +8,11 @@ cats:
     name: Lil Bub
   - description: Grumpy cat is an American celebrity cat known for her grumpy appearance.
     name: Grumpy cat (Tardar Sauce)
+description: Can climate change be reversed? The Collaboratory is empowering
+  global researchers to answer this question.
+link: http://colab.coop/
+projects:
+  - name: The Solutions Code
+    description: This is the code that does all the work
 ---
 Can climate change be reserved? The Collaboratory is empowering global researchers to answer this question.
