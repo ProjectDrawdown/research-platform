@@ -1,0 +1,33 @@
+{
+  "name": "open-collaboratory",
+  "version": "1.0.0",
+  "main": "index.js",
+   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectDrawdown/open-collaboratory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProjectDrawdown/open-collaboratory/issues"
+  },
+  "homepage": "https://github.com/ProjectDrawdown/open-collaboratory#readme",
+  "description": "",
+  "dependencies": {
+    "next": "^11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "frontmatter-markdown-loader": "^3.6.3"
+  }
+}
