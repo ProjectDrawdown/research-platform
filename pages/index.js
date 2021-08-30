@@ -15,8 +15,10 @@ export default class Home extends Component {
           <HomeContent />
           <h2>Active Projects</h2>
           <ul>
+            <pre>{projects}</pre>
             {projects.map((project, k) => (
               <li key={k}>
+                <pre>{project}</pre>
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
               </li>
