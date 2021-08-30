@@ -20,6 +20,7 @@ collections:
           collection: "projects"
           value_field: "name"
           search_fields: ["name"]
+          multiple: true
   - name: "projects"
     label: "Projects"
     folder: "_projects"
