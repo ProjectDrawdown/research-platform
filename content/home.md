@@ -13,5 +13,6 @@ description: Can climate change be reversed? The Collaboratory is empowering
 link: http://colab.coop/
 projects:
   - Test project
+  - The Open Collaboratory
 ---
 Can climate change be reserved? The Collaboratory is empowering global researchers to answer this question.
