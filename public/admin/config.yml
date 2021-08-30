@@ -16,7 +16,16 @@ collections:
         - { label: "Link", name: "link", widget: "string"}
         - label: 'Projects'
           name: "projects"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+          widget: relation
+          collection: "projects"
+          value_field: "name"
+          search_fields: "name"
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string"}
+      - { label: "Description", name: "description", widget: "text"}
+      - { label: "Link", name: "link", widget: "string"}
+
