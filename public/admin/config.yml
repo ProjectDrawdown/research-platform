@@ -19,7 +19,7 @@ collections:
           widget: relation
           collection: "projects"
           value_field: "name"
-          search_fields: "name"
+          search_fields: ["name"]
   - name: "projects"
     label: "Projects"
     folder: "_projects"
