@@ -17,7 +17,7 @@ collections:
         - label: 'Projects'
           name: "projects"
           widget: relation
-          collection: "projects"
+          collection: "project"
           value_field: "name"
           search_fields: ["name"]
           multiple: true
@@ -29,4 +29,20 @@ collections:
       - { label: "Name", name: "name", widget: "string"}
       - { label: "Description", name: "description", widget: "text"}
       - { label: "Link", name: "link", widget: "string"}
+  - name: "resources"
+    label: "Resources"
+    folder: "_resources"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string"}
+      - { label: "Description", name: "description", widget: "text"}
+      - { label: "File", name: "file", widget: "file"}
+      - { label: "Link", name: "link", widget: "string"}
+      - label: 'Related Projects'
+        name: "projects"
+        widget: relation
+        collection: "projects"
+        value_field: "name"
+        search_fields: ["name"]
+        multiple: true
 
