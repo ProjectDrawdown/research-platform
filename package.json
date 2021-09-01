@@ -2,7 +2,7 @@
   "name": "open-collaboratory",
   "version": "1.0.0",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ProjectDrawdown/open-collaboratory#readme",
   "description": "",
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "^11.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

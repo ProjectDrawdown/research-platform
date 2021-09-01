@@ -1,5 +1,8 @@
+publish_mode: editorial_workflow
 backend:
-  name: git-gateway
+  name: github
+  repo: ProjectDrawdown/open-collaboratory
+  open_authoring: true
   branch: master # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
