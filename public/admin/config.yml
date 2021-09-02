@@ -22,6 +22,7 @@ collections:
           search_fields: ["name"]
           multiple: true
   - name: "projects"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     label: "Projects"
     folder: "_projects"
     create: true
