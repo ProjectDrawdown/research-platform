@@ -18,7 +18,7 @@ export default class Home extends Component {
               Collaboratory
             </Heading>
           <HStack >
-            <Text fontSize="1.2rem"  marginTop="2rem" marginLeft="25%" marginRight="25%" textAlign="center">
+            <Text fontSize="1.2rem"  paddingTop="2rem" paddingRight="25%" paddingLeft="25%" textAlign="center">
               Can climate change be reserved? The Collaboratory  is empowering global researchers to answer this question.
             </Text>
           </HStack>
@@ -31,7 +31,7 @@ export default class Home extends Component {
               <Image borderRadius="full" boxSize="40px" src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
             </HStack>
           <HStack >
-            <Text fontSize="1.8rem" marginTop="4rem" marginLeft="15%" marginRight="15%" textAlign="center" paddingBottom="50px">
+            <Text fontSize="1.8rem" marginTop="4rem" paddingLeft="15%" paddingRight="15%" textAlign="center" paddingBottom="50px">
             The world’s largest open-source climate solution laboratory
             </Text>
           </HStack>
