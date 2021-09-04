@@ -1,6 +1,6 @@
+import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import fs from "fs";
-import yaml from "js-yaml";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote'
 
