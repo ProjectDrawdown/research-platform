@@ -24,7 +24,7 @@ collections:
   - name: "projects"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     label: "Projects"
-    folder: "_projects"
+    folder: "projects"
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
