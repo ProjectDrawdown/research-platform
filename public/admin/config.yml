@@ -1,6 +1,7 @@
 publish_mode: editorial_workflow
 backend:
   name: github
+  auth_scope: repo
   repo: ProjectDrawdown/open-collaboratory
   open_authoring: true
   branch: master # Branch to update (optional; defaults to master)
