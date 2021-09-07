@@ -1,33 +1,12 @@
 import React from "react"
-import { promises as fs } from "fs"
-import path from "path"
-import matter from "gray-matter"
 import Head from "next/head"
-import { Component } from 'react'
-import { attributes, react as HomeContent } from '../content/home.md';
-
-async function getFrontMatter (directory, filename) {
-  const filePath = path.join(directory, filename)
-  const fileContents = await fs.readFile(filePath, "utf8")
-  return matter(fileContents).data
-}
+import PropTypes from 'prop-types'
+import { react as HomeContent } from '../content/home.md';
+import getStaticFilesFrontMatter from '../getStatic'
 
 export async function getStaticProps() {
-  const projectsDirectory = path.join(process.cwd(), "_projects")
-  const resourcesDirectory = path.join(process.cwd(), "_resources")
-  const projectFiles = await fs.readdir(projectsDirectory)
-  const resourceFiles = await fs.readdir(resourcesDirectory)
-
-  const projectPromises = projectFiles.map((filename) => {
-    return getFrontMatter(projectsDirectory, filename)
-  })
-
-  const resourcePromises = resourceFiles.map((filename) => {
-    return getFrontMatter(resourcesDirectory, filename)
-  })
-
-  const projects = await Promise.all(projectPromises)
-  const resources = await Promise.all(resourcePromises)
+  const projects = await getStaticFilesFrontMatter("_projects")
+  const resources = await getStaticFilesFrontMatter("_resources")
 
   const preloadedProjects = projects.map((project) => {
     const associatedResources = resources.filter((resource) => {
@@ -44,7 +23,6 @@ export async function getStaticProps() {
     },
   }
 }
-
 
 function Home({ projects, resources }) {
   return (
@@ -103,6 +81,11 @@ function Home({ projects, resources }) {
       </article>
     </>
   )
+}
+
+Home.propTypes = {
+  projects: PropTypes.array,
+  resources: PropTypes.array
 }
 
 export default Home

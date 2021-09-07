@@ -1,15 +1,19 @@
 import React from "react";
-import { GetStaticProps, GetStaticPaths } from "next";
 import fs from "fs";
+import PropTypes from 'prop-types'
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote'
 
-export default function Post({
+function Post({
   data
 }) {
   return (
     <MDXRemote {...data} />
   )
+}
+
+Post.propTypes = {
+  data: PropTypes.array
 }
 
 export const getStaticPaths = async () => {
@@ -29,3 +33,6 @@ export const getStaticProps = async ({ params }) => {
     props: { data },
   };
 };
+
+export default Post
+
