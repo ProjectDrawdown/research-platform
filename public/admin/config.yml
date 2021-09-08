@@ -1,5 +1,9 @@
+publish_mode: editorial_workflow
 backend:
-  name: git-gateway
+  name: github
+  auth_scope: repo
+  repo: ProjectDrawdown/open-collaboratory
+  open_authoring: true
   branch: master # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
@@ -22,8 +26,9 @@ collections:
           search_fields: ["name"]
           multiple: true
   - name: "projects"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     label: "Projects"
-    folder: "_projects"
+    folder: "projects"
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}

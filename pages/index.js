@@ -1,6 +1,8 @@
+import React from "react"
 import Head from "next/head"
+
 import { Component } from 'react'
-import {ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, VStack, Image, Grid, Box, Center} from "@chakra-ui/react"
+import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, VStack, Image, Grid, Box, Center} from "@chakra-ui/react"
 import { attributes, react as HomeContent } from '../content/home.md';
 
 export default class Home extends Component {
@@ -86,8 +88,8 @@ export default class Home extends Component {
             </HStack>
           </Stack>
         </Flex>
-    </ChakraProvider>
-      </>
+      </ChakraProvider>
+    </>
     )
   }
 }

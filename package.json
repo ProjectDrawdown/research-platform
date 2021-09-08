@@ -25,13 +25,20 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "framer-motion": "^4.1.17",
+    "@next/eslint-plugin-next": "^11.1.2",
+    "gray-matter": "^4.0.3",
     "next": "^11.1.0",
+    "next-mdx-remote": "3.0.4",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
-    "frontmatter-markdown-loader": "^3.6.3"
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.25.1",
+    "frontmatter-markdown-loader": "^3.6.3",
+    "@next/eslint-plugin-next": "11.1.2"
   }
 }
