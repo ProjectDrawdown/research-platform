@@ -1,7 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import { Component } from 'react'
-import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, Grid, Box, Link, Input} from "@chakra-ui/react"
+import { ChakraProvider, Flex, Heading, Button, Stack, HStack, Box, Link, Input} from "@chakra-ui/react"
 
 export default class browseProjects extends Component {
   render() {
