@@ -3,7 +3,7 @@ import Head from "next/head"
 import { Component } from 'react'
 import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, Grid, Box, Link, Input} from "@chakra-ui/react"
 
-export default class Home extends Component {
+export default class BrowseProjects extends Component {
   render() {
     return (
       <>
