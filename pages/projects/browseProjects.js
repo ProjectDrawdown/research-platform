@@ -4,7 +4,7 @@ import { Input } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/react"
 
 import { Component } from 'react'
-import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, VStack, Image, Grid, Box, Center} from "@chakra-ui/react"
+import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, Grid, Box} from "@chakra-ui/react"
 
 export default class Home extends Component {
   render() {
