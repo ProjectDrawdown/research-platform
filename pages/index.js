@@ -2,10 +2,12 @@ import React from "react"
 import Head from "next/head"
 
 import { Component } from 'react'
-import { ChakraProvider, Flex, Heading, Text, Stack, HStack, Image, Grid, Box} from "@chakra-ui/react"
+import { ChakraProvider, Flex, Heading, Text, Button, Stack, HStack, VStack, Image, Grid, Box, Center} from "@chakra-ui/react"
+import { attributes, react as HomeContent } from '../content/home.md';
 
 export default class Home extends Component {
   render() {
+    let { title, projects } = attributes;
     return (
       <>
         <Head>
