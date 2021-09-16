@@ -3,11 +3,9 @@ import Head from "next/head"
 
 import { Component } from 'react'
 import { ChakraProvider, Flex, Heading, Text, Stack, HStack, Image, Grid, Box} from "@chakra-ui/react"
-import { attributes, react as HomeContent } from '../content/home.md';
 
 export default class Home extends Component {
   render() {
-    let { title, projects } = attributes;
     return (
       <>
         <Head>
@@ -17,11 +15,11 @@ export default class Home extends Component {
         <Flex as="nav" flexWrap="wrap" alignItems="center">
           <Stack align="center" marginTop="2rem">
             <Heading as="h1" textStyle="caps" fontSize="39px">
-              {title}
+              Collaboratory
             </Heading>
           <HStack >
             <Text fontSize="1.2rem"  paddingTop="2rem" paddingRight="25%" paddingLeft="25%" textAlign="center">
-              <HomeContent />
+              Can climate change be reserved? The Collaboratory  is empowering global researchers to answer this question.
             </Text>
           </HStack>
             <Text  fontSize="1.2rem" marginTop="2rem" marginLeft="10%" marginRight="10%">In partnership with</Text>
@@ -40,17 +38,25 @@ export default class Home extends Component {
             <Heading as="h4" size="md" textStyle="caps">
               Active Projects
             </Heading>
-            {/** TODO iterate over projects array instead of hardcoding */}
             <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-              {projects.forEach((projectData) => 
-                <Box w="82%" bg="gray.500" margin="auto">
-                  <Image boxsize="100px" src="https://bit.ly/sage-adebayo" />
-                  <Text textAlign="center" padding="1rem">
-                    Open Solutions Model: open source modeling of 100s of climate solutions
-                  </Text>
-                </Box>
-              )
-            }
+              <Box w="82%" bg="gray.500" margin="auto">
+                <Image boxsize="100px" src="https://bit.ly/sage-adebayo" />
+                <Text textAlign="center" padding="1rem">
+                  Open Solutions Model: open source modeling of 100s of climate solutions
+                </Text>
+              </Box>
+              <Box w="82%" bg="gray.500" margin="auto">
+                <Image boxsize="100px" src="https://bit.ly/sage-adebayo" />
+                <Text textAlign="center" padding="1rem">
+                  Climate Solutions Data Hub: open research on solution impacts
+                </Text>
+              </Box>
+              <Box w="82%" bg="gray.500" margin="auto">
+                <Image boxsize="100px" src="https://bit.ly/sage-adebayo" />
+                <Text textAlign="center" padding="1rem">
+                  2022 Open Climate Research Fellowships
+                </Text>
+              </Box>
             </Grid>
             <Heading as="h5" fontSize="1rem" size="md" textStyle="caps" paddingBottom="30px">
               Browse all projects
