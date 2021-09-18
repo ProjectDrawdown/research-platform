@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Head from "next/head"
-import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Link, Input, Text, Popover, Portal,
+import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Link, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
