@@ -82,7 +82,7 @@ const AddProject = ({projects,setProjects, setProjectsDefault}) =>{
   )
 }
 
-const BrowseList = ({projects, setProjects}) => {
+const BrowseList = ({projects}) => {
   return (
     <>
     {projects.map(project => (
@@ -105,7 +105,7 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   );
 }
 
-const browseProjects = (props) => {
+const browseProjects = () => {
   const [input, setInput] = useState('');
   const [ projects, setProjects ] = useState([
     {"name":"UN data on solar water heater", "tag":"model"},
@@ -134,7 +134,7 @@ const browseProjects = (props) => {
               Browse all projects
               <SearchBar input={input} onChange={updateInput}/>
             </Heading>
-            <BrowseList projects={projects} setProjects={setProjects}/>
+            <BrowseList projects={projects} />
             <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
           </Stack>
 
