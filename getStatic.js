@@ -10,9 +10,13 @@ async function getFrontMatter (directory, filename) {
 
 export default async function getStaticFilesFrontMatter(pathName) {
   const directory = path.join(process.cwd(), pathName)
-  const files = await fs.readdir(directory)
+  const filenames = await fs.readdir(directory)
 
-  const promises = files.map((filename) => {
+  const markdownFilenames = filenames.filter((filename) => {
+    return filename.split(".").reverse()[0] === "md"
+  })
+
+  const promises = markdownFilenames.map((filename) => {
     return getFrontMatter(directory, filename)
   })
 
