@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Head from "next/head"
+import PropTypes from 'prop-types'
 import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Link, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
@@ -145,4 +146,25 @@ const browseProjects = () => {
     )
 }
 
+AddForm.propTypes = {
+  projects: PropTypes.array,
+  setProjects: PropTypes.func,
+  setPopState: PropTypes.func,
+  setProjectsDefault: PropTypes.func,
+}
+
+AddProject.propTypes = {
+  projects: PropTypes.array,
+  setProjects: PropTypes.func,
+  setProjectsDefault: PropTypes.func,
+}
+
+BrowseList.propTypes = {
+  projects: PropTypes.array,
+}
+
+SearchBar.propTypes = {
+  input: PropTypes.string,
+  onChange: PropTypes.func,
+}
 export default browseProjects;
