@@ -13,14 +13,9 @@ import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VS
 const AddForm = ({projects,setProjects,setPopState, setProjectsDefault}) =>{
   const [projectInput, setProjectInput] = useState({"name":"", "tag":""});
 
-  const handleNameChange = (e) => {
+  const handleFormChange = (setValue,e) => {
     const newInput = {...projectInput};
-    newInput.name = e.target.value; 
-    setProjectInput(newInput);
-  }
-  const handleTagChange = (e) => {
-    const newInput = {...projectInput};
-    newInput.tag = e.target.value.toLowerCase(); 
+    newInput[setValue] = e.target.value; 
     setProjectInput(newInput);
   }
   const handleSubmit = (e) => {
@@ -37,13 +32,13 @@ const AddForm = ({projects,setProjects,setPopState, setProjectsDefault}) =>{
                 <HStack paddingBottom="10px">
                 <FormControl as="fieldset" isRequired>
                 <FormLabel > Name </FormLabel>
-                <Input width="250px" value={projectInput.name} onChange={(e) => handleNameChange(e)}/>
+                <Input width="250px" value={projectInput.name} onChange={(e) => handleFormChange("name",e)}/>
                 </FormControl>
                 </HStack>
                 <HStack paddingBottom="20px">
                 <FormControl as="fieldset">
                 <FormLabel > Tag </FormLabel>
-                <Input width="250px" value={projectInput.tag} onChange={(e) => handleTagChange(e)}/>
+                <Input width="250px" value={projectInput.tag} onChange={(e) => handleFormChange("tag",e)}/>
                 </FormControl>
                 </HStack>
                 <Button colorScheme="blue" type="submit">Submit</Button>
