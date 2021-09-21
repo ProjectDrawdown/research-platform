@@ -1,14 +1,12 @@
 import React from "react";
 import fs from "fs";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote'
+import Button from "../../components/Button";
 
-function Post({
-  data
-}) {
+function Post() {
   return (
-    <MDXRemote {...data} />
+    <Button />
   )
 }
 
