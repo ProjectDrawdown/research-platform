@@ -50,7 +50,7 @@ const Header = () =>{
 }
 
 const FeaturedProjectsList = () =>{
-  const [ projects, setProjects ] = useState([
+  const [ projects] = useState([
     {"name":"Open Solutions Model: open source modeling of 100s of climate solutions", "link":""},
     {"name":"2022 Open Climate Research Fellowships", "link":""},
     {"name":"Climate Solutions Data Hub: open research on solution impacts", "link":""},
