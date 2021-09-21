@@ -68,7 +68,7 @@ const FeaturedProjectsList = () =>{
       <Grid templateColumns="1fr" gap={6} background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
         <Grid templateColumns="repeat(2, 1fr)" gap="20px" >
           {projects.slice(0,2).map(project => (
-          <Box w="100%" padding="45" position="relative" background="#F5F5F5" margin="auto">
+          <Box w="100%" padding="45" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="400px" >
               <Heading as="h2" size="md" textStyle="caps" fontSize="30px" color="#00C24E">
                 {project.name}
@@ -87,7 +87,7 @@ const FeaturedProjectsList = () =>{
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap="20px">
           {projects.slice(2,4).map(project => (
-          <Box w="100%" padding="45" position="relative" background="#F5F5F5" margin="auto">
+          <Box w="100%" padding="45" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="400px" >
               <Heading as="h2" size="md" textStyle="caps" fontSize="30px" color="#00C24E">
                 {project.name}
