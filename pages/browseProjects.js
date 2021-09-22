@@ -55,11 +55,10 @@ const AddProject = ({projects, setProjects, setProjectsDefault}) =>{
 
   return (
     <HStack paddingTop="50px" marginLeft="67px" paddingBottom="20px">
-      <Box bg="#E2E2E2" w="493px" h="64px"  p={4} color="black" textAlign="Center" display="flex" alignItems="center" paddingLeft="100px" fontSize="12px" textStyle="normal" >
-        Have a Reasource to Add? 
+      <Box  w="493px" h="64px"  p={4} color="black" textAlign="Center" display="flex" alignItems="center" paddingLeft="100px" fontSize="12px" textStyle="normal" >
         <Popover placement="top" isOpen={popState} onOpen={()=>(handleOpen())}>
           <PopoverTrigger>
-            <Link>Click Here</Link>
+            <Button bg="yellow" borderRadius="0px" >Propose A Project</Button>
           </PopoverTrigger>
           <Portal>
             <PopoverContent>
@@ -95,7 +94,7 @@ const BrowseList = ({projects}) => {
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
     <HStack paddingTop="71px" paddingBottom="31px" marginLeft="50px">
-      <Input placeholder="search" w="582px" h="32px" size="md" borderRadius="none" borderColor="black"
+      <Input placeholder="Search helper text" w="582px" h="32px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
   );
@@ -125,15 +124,16 @@ const browseProjects = () => {
         </Head>
         <ChakraProvider>
           <Flex as="nav" flexWrap="wrap" alignItems="center" marginLeft="63px" marginRight="169">
-            <Stack align="center" marginTop="2rem" >
-              <Heading as="h1" textStyle="caps" fontSize="39px" paddingLeft="30px" paddingBottom="20px"  textAlign="center" >
-                Browse all projects
-                <SearchBar input={input} onChange={updateInput}/>
-              </Heading>
-              <BrowseList projects={projects} />
-              <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
-            </Stack>
-
+            <Box background="#FFFFFF" border="4px" solid="#000000" boxSizing="border-box" borderRadius="10px" marginTop="1em">
+              <Stack align="center" marginTop="2rem" >
+                <Heading as="h1" textStyle="caps" fontSize="39px" paddingLeft="30px" paddingBottom="20px"  textAlign="center" >
+                  Browse All Projects
+                  <SearchBar input={input} onChange={updateInput}/>
+                </Heading>
+                <BrowseList projects={projects} />
+                <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
+              </Stack>
+            </Box>
           </Flex>
 
         </ChakraProvider>
