@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import Head from "next/head"
-import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, HStack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
+import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 
 // This is the default breakpoint
