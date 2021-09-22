@@ -4,7 +4,7 @@ import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, 
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 
 // This is the default breakpoint
-const breakpoints = createBreakpoints({
+createBreakpoints({
 sm: "30em",
 md: "48em",
 lg: "62em"
