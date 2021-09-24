@@ -67,9 +67,12 @@ const FeaturedProjectsList = () =>{
           Recently Active Projects
         </Text>
       </Box>
-      
-      <Grid templateColumns="1fr" gap={6} background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
-        <Grid templateColumns="repeat(2, 1fr)" gap="20px" >
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Grid templateColumns="1fr" width="80%" marginX="auto" gap={6} background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
+        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
           {projects.slice(0,2).map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
@@ -88,7 +91,7 @@ const FeaturedProjectsList = () =>{
             <Button colorScheme="yellow" borderRadius="0px" border="2px solid #000000">Browse all projects</Button>
           </Link>
         </Heading>
-        <Grid templateColumns="repeat(2, 1fr)" gap="20px">
+        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginBottom="-100px">
           {projects.slice(2,4).map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
@@ -103,7 +106,10 @@ const FeaturedProjectsList = () =>{
           ))}
         </Grid>
       </Grid>
-       
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
     </>
   )
 }
@@ -137,17 +143,17 @@ const Body = () =>{
             Who We Are
           </Text>
       </Box>
-      <Grid templateColumns="1fr 1.5fr" width={["100", "70%", "50%"]} gap={6} padding="40px" background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
-        <Stack marginLeft="-40%" gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="300px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto" gap={6} padding="40px" background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
+        <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
+          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Countries </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="300px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 300 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Collaborators </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="300px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 500 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Projects </Heading>
           </Box>
