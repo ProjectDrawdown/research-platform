@@ -19,7 +19,6 @@ const Header = () =>{
         left="10%"
         top="53px"
         zIndex="100"
-        border="4px solid #000000"
         p="3"
         boxShadow="base"
         display="block"
@@ -38,14 +37,13 @@ const Header = () =>{
           </Text>
         </Box>
         <Box position="relative" 
-        border="4px solid #000000"
         h={["250px", "250px", "500px"]}
         w={["60%", "50%"]}
         left = {["40%"]}
         top = {["150px" ]}
         zIndex="90"
         marginBottom="150px"
-        background = "url(https://bit.ly/sage-adebayo)"
+        backgroundImage = "url('img/assets/Rectangle 1087.png')"
         mixBlendMode="normal"></Box>
       </Box>
     </>
@@ -71,7 +69,7 @@ const FeaturedProjectsList = () =>{
       <br></br>
       <br></br>
       <br></br>
-      <Grid templateColumns="1fr" width="80%" marginX="auto" gap={6} background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns="1fr" width="80%" marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
           {projects.slice(0,2).map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
@@ -122,14 +120,15 @@ const Partners = () =>{
           Our Partners
         </Text>
       </Box>
-      <SimpleGrid minChildWidth="370px" padding="50px" spacing="40px" width="100%">
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
-        <Image borderRadius="full" maxWidth={["250px", "250px", "360px"]} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+      <SimpleGrid minChildWidth="370px" padding="50px" spacing="40px" width="100%" >
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 53.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 3.png" alt="Segun Adebayo" />
+        <br></br>
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 2.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 23.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/drawdown.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Ellipse 10.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 52.png" alt="Segun Adebayo" />
       </SimpleGrid>
     </>
   )
@@ -143,7 +142,7 @@ const Body = () =>{
             Who We Are
           </Text>
       </Box>
-      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto" gap={6} padding="40px" background="url(https://bit.ly/sage-adebayo)" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto" gap={6} padding="40px" backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
           <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
@@ -171,7 +170,7 @@ const Body = () =>{
       <Stack padding="2rem">
         <Grid templateColumns="1fr 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+            <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
           </Box>
           <Box w="100%">
             <Text fontWeight="bold">
@@ -182,7 +181,7 @@ const Body = () =>{
         </Grid>
         <Grid templateColumns="1fr 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+            <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
           </Box>
           <Box w="100%">
             <Text fontWeight="bold">
@@ -193,7 +192,7 @@ const Body = () =>{
         </Grid>
         <Grid templateColumns="1fr 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+            <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
           </Box>
           <Box w="100%">
             <Text fontWeight="bold">
@@ -210,10 +209,10 @@ const Body = () =>{
 const Footer = () =>{
   return (
     <Box
-      w="100% "
+      w="100% " 
       position="relative"
-    >
-      <Box background = "url(https://bit.ly/sage-adebayo)"
+      marginTop="100px">
+      <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
         h={["200px", "250px", "300px"]}
         w={["50%", "50%", "60%"]}
         left="30px"
@@ -273,8 +272,8 @@ const Home = () => {
         <Header />
         <Stack align="center" marginTop="2rem" width="100vw">
         <Partners />
-        <FeaturedProjectsList />
         <Body />
+        <FeaturedProjectsList />
         </Stack>
         <Footer></Footer>
       </Flex>
