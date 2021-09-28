@@ -1,8 +1,7 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { MDXRemote } from 'next-mdx-remote'
-import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
+import { Link, Heading, Text, Box } from "@chakra-ui/react"
 import matter from 'gray-matter';
 
 function Post({

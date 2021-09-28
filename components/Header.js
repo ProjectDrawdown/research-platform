@@ -1,7 +1,7 @@
 import React from "react";
-import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
+import { Heading, Text, Box} from "@chakra-ui/react"
 
-export default () =>{
+export default function Header () {
   return (
     <>
       <Box top="0px" left="0px" width="100%" height="max-content">
