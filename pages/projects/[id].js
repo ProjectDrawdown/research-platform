@@ -1,7 +1,7 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { Link, Heading, Text, Box } from "@chakra-ui/react"
+import { Link, Heading, Text, Box, Avatar } from "@chakra-ui/react"
 import matter from 'gray-matter';
 
 function Post({
@@ -30,10 +30,15 @@ function Post({
           <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/" >
             {"<< Back to project listing"}
           </Link>
-          <Text fontSize="20px">{data.name}</Text>
-          <Text fontSize="20px" fontWeight="600px" paddingTop="2rem" paddingRight={["10%", "35%"]}  textAlign="left" >
+          <Text fontSize="20px" marginTop="2vh">{data.name}</Text>
+          <Heading as="h3" size="md" marginTop="2vh"> Description: </Heading>
+          <Text fontSize="20px" fontWeight="600px" paddingRight={["10%", "35%"]}  textAlign="left" >
             {data.description}
           </Text>
+          <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
+          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" marginTop="2vh" />
+          <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
+          <Text fontSize="20px" marginTop="2vh">No resources.</Text>
         </Box>
         <Box position="relative"
         h={["250px", "250px", "500px"]}
