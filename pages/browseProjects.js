@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Head from "next/head"
 import PropTypes from 'prop-types'
-import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Text, Input, Popover, Portal,
+import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
