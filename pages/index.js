@@ -3,6 +3,8 @@ import Head from "next/head"
 import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import StyledButton from "../components/StyledButton";
 
 // This is the default breakpoint
 createBreakpoints({
@@ -47,7 +49,7 @@ const FeaturedProjectsList = () =>{
         </Grid>
         <Heading as="h5" fontSize="1rem" size="md" textStyle="caps" paddingBottom="30px" textAlign="center">
           <Link href="browseProjects">
-            <Button colorScheme="yellow" borderRadius="0px" border="2px solid #000000">Browse all projects</Button>
+            <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginBottom="-100px">
@@ -164,61 +166,6 @@ const Body = () =>{
         </Grid>
       </Stack>
     </>
-  )
-}
-
-const Footer = () =>{
-  return (
-    <Box
-      w="100% " 
-      position="relative"
-      marginTop="100px">
-      <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
-        h={["200px", "250px", "300px"]}
-        w={["50%", "50%", "60%"]}
-        left="30px"
-        bottom="100px"
-        zIndex="100"
-        border="4px solid #000000"
-        p="3"
-        boxShadow="base"
-        display="block"
-        direction="row"
-        boxSizing="border-box"
-        borderColor="black"
-        borderWidth="3px"
-        borderStyle="solid"
-        position="absolute"></Box>
-          <Box
-          background="#000000"
-          h="237px"
-          w={["70%", "50%", "50%"]}
-          left={["40%", "40%", "40%"]}
-          bottom="50px"
-          zIndex="100"
-          marginTop={["200px", "150px", "200px"]}
-          border="4px solid #000000"
-          p="3"
-          boxShadow="base"
-          display="block"
-          direction="row"
-          boxSizing="border-box"
-          borderColor="black"
-          borderWidth="3px"
-          borderStyle="solid"
-          position="relative"
-          >
-        <Heading as="h1" textStyle="caps" fontSize={["20px", "28px", "36px"]} fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          Open Solutions Collaboratory
-        </Heading>
-        <Text textStyle="caps" fontSize={["12px", "14px", "18px"]} fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          Contact Us
-        </Text>
-        <Text textStyle="caps" fontSize="14px" fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          ©2021
-        </Text>
-      </Box>
-  </Box>
   )
 }
 
