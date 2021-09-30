@@ -8,7 +8,7 @@ import StyledButton from '../../components/StyledButton';
 function Post({
   data
 }) {
-  return (  
+  return (
     <Box top="0px" left="0px" width="100%" height="max-content">
         <Box background="#FFFFFF"
         w={["80%", "60%", "50%"]}
@@ -31,7 +31,7 @@ function Post({
                 Project Detail
               </Heading>
             </GridItem>
-            <GridItem colSpan={1}></GridItem>
+            <GridItem colSpan={1} />
             <GridItem colSpan={1}>
               <StyledButton content="PROJECT LINK" />
             </GridItem>
@@ -57,7 +57,9 @@ function Post({
         zIndex="90"
         marginBottom="150px"
         backgroundImage = "url('img/assets/Rectangle 1087.png')"
-        mixBlendMode="normal"></Box>
+        mixBlendMode="normal">
+          This is awesome.
+        </Box>
       </Box>
 )
 }
