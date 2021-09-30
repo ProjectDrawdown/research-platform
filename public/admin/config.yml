@@ -32,11 +32,13 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
+      - { label: "Active", name: "acive", widget: "boolean"}
       - { label: "Description", name: "description", widget: "text"}
       - { label: "Link", name: "link", widget: "string"}
+      - { label: "Collaborators", name: "collaborators", widget: "relation", collection: "authors", value_field: "name", search_fields: ["name"] }
   - name: "resources"
     label: "Resources"
-    folder: "_resources"
+    folder: "resources"
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
@@ -50,4 +52,11 @@ collections:
         value_field: "name"
         search_fields: ["name"]
         multiple: true
+  - name: "Authors"
+    label: "authors"
+    folder: "authors"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string"}
+      - { label: "Nickname", name: "nickname", widget: "string"}
 
