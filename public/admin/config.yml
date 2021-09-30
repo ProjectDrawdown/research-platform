@@ -52,8 +52,8 @@ collections:
         value_field: "name"
         search_fields: ["name"]
         multiple: true
-  - name: "Authors"
-    label: "authors"
+  - name: "authors"
+    label: "Authors"
     folder: "authors"
     create: true
     fields:
