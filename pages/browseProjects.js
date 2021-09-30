@@ -10,8 +10,10 @@ import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VS
   PopoverArrow,
   PopoverCloseButton,} from "@chakra-ui/react"
 import {SearchIcon} from "@chakra-ui/icons"
-
-  import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+import Footer from "../components/Footer";
+import StyledButton from "../components/StyledButton";
+import BackButton from "../components/BackButton"
 
   // This is the default breakpoint
   createBreakpoints({
@@ -69,7 +71,7 @@ const AddProject = ({projects, setProjects, setProjectsDefault}) =>{
       <Box w="100%" h="64px"  p={4} color="black" textAlign="Center" display="flex" alignItems="center" fontSize="12px" textStyle="normal" >
         <Popover placement="top" isOpen={popState} onOpen={()=>(handleOpen())}>
           <PopoverTrigger>
-            <Button bg="#F1FF51" borderRadius="0px" marginX="auto" border="3px solid #000000" >Propose A Project</Button>
+            <StyledButton content={"Propose A Project"} />
           </PopoverTrigger>
           <Portal>
             <PopoverContent>
@@ -115,62 +117,6 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   );
 }
 
-const Footer = () =>{
-  return (
-    <Box
-      w="100% "
-      position="relative"
-    >
-      <Box background = "url(https://bit.ly/sage-adebayo)"
-        h={["200px", "250px", "300px"]}
-        w={["50%", "50%", "60%"]}
-        left="30px"
-        bottom="100px"
-        zIndex="100"
-        border="4px solid #000000"
-        p="3"
-        boxShadow="base"
-        display="block"
-        direction="row"
-        boxSizing="border-box"
-        borderColor="black"
-        borderWidth="3px"
-        borderStyle="solid"
-        position="absolute"></Box>
-          <Box
-          background="#000000"
-          h="237px"
-          w={["70%", "50%", "50%"]}
-          left={["40%", "40%", "40%"]}
-          bottom="50px"
-          zIndex="100"
-          marginTop={["200px", "150px", "200px"]}
-          border="4px solid #000000"
-          p="3"
-          boxShadow="base"
-          display="block"
-          direction="row"
-          boxSizing="border-box"
-          borderColor="black"
-          borderWidth="3px"
-          borderStyle="solid"
-          position="relative"
-          >
-        <Heading as="h1" textStyle="caps" fontSize={["20px", "28px", "36px"]} fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          Open Solutions Collaboratory
-        </Heading>
-        <Text textStyle="caps" fontSize={["12px", "14px", "18px"]} fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          Contact Us
-        </Text>
-        <Text textStyle="caps" fontSize="14px" fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-          ©2021
-        </Text>
-      </Box>
-  </Box>
-  )
-}
-
-
 const browseProjects = () => {
   const [input, setInput] = useState('');
   const [ projects, setProjects ] = useState([
@@ -199,7 +145,7 @@ const browseProjects = () => {
               <Stack align="left" marginTop="2rem" >
                 <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
                   Browse All Projects
-                  <Text fontSize="14px">{'<<'} Back to Home </Text>
+                  <BackButton />
                   <SearchBar input={input} onChange={updateInput}/>
                 </Heading>
               </Stack>

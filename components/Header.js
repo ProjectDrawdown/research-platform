@@ -1,5 +1,6 @@
 import React from "react";
-import { Heading, Text, Box} from "@chakra-ui/react"
+import { Text, Box} from "@chakra-ui/react"
+import Title from "./Title";
 
 export default function Header () {
   return (
@@ -20,9 +21,9 @@ export default function Header () {
         borderRadius="10px"
         borderStyle="solid"
         position="absolute">
-        <Heading as="h1" textStyle="caps" fontSize={["20px", "30px", "48px"]} left="78px" top="93px" textAlign="left" paddingRight={["10%", "25%"]}>
+        <Title fontSize={["20px", "30px", "48px"]} paddingRight={["10%", "25%"]}>
           Open Solutions Collaboratory
-        </Heading>
+        </Title>
           <Text fontSize={["15px", "15px", "30px"]} fontWeight="600px" paddingTop="2rem" paddingRight={["10%", "35%"]}  textAlign="left" >
           Building the worlds  largest open research platform for climate solutions...
           </Text>
