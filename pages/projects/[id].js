@@ -1,8 +1,9 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { Link, Heading, Text, Box, Avatar } from "@chakra-ui/react"
+import { Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
 import matter from 'gray-matter';
+import StyledButton from '../../components/StyledButton';
 
 function Post({
   data
@@ -24,9 +25,17 @@ function Post({
         borderRadius="10px"
         borderStyle="solid"
         position="absolute">
-          <Heading as="h1" textStyle="caps" fontSize={["20px", "30px", "48px"]} left="78px" top="93px" textAlign="left" paddingRight={["10%", "25%"]}>
-            Project Detail
-          </Heading>
+          <Grid templateColumns="repeat(5, 1fr)">
+            <GridItem colSpan={3}>
+              <Heading as="h1" textStyle="caps" fontSize={["20px", "30px", "48px"]} left="78px" top="93px" textAlign="left">
+                Project Detail
+              </Heading>
+            </GridItem>
+            <GridItem colSpan={1}></GridItem>
+            <GridItem colSpan={1}>
+              <StyledButton content="PROJECT LINK" />
+            </GridItem>
+          </Grid>
           <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/" >
             {"<< Back to project listing"}
           </Link>
