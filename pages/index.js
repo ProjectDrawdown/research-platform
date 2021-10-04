@@ -1,11 +1,11 @@
-import React, {useState} from "react"
+import React from "react"
 import Head from "next/head"
 import { ChakraProvider, Flex, Link, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
-import { attributes, react as HomeContent } from '../content/home.md';
+import { attributes } from '../content/home.md';
 
 // This is the default breakpoint
 createBreakpoints({
