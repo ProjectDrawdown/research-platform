@@ -20,8 +20,8 @@ collections:
         - { label: "Link", name: "link", widget: "string"}
         - label: 'Projects'
           name: "projects"
-          widget: relation
-          collection: "project"
+          widget: "relation"
+          collection: "projects"
           value_field: "name"
           search_fields: ["name"]
           multiple: true

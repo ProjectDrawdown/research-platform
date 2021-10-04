@@ -5,6 +5,7 @@ import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
+import { attributes, react as HomeContent } from '../content/home.md';
 
 // This is the default breakpoint
 createBreakpoints({
@@ -14,13 +15,7 @@ lg: "62em"
 })
 
 const FeaturedProjectsList = () =>{
-  const [ projects] = useState([
-    {"name":"Open Solutions Model: open source modeling of 100s of climate solutions", "link":""},
-    {"name":"2022 Open Climate Research Fellowships", "link":""},
-    {"name":"Climate Solutions Data Hub: open research on solution impacts", "link":""},
-    {"name":"2023 Open Climate Research Fellowships", "link":""}
-  ])
-  
+  let { projects } = attributes;
   return (
     <>
       <Box paddingBottom="3em" paddingTop="3em">
@@ -34,11 +29,11 @@ const FeaturedProjectsList = () =>{
       <br></br>
       <Grid templateColumns="1fr" width="80%" marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
-          {projects.slice(0,2).map(project => (
+          {projects.map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
               <Heading as="h2" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
-                {project.name}
+                {project.title}
               </Heading>
             </Text>
             <Link href="{project.link}" textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
