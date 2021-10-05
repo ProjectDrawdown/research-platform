@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
 import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
+import getStaticFilesFrontMatter from '../../getStatic';
 
 function Post({
   data
@@ -47,7 +48,18 @@ function Post({
           <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
           <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" marginTop="2vh" />
           <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
-          <Text fontSize="20px" marginTop="2vh">No resources.</Text>
+          <Text fontSize="20px" marginTop="2vh">
+            <ul>
+            {data.resources.map((resource, k) => (
+              <li key={k}>
+                <b>{resource.name}</b>
+                <p>{resource.description}</p>
+                <a href={resource.file}>{resource.file}</a>
+                <a href={resource.link}>{resource.link}</a>
+              </li>
+            ))}
+            </ul>
+          </Text>
         </Box>
         <Box position="relative"
         h={["250px", "250px", "500px"]}
@@ -80,9 +92,18 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const slug = params.id;
   const source = fs.readFileSync('projects/' + slug + '.md', "utf8");
-  const data = matter(source)
+  const data = matter(source).data;
+
+  const resources = await getStaticFilesFrontMatter("_resources");
+
+  const associatedResources = resources.filter((resource) => {
+    return resource && resource.projects && resource.projects.indexOf(data.name) !== -1;
+  });
+
+  data["resources"] = associatedResources
+
   return {
-    props: { data: data.data },
+    props: { data: data},
   };
 };
 
