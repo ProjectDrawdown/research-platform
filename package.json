@@ -27,6 +27,7 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/open-sans": "^4.5.1",
     "@fontsource/raleway": "^4.5.0",
+    "@fontsource/sora": "^4.5.0",
     "@next/eslint-plugin-next": "^11.1.2",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
