@@ -4,15 +4,11 @@ import Title from "./Title";
 
 export default function Footer () {
     return (
-      <Box
-        w="100% " 
-        position="relative"
-        marginTop="100px">
+      <>
         <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
-          h={["200px", "250px", "300px"]}
+          h={["200px", "300px", "400px"]}
           w={["50%", "50%", "60%"]}
           left="30px"
-          bottom="100px"
           zIndex="100"
           border="4px solid #000000"
           p="3"
@@ -23,13 +19,14 @@ export default function Footer () {
           borderColor="black"
           borderWidth="3px"
           borderStyle="solid"
-          position="absolute"></Box>
+          marginTop="200px"
+          marginLeft="50px"
+          ></Box>
             <Box
             background="#000000"
-            h="237px"
+            h={["120px", "170px", "270px"]}
             w={["70%", "50%", "50%"]}
-            left={["40%", "40%", "40%"]}
-            bottom="50px"
+            right="0px"
             zIndex="100"
             marginTop={["200px", "150px", "200px"]}
             border="4px solid #000000"
@@ -41,7 +38,9 @@ export default function Footer () {
             borderColor="black"
             borderWidth="3px"
             borderStyle="solid"
-            position="relative"
+            bottom="0px"
+            position="absolute"
+            marginRight="50px"
             >
           <Title fontSize={["20px", "28px", "36px"]} paddingRight="15%" color="#FFF">
             Open Solutions Collaboratory
@@ -53,7 +52,7 @@ export default function Footer () {
             ©2021
           </Text>
         </Box>
-    </Box>
+        </>
     )
   }
   

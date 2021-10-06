@@ -1,4 +1,5 @@
 import React from "react";
+import "@fontsource/sora/800.css";
 import { Heading } from "@chakra-ui/react"
 
 
