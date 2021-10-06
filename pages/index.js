@@ -38,10 +38,10 @@ const FeaturedProjectsList = () =>{
         </Text>
       </Box>
       <Center>
-      <Grid marginTop="6em" templateColumns="1fr" width={["700px", "700px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
+      <Grid marginTop="6em" templateColumns="1fr" width={["300px", "400px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
           {projects.slice(0,2).map(project => (
-          <Box width={["290px", "290px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
+          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
               <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
                 {project.name}
@@ -60,7 +60,7 @@ const FeaturedProjectsList = () =>{
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginBottom="-100px">
           {projects.slice(2,4).map(project => (
-          <Box width={["290px", "290px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
+          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
           <Text boxSize="100%" >
             <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
               {project.name}
