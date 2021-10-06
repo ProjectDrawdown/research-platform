@@ -22,7 +22,7 @@ collections:
           name: "projects"
           widget: "relation"
           collection: "projects"
-          value_field: "{{fields.name}}_{{fields.description}}_{{fields.link}}"
+          value_field: "{{fields.name}}_{{fields.description}}_{{fields.slug}}"
           search_fields: ["name"]
           multiple: true
   - name: "projects"

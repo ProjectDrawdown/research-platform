@@ -41,7 +41,7 @@ const FeaturedProjectsList = () => {
                 {project.split('_')[0]}
               </Heading>
             </Text>
-            <Link href={project.split('_')[2]} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('_')[2]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
@@ -52,20 +52,6 @@ const FeaturedProjectsList = () => {
             <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
-        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginBottom="-100px">
-          {projects.map(project => (
-          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
-          <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
-            <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
-              {project.split('_')[0]} 
-            </Heading>
-          </Text>
-          <Link href={project.split('_')[2]} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-            View
-          </Link>
-        </Box>
-          ))}
-        </Grid>
       </Grid>
       </Center>
     </>
