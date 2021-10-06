@@ -6,7 +6,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
-import "@fontsource/sora/800.css";
 
 // This is the default breakpoint
 createBreakpoints({
@@ -23,8 +22,8 @@ const theme = extendTheme({
 })
 
 
-const FeaturedProjectsList = () =>{
-  let { projects } = attributes;
+const FeaturedProjectsList = () => {
+  const { projects } = attributes;
   return (
     <>
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
@@ -35,14 +34,14 @@ const FeaturedProjectsList = () =>{
       <Center>
       <Grid marginTop="6em" templateColumns="1fr" width={["300px", "400px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
-          {projects.slice(0,2).map(project => (
+          {projects.map(project => (
           <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
-                {project.name}
+                {project.split('_')[0]}
               </Heading>
             </Text>
-            <Link href="{project.link}" paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={project.split('_')[2]} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
@@ -54,14 +53,14 @@ const FeaturedProjectsList = () =>{
           </Link>
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginBottom="-100px">
-          {projects.slice(2,4).map(project => (
+          {projects.map(project => (
           <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
           <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
             <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
-              {project.name}
+              {project.split('_')[0]} 
             </Heading>
           </Text>
-          <Link href="{project.link}" paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+          <Link href={project.split('_')[2]} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
             View
           </Link>
         </Box>
@@ -184,6 +183,7 @@ const Body = () =>{
 }
 
 const Home = () => {
+  let { title, description } = attributes;
   return (
     <>
       <Head>
@@ -191,7 +191,7 @@ const Home = () => {
       </Head>
       <ChakraProvider theme={theme}>
         <Flex as="nav" flexWrap="wrap" direction="row">
-        <Header />
+        <Header title={title} description={description} />
         <Stack marginTop="2rem" width="100vw">
         <Partners />
         <Body />
