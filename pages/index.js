@@ -37,7 +37,7 @@ const FeaturedProjectsList = () =>{
           {projects.slice(0,2).map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
-              <Heading as="h2" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
+              <Heading as="h2" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} inlineSize="150px" overflowWrap="break-word" color="#00C24E">
                 {project.name}
               </Heading>
             </Text>
@@ -84,14 +84,14 @@ const Partners = () =>{
         </Text>
       </Box>
       <SimpleGrid minChildWidth="370px" padding="50px" spacing="40px" width="100%" >
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 53.png" alt="Segun Adebayo" />
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 3.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 3.png" alt="Climatebase" />
         <br></br>
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 2.png" alt="Segun Adebayo" />
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 23.png" alt="Segun Adebayo" />
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/drawdown.png" alt="Segun Adebayo" />
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Ellipse 10.png" alt="Segun Adebayo" />
-        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 52.png" alt="Segun Adebayo" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 2.png" alt="Project Drawdown" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 23.png" alt="Drawdown GA" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/drawdown.png" alt="Drawdown Europe" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Ellipse 10.png" alt="ECOSIA" />
+        <Image marginX="auto" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 52.png" alt="One Project" />
       </SimpleGrid>
     </>
   )
