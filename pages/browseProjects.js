@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Head from "next/head"
 import PropTypes from 'prop-types'
-import { ChakraProvider, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { ChakraProvider, extendTheme, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -20,6 +20,14 @@ import BackButton from "../components/BackButton"
   sm: "30em",
   md: "48em",
   lg: "62em"
+  })
+
+
+  const theme = extendTheme({
+    fonts: {
+      heading: "Sora",
+      body: "Sora",
+    },
   })
   
 
@@ -139,7 +147,7 @@ const browseProjects = () => {
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
             <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
               <Stack align="left" marginTop="2rem" >
