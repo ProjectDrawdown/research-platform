@@ -133,10 +133,12 @@ const Body = () =>{
             <Heading as="h4" mt="5" size="md" color="blue"> Projects </Heading>
           </Box>
         </Stack>
-          <Box padding="20px" maxWidth={["100%"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Text fontWeight="bold">
+          <Box padding="20px" width={["155px","255px","355px"]} width={["155px","255px","355px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Center>
+            <Text fontWeight="bold" boxSize="55%">
               There could be a short description here with a bit more inspirational somethn’ somethn’
             </Text>
+            </Center>
           </Box>
       </Grid>
       </Center>
