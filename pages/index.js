@@ -37,7 +37,7 @@ const FeaturedProjectsList = () =>{
           {projects.slice(0,2).map(project => (
           <Box w="100%" minHeight={["200px", "200px","300px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="100%" >
-              <Heading as="h2" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} inlineSize="150px" overflowWrap="break-word" color="#00C24E">
+              <Heading as="h2" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} inlineSize="300px" overflowWrap="break-word" color="#00C24E">
                 {project.name}
               </Heading>
             </Text>
