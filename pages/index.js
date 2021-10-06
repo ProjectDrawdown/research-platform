@@ -118,24 +118,24 @@ const Body = () =>{
           </Text>
       </Box>
       <Center>
-      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto" gap={6} padding="40px" backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto"  padding="40px" backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Countries </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 300 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Collaborators </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" minWidth="200px" maxWidth="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 500 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Projects </Heading>
           </Box>
         </Stack>
-          <Box padding="20px" width={["255px","255px","355px"]} height={["255px","255px","355px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box width={["180px","200px","355px"]} height={["255px","255px","355px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Center>
-            <Text fontWeight="bold" boxSize="55%">
+            <Text paddingTop="10px" fontWeight="bold" boxSize="55%">
               There could be a short description here with a bit more inspirational somethn’ somethn’
             </Text>
             </Center>
