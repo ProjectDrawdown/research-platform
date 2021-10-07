@@ -34,7 +34,7 @@ function Project({
             </GridItem>
             <GridItem colSpan={1} />
             <GridItem colSpan={1}>
-              <StyledButton content="PROJECT LINK" />
+              <StyledButton content="PROJECT LINK" href={data.link} />
             </GridItem>
           </Grid>
           <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/" >
@@ -55,9 +55,7 @@ function Project({
             {data.description}
           </Text>
           <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
-          {data.collaborators && data.collaborators.map((collaborator, index) =>
-            <Avatar name={collaborator.name} src="https://bit.ly/broken-link" marginTop="2vh" key={index} />
-          )}
+          <Avatar name={data.collaborators} src="https://bit.ly/broken-link" marginTop="2vh" />
           <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
           <Text fontSize="20px" marginTop="2vh">
             <ul>
