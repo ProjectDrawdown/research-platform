@@ -41,7 +41,7 @@ const FeaturedProjectsList = () => {
                 {project.split('_')[0]}
               </Heading>
             </Text>
-            <Link href={`/projects/${project.split('_')[2]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
