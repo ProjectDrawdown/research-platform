@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, Box} from "@chakra-ui/react"
-import "@fontsource/sora/800.css";
 import Title from "./Title";
 
-export default function Header () {
+export default function Header ({ title, description }) {
   return (
     <>
       <Box top="0px" left="0px" width="100%" height="max-content">
@@ -22,11 +21,11 @@ export default function Header () {
         borderRadius="10px"
         borderStyle="solid"
         position="absolute">
-        <Title fontSize={["20px", "30px", "48px"]} paddingRight={["10%", "25%"]} fontWeight="800px">
-          Open Solutions Collaboratory
-        </Title>
+          <Title fontSize={["20px", "30px", "48px"]} paddingRight={["10%", "25%"]} fontWeight="800px">
+            {title}
+          </Title>
           <Text fontSize={["15px", "15px", "30px"]} fontFamily="sora" fontWeight="600px" paddingTop="2rem" paddingRight={["10%", "35%"]}  textAlign="left" >
-          Building the worlds  largest open research platform for climate solutions...
+            {description}
           </Text>
         </Box>
         <Box position="relative"
@@ -44,4 +43,4 @@ export default function Header () {
 }
 
 
-
+  

@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
 
-function Post({
+function Project({
   data
 }) {
   return (
@@ -34,19 +34,28 @@ function Post({
             </GridItem>
             <GridItem colSpan={1} />
             <GridItem colSpan={1}>
-              <StyledButton content="PROJECT LINK" />
+              <StyledButton content="PROJECT LINK" href={data.link} />
             </GridItem>
           </Grid>
           <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/" >
             {"<< Back to project listing"}
           </Link>
           <Text fontSize="20px" marginTop="2vh">{data.name}</Text>
+          {data.video &&
+            <iframe
+              src={data.video}
+              frameBorder='0'
+              allow='autoplay; encrypted-media'
+              allowFullScreen
+              title='video'
+            />
+          }
           <Heading as="h3" size="md" marginTop="2vh"> Description: </Heading>
           <Text fontSize="20px" fontWeight="600px" paddingRight={["10%", "35%"]}  textAlign="left" >
             {data.description}
           </Text>
           <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
-          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" marginTop="2vh" />
+          <Avatar name={data.collaborators} src="https://bit.ly/broken-link" marginTop="2vh" />
           <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
           <Text fontSize="20px" marginTop="2vh">
             <ul>
@@ -76,8 +85,8 @@ function Post({
 )
 }
 
-Post.propTypes = {
-  data: PropTypes.array
+Project.propTypes = {
+  data: PropTypes.object
 }
 
 export const getStaticPaths = async () => {
@@ -103,9 +112,9 @@ export const getStaticProps = async ({ params }) => {
   data["resources"] = associatedResources
 
   return {
-    props: { data: data},
+    props: { data: data },
   };
 };
 
-export default Post
+export default Project
 
