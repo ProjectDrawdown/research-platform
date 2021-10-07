@@ -22,7 +22,7 @@ collections:
           name: "projects"
           widget: "relation"
           collection: "projects"
-          value_field: "{{fields.name}}_{{fields.description}}_{{fields.link}}"
+          value_field: "{{fields.name}}_{{fields.description}}_{{fields.link}}_{{slug}}"
           search_fields: ["name"]
           multiple: true
   - name: "projects"
@@ -35,7 +35,14 @@ collections:
       - { label: "Active", name: "active", widget: "boolean", required: false}
       - { label: "Description", name: "description", widget: "text"}
       - { label: "Link", name: "link", widget: "string"}
-      - { label: "Collaborators", name: "collaborators", widget: "relation", collection: "authors", value_field: "name", search_fields: ["name"] }
+      - { label: "Collaborators", 
+          name: "collaborators", 
+          widget: "relation", 
+          collection: "authors", 
+          value_field: "name", 
+          search_fields: ["name"],
+          multiple: true   
+        }
       - { label: "Video Link", name: "video", widget: "string" }
   - name: "resources"
     label: "Resources"
