@@ -32,7 +32,7 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
-      - { label: "Active", name: "acive", widget: "boolean", required: "false"}
+      - { label: "Active", name: "active", widget: "boolean", required: false}
       - { label: "Description", name: "description", widget: "text"}
       - { label: "Link", name: "link", widget: "string"}
       - { label: "Collaborators", name: "collaborators", widget: "relation", collection: "authors", value_field: "name", search_fields: ["name"] }
