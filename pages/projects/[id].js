@@ -55,8 +55,8 @@ function Project({
             {data.description}
           </Text>
           <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
-          {data.collaborators.map((collaborator) =>
-            <Avatar name={collaborator.name} src="https://bit.ly/broken-link" marginTop="2vh" />
+          {data.collaborators.map((collaborator, index) =>
+            <Avatar name={collaborator.name} src="https://bit.ly/broken-link" marginTop="2vh" key={index} />
           )}
           <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
           <Text fontSize="20px" marginTop="2vh">
