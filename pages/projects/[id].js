@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
 
-function Post({
+function Project({
   data
 }) {
   return (
@@ -41,6 +41,15 @@ function Post({
             {"<< Back to project listing"}
           </Link>
           <Text fontSize="20px" marginTop="2vh">{data.name}</Text>
+          {data.video &&
+            <iframe
+              src={data.video}
+              frameborder='0'
+              allow='autoplay; encrypted-media'
+              allowfullscreen
+              title='video'
+            />
+          }
           <Heading as="h3" size="md" marginTop="2vh"> Description: </Heading>
           <Text fontSize="20px" fontWeight="600px" paddingRight={["10%", "35%"]}  textAlign="left" >
             {data.description}
@@ -76,8 +85,8 @@ function Post({
 )
 }
 
-Post.propTypes = {
-  data: PropTypes.array
+Project.propTypes = {
+  data: PropTypes.object
 }
 
 export const getStaticPaths = async () => {
@@ -103,9 +112,9 @@ export const getStaticProps = async ({ params }) => {
   data["resources"] = associatedResources
 
   return {
-    props: { data: data},
+    props: { data: data },
   };
 };
 
-export default Post
+export default Project
 

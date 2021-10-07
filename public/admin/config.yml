@@ -18,11 +18,12 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "string" }
         - { label: "Link", name: "link", widget: "string"}
+        - { label: "Video Link", name: "video", widget: "string"
         - label: 'Projects'
           name: "projects"
           widget: "relation"
           collection: "projects"
-          value_field: "{{fields.name}}_{{fields.description}}_{{fields.slug}}"
+          value_field: "{{fields.name}}_{{fields.description}}"
           search_fields: ["name"]
           multiple: true
   - name: "projects"
