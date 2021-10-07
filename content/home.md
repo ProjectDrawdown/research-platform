@@ -12,6 +12,6 @@ description: Can climate change be reversed? The Collaboratory is empowering
   global researchers to answer this question.
 link: http://colab.coop/
 projects:
-  - adsdsasdsadasdasd_sadadssadadsasd_adsadsadsadssadasd
+  - adsdsasdsadasdasd_sadadssadadsasd_adsadsadsadssadasd_2021-09-02-map-name-adsdsasdsadasdasd-description-sadadssadadsasd-link-adsadsadsadssadasd
 ---
 Can climate change be reserved? The Collaboratory is empowering global researchers to answer this question.
