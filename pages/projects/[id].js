@@ -44,9 +44,9 @@ function Project({
           {data.video &&
             <iframe
               src={data.video}
-              frameborder='0'
+              frameBorder='0'
               allow='autoplay; encrypted-media'
-              allowfullscreen
+              allowFullScreen
               title='video'
             />
           }
