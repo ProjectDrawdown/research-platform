@@ -18,12 +18,11 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "string" }
         - { label: "Link", name: "link", widget: "string"}
-        - { label: "Video Link", name: "video", widget: "string"
         - label: 'Projects'
           name: "projects"
           widget: "relation"
           collection: "projects"
-          value_field: "{{fields.name}}_{{fields.description}}"
+          value_field: "{{fields.name}}_{{fields.description}}_{{fields.link}}"
           search_fields: ["name"]
           multiple: true
   - name: "projects"
@@ -33,10 +32,11 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
-      - { label: "Active", name: "acive", widget: "boolean"}
+      - { label: "Active", name: "acive", widget: "boolean", required: "false"}
       - { label: "Description", name: "description", widget: "text"}
       - { label: "Link", name: "link", widget: "string"}
       - { label: "Collaborators", name: "collaborators", widget: "relation", collection: "authors", value_field: "name", search_fields: ["name"] }
+      - { label: "Video Link", name: "video", widget: "string" }
   - name: "resources"
     label: "Resources"
     folder: "resources"
