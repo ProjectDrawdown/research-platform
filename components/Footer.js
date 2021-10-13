@@ -2,10 +2,10 @@ import React from "react";
 import { Text, Box} from "@chakra-ui/react"
 import Title from "./Title";
 
-export default function Footer () {
+export default function Footer ({ bottom_image }) {
     return (
       <>
-        <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
+        <Box backgroundImage={bottom_image ? "url('" + bottom_image.file + "')" : ''}
           h={["200px", "300px", "400px"]}
           w={["100%", "50%", "60%"]}
           left="30px"
