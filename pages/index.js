@@ -89,7 +89,7 @@ const Partners = () =>{
   )
 }
 
-const Body = () =>{
+const Body = ({ project_image }) =>{
   return (
     <>
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
@@ -98,7 +98,7 @@ const Body = () =>{
           </Text>
       </Box>
       <Center>
-      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto"  padding="40px" backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto"  padding="40px" backgroundImage={"url('" + project_image.file + "')"} backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
           <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
@@ -169,7 +169,7 @@ const Body = () =>{
 }
 
 const Home = () => {
-  let { title, description } = attributes;
+  let { title, description, header_image, project_image, bottom_image } = attributes;
   return (
     <>
       <Head>
@@ -177,13 +177,13 @@ const Home = () => {
       </Head>
       <ChakraProvider theme={theme}>
         <Flex as="nav" flexWrap="wrap" direction="row">
-        <Header title={title} description={description} />
+        <Header title={title} description={description} image={header_image}/>
         <Stack marginTop="2rem" width="100vw">
         <Partners />
-        <Body />
+        <Body project_image={project_image} />
         <FeaturedProjectsList />
         </Stack>
-        <Footer></Footer>
+        <Footer bottom_image={bottom_image} ></Footer>
       </Flex>
     </ChakraProvider>
   </>
