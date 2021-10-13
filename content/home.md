@@ -1,6 +1,6 @@
 ---
 header_image: img/pdd2.jpeg
-bottom_image: img/pdd2.jpeg
+bottom_image: img/projectdrawdown.png
 date: 2019-03-17T19:31:20.591Z
 title: Open Climate Solutions Collaboratory
 description: Can climate change be reversed? The Collaboratory is empowering
