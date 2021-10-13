@@ -14,6 +14,7 @@ collections:
     - label: "Home"
       name: "home"
       file: "content/home.md"
+      create: true
       fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "string" }
