@@ -35,7 +35,7 @@ export default function Header ({ title, description, image }) {
         top = {["150px" ]}
         zIndex="90"
         marginBottom="150px"
-        backgroundImage ={"url('" + image.file + "')"}
+        backgroundImage ={image ? "url('" + image.file + "')" : ''}
         mixBlendMode="normal"></Box>
       </Box>
     </>
