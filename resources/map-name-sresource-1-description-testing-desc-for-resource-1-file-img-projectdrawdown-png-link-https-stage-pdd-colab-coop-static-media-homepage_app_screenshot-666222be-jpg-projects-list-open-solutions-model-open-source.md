@@ -12,4 +12,5 @@ file: https://drawdown.org/sites/default/files/1920x1080_drawdown_cs101_poster01
 link: https://stage.pdd.colab.coop/static/media/homepage_app_screenshot.666222be.jpg
 projects:
   - "SProject1 Open Solutions Model: 100s of climate solutions"
+  - "Shruti & Colleen Are Working "
 ---
