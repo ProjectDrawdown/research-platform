@@ -34,7 +34,7 @@ const FeaturedProjectsList = () => {
       <Center>
       <Grid marginTop="6em" templateColumns="1fr" width={["300px", "400px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
-          {projects.map(project => (
+          {projects.slice(0,2).map((project) => (
           <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
@@ -52,6 +52,20 @@ const FeaturedProjectsList = () => {
             <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
+        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
+          {projects.slice(2,4).map((project) => (
+          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project}>
+            <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
+              <Heading as="h2" fontFamily="Sora" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
+                {project.split('_')[0]}
+              </Heading>
+            </Text>
+            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+              View
+            </Link>
+          </Box>
+          ))}
+        </Grid>
       </Grid>
       </Center>
     </>
