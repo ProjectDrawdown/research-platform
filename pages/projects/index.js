@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import getStaticFilesFrontMatter from '../../getStatic'
 
 export async function getStaticProps() {
-  const projects = await getStaticFilesFrontMatter("_projects")
-  const resources = await getStaticFilesFrontMatter("_resources")
+  const projects = await getStaticFilesFrontMatter("projects")
+  const resources = await getStaticFilesFrontMatter("resources")
 
   const preloadedProjects = projects.map((project) => {
     const associatedResources = resources.filter((resource) => {
