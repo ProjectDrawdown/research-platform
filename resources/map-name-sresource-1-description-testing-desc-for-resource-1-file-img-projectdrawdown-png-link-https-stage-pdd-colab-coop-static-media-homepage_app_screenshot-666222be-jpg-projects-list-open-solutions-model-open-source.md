@@ -1,6 +1,6 @@
 ---
 name: "SResource 1: resource for Project Open Solutions Model: 100s of climate
-  solutions END"
+  solutions.  END"
 description: Testing Desc for Resource 1 URL . Lorem ipsum dolor sit amet,
   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
