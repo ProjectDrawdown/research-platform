@@ -25,8 +25,8 @@ const theme = extendTheme({
 const FeaturedProjectsList = () => {
   const { projects } = attributes;
   return (
-    <>
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
+    <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
+      <Box paddingBottom="3em" paddingTop="3em" >
         <Text fontSize="36px" fontWeight="bold" textStyle="caps" textAlign="left">
           Recently Active Projects
         </Text>
@@ -35,9 +35,9 @@ const FeaturedProjectsList = () => {
       <Grid marginTop="6em" templateColumns="1fr" width={["300px", "400px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
           {projects.slice(0,2).map((project) => (
-          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["10px", "15px", "18px"]} color="#00C24E">
+              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
                 {project.split('_')[0]}
               </Heading>
             </Text>
@@ -54,9 +54,9 @@ const FeaturedProjectsList = () => {
         </Heading>
         <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
           {projects.slice(2,4).map((project) => (
-          <Box width={["170px", "190px","390px"]} height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["15px", "20px", "30px"]} color="#00C24E">
+              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
                 {project.split('_')[0]}
               </Heading>
             </Text>
@@ -68,7 +68,7 @@ const FeaturedProjectsList = () => {
         </Grid>
       </Grid>
       </Center>
-    </>
+    </Box>
   )
 }
 
@@ -81,7 +81,7 @@ const Partners = () =>{
         </Text>
       </Box>
       <Center>
-      <SimpleGrid columns={[1,2,5]} justifyContent="center" rowGap="80px" maxWidth="90%" paddingRight="10%" paddingLeft="3%" >
+      <SimpleGrid columns={[1,1,5]} justifyContent={["column-reverse", "row-reverse", "center"]} rowGap={["20px", "40px", "80px"]} maxWidth="90%" paddingRight="10%" paddingLeft="3%" >
       <div></div>
         <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
         <div></div>
@@ -105,7 +105,7 @@ const Partners = () =>{
 
 const Body = () =>{
   return (
-    <>
+    <Box paddingX="10px">
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
           <Text fontSize="36px" fontWeight="bold" textStyle="caps" textAlign="left">
             Who We Are
@@ -129,7 +129,7 @@ const Body = () =>{
         </Stack>
           <Box width={["180px","200px","355px"]} height={["255px","255px","355px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Center>
-            <Text paddingTop="10px" fontWeight="bold" boxSize="55%">
+            <Text paddingTop="10px" fontSize={["15px","20px","24px"]} padding={["15px", "20px", "25px"]} fontWeight="bold">
               There could be a short description here with a bit more inspirational somethn’ somethn’
             </Text>
             </Center>
@@ -180,14 +180,14 @@ const Body = () =>{
         </Grid>
       </Stack>
       </Center>
-    </>
+    </Box>
   )
 }
 
 const Home = () => {
   let { title, description } = attributes;
   return (
-    <>
+    <div style={{marginX: '20px', marginBottom: '0px'}}>
       <Head>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
@@ -202,7 +202,7 @@ const Home = () => {
         <Footer></Footer>
       </Flex>
     </ChakraProvider>
-  </>
+  </div>
   )
 }
 

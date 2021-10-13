@@ -21,6 +21,8 @@ export default function Footer () {
           borderStyle="solid"
           marginTop="200px"
           marginLeft="50px"
+          paddingBottom="0px"
+          marginBottom="0px"
           ></Box>
             <Box
             background="#000000"
@@ -42,7 +44,7 @@ export default function Footer () {
             position="absolute"
             marginRight="50px"
             >
-          <Title fontSize={["20px", "28px", "36px"]} fontWeight="800" lineHeight="40px" paddingRight="15%" color="#FFF">
+          <Title fontSize={["20px", "23px", "36px"]} fontWeight="800" lineHeight="40px" paddingRight="15%" color="#FFF">
             Open Solutions Collaboratory
           </Title>
           <Box flex="1" display="flex" flexDirection="column" justifyContent="space-between" >
