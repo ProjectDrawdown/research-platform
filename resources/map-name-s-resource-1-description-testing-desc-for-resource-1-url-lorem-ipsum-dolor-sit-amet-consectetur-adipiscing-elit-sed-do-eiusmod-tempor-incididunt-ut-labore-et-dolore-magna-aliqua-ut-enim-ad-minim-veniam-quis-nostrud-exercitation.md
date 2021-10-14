@@ -10,6 +10,6 @@ description: Testing Desc for Resource 1 URL . Lorem ipsum dolor sit amet,
 file: https://drawdown.org/sites/default/files/1920x1080_drawdown_cs101_poster01_0.jpg
 link: http://stage.pdd.colab.coop
 projects:
-  - "SProject1 Open Solutions Model: 100s of climate solutions"
   - "Shruti & Colleen Are Working "
+  - "SProject1 Open Solutions Model: 100s of climate solutions@@"
 ---
