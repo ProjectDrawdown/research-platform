@@ -1,5 +1,5 @@
 ---
-name: "SProject1 Open Solutions Model: 100s of climate solutions@@2"
+name: "SProject1 Open Solutions Model: 100s of climate solutions@@"
 active: true
 description: Open Solutions Model. Lorem ipsum dolor sit amet, consectetur
   adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
