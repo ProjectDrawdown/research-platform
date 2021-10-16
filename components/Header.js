@@ -21,10 +21,10 @@ export default function Header ({ title, description }) {
         borderRadius="10px"
         borderStyle="solid"
         position="absolute">
-          <Title fontSize={["20px", "30px", "48px"]} paddingRight={["10%", "25%"]} fontWeight="800px">
+          <Title fontSize={["20px", "30px", "48px"]} paddingRight={["10%", "15%"]} fontWeight="800px">
             {title}
           </Title>
-          <Text fontSize={["15px", "15px", "30px"]} fontFamily="sora" fontWeight="600px" paddingTop="2rem" paddingRight={["10%", "35%"]}  textAlign="left" >
+          <Text fontSize={["15px", "15px", "30px"]} fontFamily="sora" fontWeight="600px" paddingTop="2rem" paddingRight={["10%", "15%"]}  textAlign="left" >
             {description}
           </Text>
         </Box>
