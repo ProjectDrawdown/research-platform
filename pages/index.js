@@ -38,10 +38,10 @@ const FeaturedProjectsList = () => {
           <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-                {project.split('_')[0]}
+                {project.split('__')[0]}
               </Heading>
             </Text>
-            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
@@ -57,10 +57,10 @@ const FeaturedProjectsList = () => {
           <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-                {project.split('_')[0]}
+                {project.split('__')[0]}
               </Heading>
             </Text>
-            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textTransform="uppercase" textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textTransform="uppercase" textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
