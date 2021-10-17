@@ -30,7 +30,7 @@ export default function Header ({ title, description }) {
           <Text fontSize={["15px", "15px", "25px"]} fontFamily="sora" fontWeight="600px" paddingTop="2rem" paddingRight={["0px", "20px", "15%"]}  textAlign="left" >
             {description}
           </Text>
-          <Box marginLeft="10px" marginTop={["20px", "20px","0px"]}>
+          <Box marginLeft="10px" marginTop={["20px", "20px","20px"]}>
             <Arrow displayStyle={["block", "block", "block"]} />
             <Arrow displayStyle={["none", "block", "block"]} />
             <Arrow displayStyle={["none", "block", "block"]} />
