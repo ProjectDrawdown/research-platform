@@ -14,15 +14,19 @@ collections:
     - label: "Home"
       name: "home"
       file: "content/home.md"
+      create: true
       fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "string" }
         - { label: "Link", name: "link", widget: "string"}
+        - { label: "Header Image", name: "header_image", widget: "file"}
+        - { label: "Project Image", name: "project_image", widget: "file"}
+        - { label: "Bottom Image", name: "bottom_image", widget: "file"}
         - label: 'Projects'
           name: "projects"
           widget: "relation"
           collection: "projects"
-          value_field: "{{fields.name}}_{{fields.description}}_{{fields.link}}_{{slug}}"
+          value_field: "{{fields.name}}__{{fields.description}}__{{fields.link}}__{{slug}}"
           search_fields: ["name"]
           multiple: true
   - name: "projects"
