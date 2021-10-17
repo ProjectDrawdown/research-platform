@@ -2,7 +2,7 @@ import React from "react";
 import { Text, Box, Image} from "@chakra-ui/react"
 import Title from "./Title";
 
-export default function Header ({ title, description }) {
+export default function Header ({ title, description, image }) {
   return (
     <>
       <Box top="0px" left="0px" width="100%" height="max-content">
@@ -44,7 +44,7 @@ export default function Header ({ title, description }) {
         top = {["80px", "100px","200px" ]}
         zIndex="90"
         marginBottom="150px"
-        backgroundImage = "url('img/assets/Rectangle 1087.png')"
+        backgroundImage ={image ? "url('" + image + "')" : ''}
         mixBlendMode="normal"></Box>
       </Box>
       <Image src="img/assets/wavy.png" width={["80%", "80%","25%"]} marginTop={["20px", "20px", "-70px"]} marginLeft={["10%"]} maxHeight="40px" objectFit="contain" />
