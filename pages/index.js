@@ -143,7 +143,6 @@ const Body = () =>{
             <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" textAlign="left" paddingTop="100px" paddingLeft="15px">
               Are you Interested in Contributing?
             </Heading>
-          </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
