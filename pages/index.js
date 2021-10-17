@@ -26,16 +26,16 @@ const FeaturedProjectsList = () => {
   const { projects } = attributes;
   return (
     <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
-      <Box paddingBottom="3em" paddingTop="3em" >
-        <Text fontSize="36px" fontWeight="bold" textStyle="caps" textAlign="left">
+      <Box paddingBottom="3em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
+        <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
           Recently Active Projects
         </Text>
       </Box>
       <Center>
-      <Grid marginTop="6em" templateColumns="1fr" width={["300px", "400px","800px"]} height={["700px", "700px","800px"]} marginX="auto"  gap={6}  backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
-        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
+      <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={["375px", "375px","800px"]} height={["375px","375px","800px"]} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
           {projects.slice(0,2).map((project) => (
-          <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
                 {project.split('_')[0]}
@@ -47,20 +47,20 @@ const FeaturedProjectsList = () => {
           </Box>
           ))}
         </Grid>
-        <Heading as="h5" fontSize="18px" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" paddingBottom="30px" textAlign="center">
+        <Heading as="h5" fontSize="18px" marginY={["20px", "20px", "0px"]} fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
           <Link href="browseProjects">
             <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
-        <Grid templateColumns="repeat(2, 1fr)" gap="10%" marginX={["-20px", "-50px", "-70px"]} marginTop="-100px">
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "-100px"]}>
           {projects.slice(2,4).map((project) => (
-          <Box width={["170px", "190px","390px"]} boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
                 {project.split('_')[0]}
               </Heading>
             </Text>
-            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textTransform="uppercase" textAlign="left" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
@@ -76,7 +76,7 @@ const Partners = () =>{
   return(
     <>
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
-        <Text fontSize="36px" fontWeight="bold" textStyle="caps" textAlign="left">
+        <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
           Our Partners
         </Text>
       </Box>
@@ -106,37 +106,37 @@ const Partners = () =>{
 const Body = () =>{
   return (
     <Box paddingX="10px">
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
-          <Text fontSize="36px" fontWeight="bold" textStyle="caps" textAlign="left">
+      <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%" marginBottom={["110px", "110px", "0px"]}>
+          <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
             Who We Are
           </Text>
       </Box>
       <Center>
-      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto"  padding="40px" backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
-        <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","X"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
+        <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
+          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Countries </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 300 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Collaborators </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md"> 500 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Projects </Heading>
           </Box>
         </Stack>
-          <Box width={["180px","200px","355px"]} height={["255px","255px","355px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Center>
-            <Text paddingTop="10px" fontSize={["15px","20px","24px"]} padding={["15px", "20px", "25px"]} fontWeight="bold">
+        <Center>
+          <Box width={["250px","250px","355px"]} height={["255px","255px","355px"]} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "0px"]} marginBottom={["-30%", "-30%", "0px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Text paddingTop="10px" fontSize={["15px","20px","24px"]} fontWeight="bold">
               There could be a short description here with a bit more inspirational somethn’ somethn’
             </Text>
-            </Center>
           </Box>
+        </Center>
       </Grid>
       </Center>
-      <Center flexDirection="column" alignItems="center">
+      <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
       <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
         <Grid templateColumns="1fr" gap={6}>
           <Box>
