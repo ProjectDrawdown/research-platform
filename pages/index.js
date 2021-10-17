@@ -23,7 +23,7 @@ const theme = extendTheme({
 
 
 const FeaturedProjectsList = () => {
-  const { projects } = attributes;
+  const { projects, bottom_image } = attributes;
   return (
     <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
       <Box paddingBottom="3em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
@@ -38,10 +38,10 @@ const FeaturedProjectsList = () => {
           <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-                {project.split('_')[0]}
+                {project.split('__')[0]}
               </Heading>
             </Text>
-            <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
+            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
               View
             </Link>
           </Box>
@@ -57,7 +57,7 @@ const FeaturedProjectsList = () => {
           <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-                {project.split('_')[0]}
+                {project.split('__')[0]}
               </Heading>
             </Text>
             <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
@@ -103,7 +103,7 @@ const Partners = () =>{
   )
 }
 
-const Body = () =>{
+const Body = ({ project_image }) =>{
   return (
     <Box paddingX="10px">
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%" marginBottom={["110px", "110px", "0px"]}>
@@ -115,6 +115,10 @@ const Body = () =>{
       <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","X"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
           <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+      <Grid templateColumns="1fr 1.5fr" width={["90%", "70%", "50%"]} marginX="auto"  padding="40px" backgroundImage={ project_image ? "url('" + project_image+ "')" : ''} backgroundPosition="center" backgroundSize="cover">
+        <Stack marginLeft={["-20%", "-35%", "-40%"]} gap={6}>
+          <Box textAlign="center" padding="20px" paddingTop="0px" width={["150px","150px","250px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+
             <Heading as="h2" mt="5" size="md"> 12 </Heading>
             <Heading as="h4" mt="5" size="md" color="blue"> Countries </Heading>
           </Box>
@@ -185,7 +189,7 @@ const Body = () =>{
 }
 
 const Home = () => {
-  let { title, description } = attributes;
+  let { title, description, header_image, project_image, bottom_image } = attributes;
   return (
     <div style={{marginX: '20px', marginBottom: '0px'}}>
       <Head>
@@ -193,13 +197,13 @@ const Home = () => {
       </Head>
       <ChakraProvider theme={theme}>
         <Flex as="nav" flexWrap="wrap" direction="row">
-        <Header title={title} description={description} />
+        <Header title={title} description={description} image={header_image}/>
         <Stack marginTop="2rem" width="100vw">
         <Partners />
-        <Body />
+        <Body project_image={project_image} />
         <FeaturedProjectsList />
         </Stack>
-        <Footer></Footer>
+        <Footer bottom_image={bottom_image} ></Footer>
       </Flex>
     </ChakraProvider>
   </div>
