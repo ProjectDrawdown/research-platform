@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
+import "@fontsource/work-sans/400.css"
 
 // This is the default breakpoint
 createBreakpoints({
@@ -120,15 +121,15 @@ const Body = () =>{
         <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
           <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Countries </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
           </Box>
           <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Collaborators </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
           </Box>
           <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
             <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Projects </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
           </Box>
         </Stack>
         <Center>
