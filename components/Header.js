@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Center, Box, Image} from "@chakra-ui/react"
+import { Text, Box, Image} from "@chakra-ui/react"
 import Title from "./Title";
 
 export default function Header ({ title, description }) {
