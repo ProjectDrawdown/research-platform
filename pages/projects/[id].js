@@ -37,7 +37,7 @@ function Project({
               <StyledButton content="PROJECT LINK" href={data.link} />
             </GridItem>
           </Grid>
-          <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/projects/index.js" >
+          <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/projects" >
             {"<< Back to project listing"}
           </Link>
           <Text fontSize="20px" marginTop="2vh">{data.name}</Text>
