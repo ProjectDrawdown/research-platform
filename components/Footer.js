@@ -24,7 +24,7 @@ export default function Footer () {
             zIndex="100"
             position="absolute"
             >
-          <Title fontSize={["20px", "23px", "36px"]} fontWeight="800" lineHeight="40px" paddingRight="15%" color="#FFF">
+          <Title fontSize={["20px", "23px", "36px"]} fontWeight="800" lineHeight="40px" paddingRight="25%" color="#FFF">
             Open Solutions Collaboratory
           </Title>
           <Box flex="1" display="flex" flexDirection="column" justifyContent="space-between" >

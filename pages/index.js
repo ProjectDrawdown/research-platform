@@ -116,24 +116,24 @@ const Body = () =>{
           </Text>
       </Box>
       <Center>
-      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","450px"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","700px"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Countries </Heading>
+          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Countries </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Collaborators </Heading>
+          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Collaborators </Heading>
           </Box>
-          <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Projects </Heading>
+          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="28px" > Projects </Heading>
           </Box>
         </Stack>
         <Center>
-          <Box width={["250px","250px","355px"]} height={["255px","255px","355px"]} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "0px"]} marginBottom={["-30%", "-30%", "0px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Text paddingTop="10px" fontSize={["15px","20px","24px"]} fontWeight="bold">
+          <Box width={["250px","250px","355px"]} height={["255px","255px","355px"]} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "-250px"]} marginBottom={["-30%", "-30%", "0px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
+            <Text paddingTop="10px" fontSize={["20px","20px","24px"]} fontWeight="700">
               There could be a short description here with a bit more inspirational somethn’ somethn’
             </Text>
           </Box>
@@ -141,8 +141,8 @@ const Body = () =>{
       </Grid>
       </Center>
       <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
-      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop="134px" maxHeight="40px" objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight="40px" objectFit="contain" />
+      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize="24px" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
         Are you Interested in Contributing?
       </Heading>
       <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
