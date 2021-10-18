@@ -1,5 +1,6 @@
 ---
 name: "SM Project 2022 Open Climate Research Fellowship "
+active: true
 description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at
   tellus at urna condimentum. Ut lectus arcu bibendum at varius vel. Laoreet
