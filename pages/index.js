@@ -26,7 +26,7 @@ const FeaturedProjectsList = () => {
   const { projects } = attributes;
   return (
     <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
-      <Box paddingBottom="3em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
+      <Box paddingBottom="1em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
         <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
           Recently Active Projects
         </Text>
@@ -38,7 +38,9 @@ const FeaturedProjectsList = () => {
           <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
+              <Link href={`/projects/${project.split('_')[3]}`} >
                 {project.split('_')[0]}
+              </Link>
               </Heading>
             </Text>
             <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
@@ -57,7 +59,9 @@ const FeaturedProjectsList = () => {
           <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
+              <Link href={`/projects/${project.split('_')[3]}`} >
                 {project.split('_')[0]}
+              </Link>
               </Heading>
             </Text>
             <Link href={`/projects/${project.split('_')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
@@ -75,7 +79,7 @@ const FeaturedProjectsList = () => {
 const Partners = () =>{
   return(
     <>
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%">
+      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]}>
         <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
           Our Partners
         </Text>
@@ -106,25 +110,25 @@ const Partners = () =>{
 const Body = () =>{
   return (
     <Box paddingX="10px">
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft="5%" marginBottom={["110px", "110px", "0px"]}>
+      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]} marginBottom={["110px", "110px", "0px"]}>
           <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
             Who We Are
           </Text>
       </Box>
       <Center>
-      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","X"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
+      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","450px"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage="url('img/assets/Rectangle 1082.png')" backgroundPosition="center" backgroundSize="cover">
         <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
           <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md"> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue"> Countries </Heading>
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 12 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Countries </Heading>
           </Box>
           <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md"> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue"> Collaborators </Heading>
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 300 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Collaborators </Heading>
           </Box>
           <Box textAlign="center" padding="20px" paddingTop="0px" width="250px" border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md"> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue"> Projects </Heading>
+            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize="30px"> 500 </Heading>
+            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" > Projects </Heading>
           </Box>
         </Stack>
         <Center>
@@ -137,23 +141,20 @@ const Body = () =>{
       </Grid>
       </Center>
       <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
+      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop="134px" maxHeight="40px" objectFit="contain" />
+      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+        Are you Interested in Contributing?
+      </Heading>
       <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
-        <Grid templateColumns="1fr" gap={6}>
-          <Box>
-            <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" textAlign="left" paddingTop="100px" paddingLeft="15px">
-              Are you Interested in Contributing?
-            </Heading>
-          </Box>
-        </Grid>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
             <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" fontFamily="Sora" marginBottom="20px">
+            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
               Have a Resource to Add?
             </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
+            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
@@ -161,10 +162,10 @@ const Body = () =>{
             <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
           </Box>
           <Box >
-            <Text fontWeight="600" fontFamily="Sora" marginBottom="20px">
+            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
               Engergized by this but not sure how to contibute?
             </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
+            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
@@ -172,10 +173,10 @@ const Body = () =>{
             <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" fontFamily="Sora" marginBottom="20px">
+            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
               Propose your own project.
             </Text>
-            <Button borderRadius="0px" lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
+            <Button borderRadius="0px" fontSize="16px" lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
           </Box>
         </Grid>
       </Stack>
