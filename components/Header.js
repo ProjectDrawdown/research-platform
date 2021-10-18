@@ -10,7 +10,7 @@ export default function Header ({ title, description }) {
         w={["75%", "70%", "70%"]}
         minHeight={["240px", "240px", "300px"]}
         maxWidth={["90%", "90%", "671px"]}
-        left={["15%", "10%", "10%"]}
+        left={["4%", "10%", "10%"]}
         marginX="auto"
         top="53px"
         zIndex="100"
