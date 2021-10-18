@@ -24,7 +24,8 @@ const theme = extendTheme({
 
 
 const FeaturedProjectsList = () => {
-  const { projects } = attributes;
+  const { projects, bottom_image } = attributes;
+  
   return (
     <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
       <Box paddingBottom="1em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
@@ -33,7 +34,7 @@ const FeaturedProjectsList = () => {
         </Text>
       </Box>
       <Center>
-      <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={["375px", "375px","800px"]} height={["375px","375px","800px"]} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage="url('img/assets/Rectangle 1083.png')">
+      <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={["375px", "375px","800px"]} height={["375px","375px","800px"]} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage={"url('" + bottom_image + "')"}>
         <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
           {projects.slice(0,2).map((project) => (
           <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
