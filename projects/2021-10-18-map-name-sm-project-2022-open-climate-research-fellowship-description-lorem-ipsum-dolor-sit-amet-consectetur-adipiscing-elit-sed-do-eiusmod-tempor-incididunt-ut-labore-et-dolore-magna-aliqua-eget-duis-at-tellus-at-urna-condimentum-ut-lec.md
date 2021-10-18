@@ -1,5 +1,5 @@
 ---
-name: "SM Project 2022 Open Climate Research Fellowship "
+name: SM Project 2022 Open Climate Research Fellowship@
 active: true
 description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at
@@ -15,5 +15,6 @@ link: http://stage.pdd.colab.coop
 collaborators:
   - Shruti
   - Colleen Skemp
+  - ShrutiM
 video: https://www.youtube.com/embed/bkdOxFYb71Y
 ---
