@@ -9,5 +9,5 @@ collaborators:
   - dsadsadsadsadsasdasdadadsa
   - Shruti
   - Colleen Skemp
-video: https://google.com
+video: https://www.youtube.com/embed/bkdOxFYb71Y
 ---
