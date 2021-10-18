@@ -147,7 +147,7 @@ const Body = ({ project_image }) =>{
       <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize="24px" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
         Are you Interested in Contributing?
       </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
+      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start" marginLeft={["17%", "10%", "-80px"]}>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
             <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
