@@ -7,7 +7,7 @@ export default function Footer () {
       <>
         <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
           h={["300px", "300px", "400px"]}
-          w={["100%", "80%", "80%"]}
+          w={["100%", "80%", "53%"]}
           zIndex="100"
           marginTop="200px"
           paddingBottom="0px"
