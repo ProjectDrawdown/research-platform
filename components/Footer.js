@@ -15,6 +15,7 @@ export default function Footer () {
           ></Box>
             <Box
             background="#000000"
+            h={["122px","237px","237px"]}
             w={["70%", "50%", "50%"]}
             p="4"
             display="flex"
