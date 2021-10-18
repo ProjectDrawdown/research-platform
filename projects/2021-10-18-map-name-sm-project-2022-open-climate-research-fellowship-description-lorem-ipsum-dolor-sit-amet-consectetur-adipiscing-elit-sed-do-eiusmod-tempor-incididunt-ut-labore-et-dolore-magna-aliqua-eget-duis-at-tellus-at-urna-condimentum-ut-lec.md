@@ -10,7 +10,7 @@ description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   sed elementum tempus egestas sed sed risus pretium. Facilisi nullam vehicula
   ipsum a arcu cursus vitae congue. Mi in nulla posuere sollicitudin aliquam
   ultrices sagittis orci a. Id ornare arcu odio ut sem nulla pharetra diam. Eu
-  facilisis sed odio morbi."
+  facilisis sed odio morbi.test"
 link: http://stage.pdd.colab.coop
 collaborators:
   - Shruti
