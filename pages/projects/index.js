@@ -13,7 +13,7 @@ import {SearchIcon} from "@chakra-ui/icons"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Footer from "../../components/Footer";
 import StyledButton from "../../components/StyledButton";
-import BackButton from "../../components/BackButton";
+import BackButton from "../../components/BackButton"
 
   // This is the default breakpoint
   createBreakpoints({
