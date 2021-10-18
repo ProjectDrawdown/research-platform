@@ -11,5 +11,5 @@ file: https://drawdown.org/sites/default/files/1920x1080_drawdown_cs101_poster01
 link: http://stage.pdd.colab.coop
 projects:
   - This is a test project Oct2021
-  - "SM Project 2022 Open Climate Research Fellowship "
+  - SM Project 2022 Open Climate Research Fellowship@
 ---
