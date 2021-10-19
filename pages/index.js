@@ -10,18 +10,10 @@ import "@fontsource/work-sans/400.css"
 
 // This is the default breakpoint
 createBreakpoints({
-sm: "30em",
-md: "48em",
-lg: "62em"
+  sm: "30em",
+  md: "48em",
+  lg: "62em"
 })
-
-const theme = extendTheme({
-  fonts: {
-    heading: "Sora",
-    body: "Sora",
-  },
-})
-
 
 const FeaturedProjectsList = () => {
   const { projects, bottom_image } = attributes;
@@ -191,22 +183,20 @@ const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
   
   return (
-    <div style={{marginX: '20px', marginBottom: '0px'}}>
+    <Box fontSize={{ base: "16px", md: "40px", lg: "56px" }}>
       <Head>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
-      <ChakraProvider theme={theme}>
-        <Flex as="nav" flexWrap="wrap" direction="row">
+      <Flex flexWrap="wrap" direction="row" w="90rem" margin="0 auto">
         <Header title={title} description={description} image={header_image}/>
-        <Stack marginTop="2rem" width="100vw">
-        <Partners />
-        <Body project_image={project_image} />
-        <FeaturedProjectsList />
+        <Stack width="100rem">
+          <Partners />
+          <Body project_image={project_image} />
+          <FeaturedProjectsList />
+          <Footer bottom_image={bottom_image} ></Footer>
         </Stack>
-        <Footer bottom_image={bottom_image} ></Footer>
       </Flex>
-    </ChakraProvider>
-  </div>
+    </Box>
   )
 }
 

@@ -10,8 +10,8 @@ import {
 
 const theme = extendTheme({
   fonts: {
-    heading: "Open Sans",
-    body: "Raleway",
+    heading: "Sora",
+    body: "Sora",
   },
 });
 

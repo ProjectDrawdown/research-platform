@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, Box} from "@chakra-ui/react"
+import { Text, Box } from "@chakra-ui/react"
 import Title from "./Title";
 
 export default function Footer () {
     return (
-      <>
+      <Box position="relative">
         <Box backgroundImage="url('img/assets/Rectangle 1094.png')"
           h={["300px", "300px", "400px"]}
           w={["100%", "80%", "53%"]}
@@ -25,7 +25,7 @@ export default function Footer () {
             zIndex="100"
             position="absolute"
             >
-          <Title fontSize={["20px", "23px", "36px"]} fontWeight="800" lineHeight="40px" paddingRight="25%" color="#FFF">
+          <Title fontWeight="800" lineHeight="40px" paddingRight="25%" color="#FFF">
             Open Solutions Collaboratory
           </Title>
           <Box flex="1" display="flex" flexDirection="column" justifyContent="space-between" >
@@ -37,7 +37,7 @@ export default function Footer () {
           </Text>
           </Box>
         </Box>
-        </>
+        </Box>
     )
   }
   

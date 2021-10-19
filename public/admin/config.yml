@@ -69,6 +69,7 @@ collections:
     folder: "authors"
     create: true
     fields:
-      - { label: "Name", name: "name", widget: "string"}
-      - { label: "Nickname", name: "nickname", widget: "string"}
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Nickname", name: "nickname", widget: "string" }
+      - { label: "Profile Image", name: "profile_image", widget: "file" }
 
