@@ -49,7 +49,7 @@ const FeaturedProjectsList = () => {
               </Heading>
             </Text>
             <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-            <Text fontSize={{base:"15px", sm:"15px", md:"15px", lg:"15px", xl:"30px", "2xl":"30px"}}>
+            <Text fontSize={{base:"15px", sm:"15px", md:"15px", lg:"15px", xl:"15px", "2xl":"30px"}}>
               View
             </Text>
             </Link>
@@ -74,7 +74,9 @@ const FeaturedProjectsList = () => {
               </Heading>
             </Text>
             <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-                View
+            <Text fontSize={{base:"15px", sm:"15px", md:"15px", lg:"15px", xl:"15px", "2xl":"30px"}}>
+              View
+            </Text>
             </Link>
           </Box>
           </Link>
