@@ -8,20 +8,8 @@ bottom_image: img/projectdrawdown.png
 date: 2019-03-17T19:31:20.591Z
 project_image: img/pdd2.jpeg
 projects:
-  - This is a test project__Test
-    1231__https://google.com__2021-10-18-map-name-this-is-a-test-project-description-test-123-link-https-google-com-collaborators-list-dsadsadsadsadsasdasdadadsa-shruti-video-https-google-com
-  - SM Project 2022 Open Climate Research Fellowship __ Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua. Eget duis at tellus at urna condimentum. Ut
-    lectus arcu bibendum at varius vel. Laoreet suspendisse interdum consectetur
-    libero. Egestas fringilla phasellus faucibus scelerisque eleifend donec
-    pretium vulputate sapien. A diam maecenas sed enim ut sem viverra aliquet
-    eget. Facilisi cras fermentum odio eu feugiat. Massa sed elementum tempus
-    egestas sed sed risus pretium. Facilisi nullam vehicula ipsum a arcu cursus
-    vitae congue. Mi in nulla posuere sollicitudin aliquam ultrices sagittis
-    orci a. Id ornare arcu odio ut sem nulla pharetra diam. Eu facilisis sed
-    odio
-    morbi.__http://stage.pdd.colab.coop__2021-10-18-map-name-sm-project-2022-open-climate-research-fellowship-description-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-eget-duis-at-tellus-at-urna-condimentum-ut-lec
+  - Proj AAA__test
+    desc__https://www.youtube.com/channel/UCaG_YK1zjJ1ZUb_xqIpb1TA__2021-10-20-map-name-proj-aaa-description-test-desc-video-https-www-youtube-com-embed-bkdoxfyb71y-collaborators-list-shrutim-colleen-skemp-link-https-www-youtube-com-channel-ucag_yk1zjj1zub_xqipb1ta
 cats:
   - description: Maru is a Scottish Fold from Japan, and he loves boxes.
     name: Maru (まる)
