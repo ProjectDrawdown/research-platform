@@ -196,12 +196,13 @@ const browseProjects = ({ projects, resources }) => {
       resources,
       filteredProjects: augmentedProjects.filter((project) => {
 
+        const found = project.collaborators.find((collaborator) => {
+          return collaborator.toLowerCase().indexOf(filter) !== -1
+        })
+
         return project.name.toLowerCase().indexOf(filter) !== -1 ||
           project.description.toLowerCase().indexOf(filter) !== -1 ||
-          (typeof(project.collaborators) === "string" && project.collaborators.toLowerCase().indexOf(filter) !== -1) ||
-          (Array.isArray(project.collaborators) && console.log("collaborators: ", project.collaborators) && project.collaborators.find((collaborator) => {
-            collaborator.toLowerCase().indexOf(filter) !== -1
-          }).length !== 0)
+          found
       }),
       filteredResources: resources.filter((resource) => {
         return resource.name.toLowerCase().indexOf(filter) !== -1 ||
