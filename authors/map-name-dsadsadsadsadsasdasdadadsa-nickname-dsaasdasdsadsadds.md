@@ -1,4 +1,0 @@
----
-name: dsadsadsadsadsasdasdadadsa
-nickname: dsaasdasdsadsadds
----
