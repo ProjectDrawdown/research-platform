@@ -17,6 +17,15 @@ const theme = extendTheme({
         paddingStart: 8,
         paddingEnd: 8
       }
+    },
+    Container: {
+      baseStyle: {
+        sizes: {
+          xl: {
+            w: "1280px"
+          }
+        },
+      }
     }
   },
   colors: {

@@ -1,5 +1,4 @@
 import React from "react"
-import Head from "next/head"
 import { ChakraProvider, extendTheme, Flex, Link, Center, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
@@ -192,11 +191,7 @@ const Home = () => {
   
   return (
     <div style={{marginX: '20px', marginBottom: '0px'}}>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
-      <ChakraProvider theme={theme}>
-        <Flex as="nav" flexWrap="wrap" direction="row">
+      <Flex as="nav" flexWrap="wrap" direction="row">
         <Header title={title} description={description} image={header_image}/>
         <Stack marginTop="2rem" width="100vw">
         <Partners />
@@ -205,7 +200,6 @@ const Home = () => {
         </Stack>
         <Footer bottom_image={bottom_image} ></Footer>
       </Flex>
-    </ChakraProvider>
   </div>
   )
 }

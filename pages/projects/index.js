@@ -143,28 +143,20 @@ const browseProjects = () => {
  }
 
   return (
-      <>
-        <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Head>
-        <ChakraProvider theme={theme}>
-          <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-            <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
-              <Stack align="left" marginTop="2rem" >
-                <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
-                  Browse All Projects
-                  <BackButton />
-                  <SearchBar input={input} onChange={updateInput}/>
-                </Heading>
-              </Stack>
-                <BrowseList projects={projects} />
-                <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
-            </Box>
-            <Footer />
-          </Flex>
-          
-        </ChakraProvider>
-      </>
+    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
+      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
+        <Stack align="left" marginTop="2rem" >
+          <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
+            Browse All Projects
+            <BackButton />
+            <SearchBar input={input} onChange={updateInput}/>
+          </Heading>
+        </Stack>
+          <BrowseList projects={projects} />
+          <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
+      </Box>
+      <Footer />
+    </Flex>
     )
 }
 
