@@ -40,7 +40,7 @@ const FeaturedProjectsList = () => {
         <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
           {projects.slice(0,2).map((project) => (
           <Link href={`/projects/${project.split('__')[3]}`} >
-          <Box boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box key={project} boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
               <Link href={`/projects/${project.split('__')[3]}`} >
@@ -65,7 +65,7 @@ const FeaturedProjectsList = () => {
         <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "-100px"]}>
           {projects.slice(2,4).map((project) => (
           <Link href={`/projects/${project.split('__')[3]}`} >
-          <Box boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
+          <Box key={project} boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
             <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
               <Link href={`/projects/${project.split('__')[3]}`} >
