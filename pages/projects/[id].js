@@ -1,7 +1,7 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
+import { Link, Heading, Text, Box, Avatar, Grid, GridItem, Button } from "@chakra-ui/react"
 import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
@@ -34,7 +34,7 @@ function Project({
             </GridItem>
             <GridItem colSpan={1} />
             <GridItem colSpan={1}>
-              <StyledButton content="PROJECT LINK" href={data.link} />
+              <Button as={Link} href={data.link}>Project Link</Button>
             </GridItem>
           </Grid>
           <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/" >
