@@ -27,6 +27,10 @@ projects:
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
     dolore magna aliqua.1
      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.2  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.3__https://google.com__2021-10-18-map-name-this-is-a-test-project-description-test-123-link-https-google-com-collaborators-list-dsadsadsadsadsasdasdadadsa-shruti-video-https-google-com
+  - Proj
+    CCC__ccc__https://www.youtube.com/embed/PD65E9XFFC4__2021-10-20-map-name-proj-ccc-description-ccc-video-https-www-youtube-com-embed-pd65e9xffc4-link-https-www-youtube-com-embed-pd65e9xffc4-collaborators-list-shruti
+  - Proj
+    BBB__required__https://github.com/ProjectDrawdown/open-collaboratory/issues/29__2021-10-20-map-name-proj-bbb-active-true-link-https-github-com-projectdrawdown-open-collaboratory-issues-29-collaborators-list-shrutim-shruti-dsadsadsadsadsasdasdadadsa-colleen-skemp-video-https-www-youtube-com-embed-pd65
 cats:
   - description: Maru is a Scottish Fold from Japan, and he loves boxes.
     name: Maru (まる)
