@@ -150,18 +150,19 @@ const Body = ({ project_image }) =>{
         </Center>
       </Grid>
       </Center>
+
       <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
       <Image src="img/assets/wavy2.png" width={{base:"80%", sm:"80%", md:"80%", lg:"25%", xl:"25%", "2xl":"55%"}} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight={{base:"40px", sm:"40px", md:"40px", lg:"40px", xl:"40px", "2xl":"70px"}} objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"26px", "2xl":"42px"}} marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"36px", "2xl":"82px"}} marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
         Are you Interested in Contributing?
       </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
+      <Stack spacing={{base:"10px", sm:"20px", md:"40px", lg:"50px", xl:"80px", "2xl":"120px"}} display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
             <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} src="img/assets/Linear2.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Have a Resource to Add?
             </Text>
             <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
@@ -172,7 +173,7 @@ const Body = ({ project_image }) =>{
             <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
           </Box>
           <Box >
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Engergized by this but not sure how to contibute?
             </Text>
             <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
@@ -183,7 +184,7 @@ const Body = ({ project_image }) =>{
             <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Propose your own project.
             </Text>
             <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
