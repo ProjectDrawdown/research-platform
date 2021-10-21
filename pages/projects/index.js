@@ -17,11 +17,12 @@ import BackButton from "../../components/BackButton";
 
   // This is the default breakpoint
   createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em"
+    sm: "30em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+    "2xl": "96em",
   })
-
 
   const theme = extendTheme({
     fonts: {
@@ -102,12 +103,12 @@ const BrowseList = ({projects}) => {
   return (
     <>
       {projects.map(project => (
-        <Box minHeight="50px" w="70%" fontSize="12px" fontWeight="400"  paddingX="4px" marginX="30px" marginY="10px" color="black" key={project} borderLeft="solid #000000">
+        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"70px"}} marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={project} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             {project.name}
-            {project.status && <Button bg="#FAD546" marginX="10px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">{project.status}</Button>}
+            {project.status && <Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">{project.status}</Button>}
           </p>
-          {project.tag && <Button bg={project.color} padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">{project.tag}</Button>}
+          {project.tag && <Button bg={project.color} padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px","2xl":"33px"}}>{project.tag}</Button>}
         </Box>
       ))}
     </>
@@ -117,9 +118,9 @@ const BrowseList = ({projects}) => {
 
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
-    <HStack paddingTop="71px" position="relative" paddingBottom="31px" marginLeft="0px">
-      <SearchIcon fontSize="18px" position="absolute" left="16px" />
-      <Input placeholder="Search helper text" marginRight="60px" paddingLeft="30px" w="90%" h="32px" size="md" borderRadius="none" borderColor="black"
+    <HStack paddingTop="71px" position="relative" paddingBottom="0px" marginLeft="0px">
+      <SearchIcon fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"46px"}} position="absolute" left={{base: "16px", "2xl":"30px"}}/>
+      <Input placeholder="Search helper text" fontSize={{base: "20px", "2xl":"50px"}} marginRight="60px" paddingY={{base: "5px", "2xl":"50px"}} paddingLeft={{base: "30px", "2xl":"75px"}} w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
   );
@@ -149,9 +150,9 @@ const browseProjects = () => {
         </Head>
         <ChakraProvider theme={theme}>
           <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-            <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
-              <Stack align="left" marginTop="2rem" >
-                <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
+            <Box background="#FFFFFF" border="4px solid #000000" padding={{base: "5px", "2xl":"50px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"70%", xl:"70%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
+              <Stack align="left" marginTop="2rem">
+                <Heading as="h1" textStyle="caps" fontSize={{base:"48px",sm:"48px", md:"48px", lg:"48px", xl:"48px", "2xl":"96px"}} paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
                   Browse All Projects
                   <BackButton />
                   <SearchBar input={input} onChange={updateInput}/>

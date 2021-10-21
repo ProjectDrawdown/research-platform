@@ -37,7 +37,7 @@ const FeaturedProjectsList = () => {
       </Box>
       <Center>
       <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={{base:"375px", sm:"375px", md:"375px", lg:"800px", xl:"800px", "2xl":"1600px"}} height={{base:"375px",sm:"375px", md:"375px",lg:"800px", xl:"800px", "2xl":"1600px"}} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage={"url('" + bottom_image + "')"}>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"10px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
           {projects.slice(0,2).map((project) => (
           <Link key={project} href={`/projects/${project.split('__')[3]}`} >
           <Box  boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto" border="4px solid #000000" borderRadius="5px">
@@ -154,19 +154,19 @@ const Body = ({ project_image }) =>{
       </Center>
       <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
       <Image src="img/assets/wavy2.png" width={{base:"80%", sm:"80%", md:"80%", lg:"25%", xl:"25%", "2xl":"55%"}} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight={{base:"40px", sm:"40px", md:"40px", lg:"40px", xl:"40px", "2xl":"70px"}} objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"26px", "2xl":"42px"}} marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"36px", "2xl":"82px"}} marginBottom="30px" marginY="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
         Are you Interested in Contributing?
       </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
+      <Stack spacing={{base:"10px", sm:"20px", md:"40px", lg:"50px", xl:"80px", "2xl":"120px"}} display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
             <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} src="img/assets/Linear2.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Have a Resource to Add?
             </Text>
-            <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
+            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
@@ -174,10 +174,10 @@ const Body = ({ project_image }) =>{
             <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
           </Box>
           <Box >
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Engergized by this but not sure how to contibute?
             </Text>
-            <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
+            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
@@ -185,10 +185,10 @@ const Body = ({ project_image }) =>{
             <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
           </Box>
           <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontFamily="Sora" marginBottom="18px">
+            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Propose your own project.
             </Text>
-            <Button borderRadius="0px" padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
+            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
           </Box>
         </Grid>
       </Stack>
