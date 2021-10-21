@@ -103,7 +103,7 @@ const BrowseList = ({projects}) => {
   return (
     <>
       {projects.map(project => (
-        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"70px"}} marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={project} borderLeft="solid #000000">
+        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={project} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             {project.name}
             {project.status && <Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">{project.status}</Button>}
