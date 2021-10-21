@@ -119,7 +119,7 @@ const BrowseList = ({projects}) => {
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
     <HStack paddingTop="71px" position="relative" paddingBottom="0px" marginLeft="0px">
-      <SearchIcon fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"46px"}} position="absolute" left={{base: "16px", "2xl":"30px"}}/>
+      <SearchIcon fontSize={{base:"18px", "2xl":"46px"}} position="absolute" left={{base: "16px", "2xl":"30px"}}/>
       <Input placeholder="Search helper text" fontSize={{base: "20px", "2xl":"50px"}} marginRight="60px" paddingY={{base: "5px", "2xl":"50px"}} paddingLeft={{base: "30px", "2xl":"75px"}} w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
@@ -149,8 +149,8 @@ const browseProjects = () => {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <ChakraProvider theme={theme}>
-          <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-            <Box background="#FFFFFF" border="4px solid #000000" padding={{base: "5px", "2xl":"50px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"70%", xl:"70%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
+          <Flex as="nav" flexWrap="wrap" alignItems="left" marginX="auto">
+            <Box background="#FFFFFF" border="4px solid #000000" padding={{base: "5px", "2xl":"50px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
               <Stack align="left" marginTop="2rem">
                 <Heading as="h1" textStyle="caps" fontSize={{base:"48px",sm:"48px", md:"48px", lg:"48px", xl:"48px", "2xl":"96px"}} paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
                   Browse All Projects

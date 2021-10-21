@@ -1,34 +1,39 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
+import { extendTheme, ChakraProvider, Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
 import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
+import Footer from "../../components/Footer";
+
+  // This is the default breakpoint
+  createBreakpoints({
+    sm: "30em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+    "2xl": "96em",
+  })
+  
+  const theme = extendTheme({
+    fonts: {
+      heading: "Sora",
+      body: "Sora",
+    },
+  })
+  
 
 function Project({
   data
 }) {
   return (
-    <Box top="0px" left="0px" width="100%" height="max-content">
-        <Box background="#FFFFFF"
-        w={["80%", "60%", "50%"]}
-        left="10%"
-        top="53px"
-        zIndex="100"
-        p="3"
-        boxShadow="base"
-        display="block"
-        direction="row"
-        boxSizing="border-box"
-        borderColor="black"
-        borderWidth="3px"
-        borderRadius="10px"
-        borderStyle="solid"
-        position="absolute">
+    <ChakraProvider theme={theme}>
+    <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
           <Grid templateColumns="repeat(5, 1fr)">
             <GridItem colSpan={3}>
-              <Heading as="h1" textStyle="caps" fontSize={["20px", "30px", "48px"]} left="78px" top="93px" textAlign="left">
+              <Heading as="h1" textStyle="caps" fontSize={{base:"18px", sm:"25", md:"30px", "2xl":"98px"}} left="78px" top="93px" textAlign="left">
                 Project Detail
               </Heading>
             </GridItem>
@@ -37,10 +42,10 @@ function Project({
               <StyledButton content="PROJECT LINK" href={data.link} />
             </GridItem>
           </Grid>
-          <Link fontSize={["15px", "15px", "15px"]} paddingRight={["10%", "35%"]}  textAlign="left" href="/projects" >
+          <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
             {"<< Back to project listing"}
           </Link>
-          <Text fontSize="20px" marginTop="2vh">{data.name}</Text>
+          <Text fontSize={{base:"15px", "2xl":"35px"}} marginTop="2vh" marginBottom="10px">{data.name}</Text>
           {data.video &&
             <iframe
               src={data.video}
@@ -48,15 +53,16 @@ function Project({
               allow='autoplay; encrypted-media'
               allowFullScreen
               title='video'
+              style={{maxWidth: "640px", width: "90%", minHeight:"374px", maxHeight: "375px"}}
             />
           }
-          <Heading as="h3" size="md" marginTop="2vh"> Description: </Heading>
-          <Text fontSize="20px" fontWeight="600px" paddingRight={["10%", "35%"]}  textAlign="left" >
+          <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh"> Description: </Heading>
+          <Text fontSize={{base:"15px", "2xl":"35px"}} paddingRight={["10%", "35%"]}  textAlign="left" >
             {data.description}
           </Text>
-          <Heading as="h3" size="md" marginTop="5vh"> Collaborators: </Heading>
-          {data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" key={collaboratorIndex}/>)}
-          <Heading as="h3" size="md" marginTop="5vh"> Hub resources: </Heading>
+          <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="5vh"> Collaborators: </Heading>
+          {data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" marginX="10px" key={collaboratorIndex}/>)}
+          <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="5vh"> Hub resources: </Heading>
           <Text fontSize="20px" marginTop="2vh">
             <ul>
             {data.resources.map((resource, k) => (
@@ -70,18 +76,8 @@ function Project({
             </ul>
           </Text>
         </Box>
-        <Box position="relative"
-        h={["250px", "250px", "500px"]}
-        w={["60%", "50%"]}
-        left = {["40%"]}
-        top = {["150px" ]}
-        zIndex="90"
-        marginBottom="150px"
-        backgroundImage = "url('img/assets/Rectangle 1087.png')"
-        mixBlendMode="normal">
-          This is awesome.
-        </Box>
-      </Box>
+        <Footer />
+      </ChakraProvider>
 )
 }
 
