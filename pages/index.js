@@ -37,11 +37,11 @@ const FeaturedProjectsList = () => {
       </Box>
       <Center>
       <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={{base:"375px", sm:"375px", md:"375px", lg:"800px", xl:"800px", "2xl":"1600px"}} height={{base:"375px",sm:"375px", md:"375px",lg:"800px", xl:"800px", "2xl":"1600px"}} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage={"url('" + bottom_image + "')"}>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"10px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"30px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
           {projects.slice(0,2).map((project) => (
           <Link key={project} href={`/projects/${project.split('__')[3]}`} >
           <Box  boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto" border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
+            <Text boxSize="85%" paddingLeft={{base:"25px", sm:"25px", md:"25px", lg:"35px", xl:"35px", "2xl":"60px"}} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
               <Link href={`/projects/${project.split('__')[3]}`} >
                 {project.split('_')[0]}
@@ -62,11 +62,11 @@ const FeaturedProjectsList = () => {
             <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "0px"]}>
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"30px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "0px"]}>
           {projects.slice(2,4).map((project) => (
           <Link key={project} href={`/projects/${project.split('__')[3]}`} >
           <Box boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
+            <Text boxSize="85%" paddingLeft={{base:"25px", sm:"25px", md:"25px", lg:"35px", xl:"35px", "2xl":"60px"}} >
               <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
               <Link href={`/projects/${project.split('__')[3]}`} >
                 {project.split('_')[0]}
@@ -92,7 +92,7 @@ const Partners = () =>{
   return(
     <>
       <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]}>
-        <Text fontSize={{base:"24px",sm:"24px", lg:"36px", xl:"36px", "2xl":"72px"}} fontWeight="bold" textStyle="caps" textAlign="left">
+        <Text fontSize={{base:"24px", sm:"24px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontWeight="bold" textStyle="caps" textAlign="left">
           Our Partners
         </Text>
       </Box>
@@ -177,7 +177,7 @@ const Body = ({ project_image }) =>{
             <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
               Engergized by this but not sure how to contibute?
             </Text>
-            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
+            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"14px", sm:"14px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
