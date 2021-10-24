@@ -62,7 +62,7 @@ const FeaturedProjectsList = () => {
             <StyledButton content={"Browse all projects"} />
           </Link>
         </Heading>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "-100px"]}>
+        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "0px"]}>
           {projects.slice(2,4).map((project) => (
           <Link key={project} href={`/projects/${project.split('__')[3]}`} >
           <Box boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  border="4px solid #000000" borderRadius="5px">
@@ -154,7 +154,7 @@ const Body = ({ project_image }) =>{
       </Center>
       <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
       <Image src="img/assets/wavy2.png" width={{base:"80%", sm:"80%", md:"80%", lg:"25%", xl:"25%", "2xl":"55%"}} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight={{base:"40px", sm:"40px", md:"40px", lg:"40px", xl:"40px", "2xl":"70px"}} objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"36px", "2xl":"82px"}} marginBottom="30px" marginY="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+      <Heading flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"26px", "2xl":"82px"}} marginBottom="30px" marginY="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
         Are you Interested in Contributing?
       </Heading>
       <Stack spacing={{base:"10px", sm:"20px", md:"40px", lg:"50px", xl:"80px", "2xl":"120px"}} display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>

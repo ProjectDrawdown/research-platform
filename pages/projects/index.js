@@ -137,7 +137,7 @@ const BrowseList = ({projects}) => {
           {
             project.resources.length !== 0 ?
               project.resources.map((resource, k) => (
-                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                   {resource.file && (
                     <a href={resource.file}>File</a>
                   )}
@@ -150,14 +150,14 @@ const BrowseList = ({projects}) => {
 
           {
             project.link &&
-              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                 <a href={project.link}>Link</a>
               </Button>
           }
 
           {
             project.video &&
-              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                 <a href={project.video}>Video</a>
               </Button>
           }
