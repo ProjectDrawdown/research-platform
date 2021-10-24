@@ -100,7 +100,7 @@ export const getStaticProps = async ({ params }) => {
   const source = fs.readFileSync('projects/' + slug + '.md', "utf8");
   const data = matter(source).data;
 
-  const resources = await getStaticFilesFrontMatter("_resources");
+  const resources = await getStaticFilesFrontMatter("resources");
 
   const associatedResources = resources.filter((resource) => {
     return resource && resource.projects && resource.projects.indexOf(data.name) !== -1;

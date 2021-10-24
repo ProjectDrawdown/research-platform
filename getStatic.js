@@ -5,7 +5,10 @@ import matter from "gray-matter"
 async function getFrontMatter (directory, filename) {
   const filePath = path.join(directory, filename)
   const fileContents = await fs.readFile(filePath, "utf8")
-  return matter(fileContents).data
+  return {
+    ...matter(fileContents).data,
+    path: filename.split(".md")[0]
+  }
 }
 
 export default async function getStaticFilesFrontMatter(pathName) {
