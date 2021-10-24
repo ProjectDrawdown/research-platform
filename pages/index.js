@@ -160,7 +160,7 @@ const Body = ({ project_image }) =>{
       <Stack spacing={{base:"10px", sm:"20px", md:"40px", lg:"50px", xl:"80px", "2xl":"120px"}} display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
         <Grid templateColumns="80px 1fr" gap={6}>
           <Box display="flex" justifyContent="flex-start">
-            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} src="img/assets/Linear2.png" alt="Segun Adebayo" />
+            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain"  src="img/assets/Linear2.png" alt="Segun Adebayo" />
           </Box>
           <Box>
             <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
@@ -171,7 +171,7 @@ const Body = ({ project_image }) =>{
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
           <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
+            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain" src="img/assets/Linear.png" alt="Segun Adebayo" />
           </Box>
           <Box >
             <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
@@ -182,7 +182,7 @@ const Body = ({ project_image }) =>{
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >
           <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
+            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain" src="img/assets/Linear3.png" alt="Segun Adebayo" />
           </Box>
           <Box>
             <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
