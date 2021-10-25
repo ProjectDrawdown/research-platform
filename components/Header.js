@@ -33,9 +33,9 @@ export default function Header ({ title, description }) {
             {description}
           </Text>
           <Box marginLeft="10px" marginTop={["20px", "20px","40px"]}>
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"25%", xl:"8%", "2xl":"8%"}} displayStyle={["block", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"25%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"25%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
+            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["block", "block", "block"]} />
+            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
+            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
           </Box>
         </Box>
         <Box position="relative"
@@ -51,7 +51,7 @@ export default function Header ({ title, description }) {
         bgSize="cover"
         mixBlendMode="normal"></Box>
       </Box>
-      <Image src="img/assets/wavy.png" width={{base:"80%", sm:"80%", md:"80%",lg:"25%", xl:"25%","2xl":"25%"}} marginTop={{base:"70px", sm:"20px", md:"100px",lg:"-50px",xl:"-50px","2xl":"-100px"}} marginLeft={["10%"]} maxHeight={{base:"40px",sm:"40px",md:"40px",lg:"40px",xl:"40px","2xl":"130px"}} objectFit="contain" />
+      <Image src="img/assets/wavy.png" width={{base:"80%", sm:"80%", md:"80%",lg:"25%", xl:"25%","2xl":"25%"}} marginTop={{base:"70px", sm:"20px", md:"100px",lg:"-30px",xl:"-30px","2xl":"-100px"}} marginLeft={["10%"]} maxHeight={{base:"40px",sm:"40px",md:"40px",lg:"40px",xl:"40px","2xl":"130px"}} objectFit="contain" />
     </>
   )
 }
