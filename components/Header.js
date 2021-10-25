@@ -29,7 +29,7 @@ export default function Header ({ title, description }) {
           <Title fontSize={{base:"17px",sm:"17px", md:"38px", lg:"48px",xl:"48px","2xl":"75px"}} paddingRight={{sm:"10px", md:"30px", lg:"15%", xl:"15%", "2xl":"30%"}} fontWeight="800px">
             {title}
           </Title>
-          <Text fontSize={{base:"17px",sm:"24px", md:"30px", lg:"30px",xl:"30px","2xl":"45px"}} fontFamily="sora" fontWeight="600px" marginTop="2rem" paddingRight={{sm:"0px", md:"20px", lg:"15%", xl:"15%", "2xl":"30%"}}  textAlign="left" >
+          <Text fontSize={{base:"17px",sm:"24px", md:"30px", lg:"30px",xl:"30px","2xl":"45px"}} fontFamily="sora" fontWeight="500px" marginTop="2rem" paddingRight={{sm:"0px", md:"20px", lg:"15%", xl:"15%", "2xl":"30%"}}  textAlign="left" >
             {description}
           </Text>
           <Box marginLeft="10px" marginTop={["20px", "20px","40px"]}>
