@@ -168,7 +168,7 @@ const Body = ({ project_image }) =>{
               Engergized by this but not sure how to contibute?
             </Text>
 
-            <Link href="/form" >
+            <Link href="/connect" >
               <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT </Button>
             </Link>
 
