@@ -10,26 +10,33 @@ import { ChakraProvider, extendTheme, Flex, FormControl,FormLabel, Heading, Butt
   PopoverArrow,
   PopoverCloseButton,} from "@chakra-ui/react"
 import {SearchIcon} from "@chakra-ui/icons"
-import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Footer from "../../components/Footer";
 import StyledButton from "../../components/StyledButton";
-import BackButton from "../../components/BackButton";
+import BackButton from "../../components/BackButton"
+import Theme from "../../components/Theme"
+import BorderBox from "../../components/BorderBox";
+import Title from "../../components/Title";
+import getStaticFilesFrontMatter from '../../getStatic'
 
-  // This is the default breakpoint
-  createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em"
+export async function getStaticProps() {
+  const projects = await getStaticFilesFrontMatter("projects")
+  const resources = await getStaticFilesFrontMatter("resources")
+
+  const preloadedProjects = projects.map((project) => {
+    const associatedResources = resources.filter((resource) => {
+      return resource && resource.projects && resource.projects.indexOf(project.name) !== -1
+    })
+    project.resources = associatedResources
+    return project
   })
 
-
-  const theme = extendTheme({
-    fonts: {
-      heading: "Sora",
-      body: "Sora",
+  return {
+    props: {
+      projects: preloadedProjects,
+      resources: resources,
     },
-  })
-  
+  }
+}
 
 const AddForm = ({projects, setProjects, setPopState, setProjectsDefault}) =>{
   const [projectInput, setProjectInput] = useState({"name":"", "tag":""});
@@ -104,10 +111,42 @@ const BrowseList = ({projects}) => {
       {projects.map(project => (
         <Box minHeight="50px" w="70%" fontSize="12px" fontWeight="400"  paddingX="4px" marginX="30px" marginY="10px" color="black" key={project} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
-            {project.name}
-            {project.status && <Button bg="#FAD546" marginX="10px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">{project.status}</Button>}
+            <a href={"/projects/" + project.path}>{project.name}</a>
+            {
+              project.active && <Button bg="#FAD546" marginX="10px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
+                { project.active ? "ACTIVE" : "INACTIVE" }
+              </Button>
+            }
           </p>
-          {project.tag && <Button bg={project.color} padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">{project.tag}</Button>}
+
+          {
+            project.resources.length !== 0 ?
+              project.resources.map((resource, k) => (
+                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                  {resource.file && (
+                    <a href={resource.file}>File</a>
+                  )}
+                  {resource.link && (
+                    <a href={resource.link}>Link</a>
+                  )}
+                </Button>
+              )) : ""
+          }
+
+          {
+            project.link &&
+              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                <a href={project.link}>Link</a>
+              </Button>
+          }
+
+          {
+            project.video &&
+              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                <a href={project.video}>Video</a>
+              </Button>
+          }
+
         </Box>
       ))}
     </>
@@ -125,46 +164,73 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   );
 }
 
-const browseProjects = () => {
-  const [input, setInput] = useState('');
-  const [ projects, setProjects ] = useState([
-    {"name":"UN data on solar water heater", "status": "active", "color":"#006ED3", "tag":"model"},
-    {"name":"GIS data to land use modal implenmentation", "status": "active", "color":"#006ED3", "tag":"data"},
-    {"name":"Greenpeace reference senarios to the 2020 reference cases", "color":"#09AF74", "tag":"pdf"},
-    {"name":"Diffrent First Cost Model for Solal Energy in China", "color":"#09AF74", "tag":""}
-  ])
-  const [projectsDefault, setProjectsDefault] = useState([...projects]);
-  const updateInput = async (input) => {
-    const filtered = projectsDefault.filter(project => {
-      return project.name.toLowerCase().includes(input.toLowerCase())
+const browseProjects = ({ projects, resources }) => {
+
+  const augmentedProjects = projects.map((project) => {
+    return {
+      ...project,
+      status: project.active ? "active" : "inactive"
+    }
+  })
+
+  const [value, setValue] = useState({ augmentedProjects, resources, filteredProjects: augmentedProjects, filteredResources: resources })
+
+  function handlekeydown (rawFilter) {
+    const filter = rawFilter.toLowerCase()
+    setValue({
+      projects,
+      resources,
+      filteredProjects: augmentedProjects.filter((project) => {
+
+        const found = project.collaborators.find((collaborator) => {
+          return collaborator.toLowerCase().indexOf(filter) !== -1
+        })
+
+        return project.name.toLowerCase().indexOf(filter) !== -1 ||
+          project.description.toLowerCase().indexOf(filter) !== -1 ||
+          found
+      }),
+      filteredResources: resources.filter((resource) => {
+        return resource.name.toLowerCase().indexOf(filter) !== -1 ||
+          resource.description.toLowerCase().indexOf(filter) !== -1
+      })
     })
-    setInput(input);
-    setProjects(filtered);
- }
+  }
 
   return (
-    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
-        <Stack align="left" marginTop="2rem" >
-          <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
-            Browse All Projects
-            <BackButton />
-            <SearchBar input={input} onChange={updateInput}/>
-          </Heading>
-        </Stack>
-          <BrowseList projects={projects} />
-          <AddProject projects={projects} setProjects={setProjects} setProjectsDefault={setProjectsDefault}/>
-      </Box>
-      <Footer />
-    </Flex>
-    )
+    <>
+      <Head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </Head>
+      <ChakraProvider theme={Theme}>
+        <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
+          <BorderBox
+            w={["100%", "90%", "70%"]} 
+            padding="2rem"
+            fontFamily="Sora">
+
+            <Stack align="left" marginTop="2rem" >
+              <Title paddingBottom="1rem">
+                Browse All Projects
+              </Title>
+              <BackButton />
+              <SearchBar onChange={handlekeydown} />
+            </Stack>
+
+            <BrowseList projects={value.filteredProjects} />
+
+          </BorderBox>
+          <Footer />
+        </Flex>
+
+      </ChakraProvider>
+    </>
+  )
 }
 
 AddForm.propTypes = {
   projects: PropTypes.array,
-  setProjects: PropTypes.func,
-  setPopState: PropTypes.func,
-  setProjectsDefault: PropTypes.func,
+  resources: PropTypes.array
 }
 
 AddProject.propTypes = {
@@ -182,3 +248,4 @@ SearchBar.propTypes = {
   onChange: PropTypes.func,
 }
 export default browseProjects;
+

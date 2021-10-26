@@ -242,7 +242,11 @@ const Body = ({ project_image }) =>{
             <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
               Engergized by this but not sure how to contibute?
             </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
+
+            <Link href="/connect" >
+              <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT </Button>
+            </Link>
+
           </Box>
         </Grid>
         <Grid templateColumns="80px 1fr" gap={6} >

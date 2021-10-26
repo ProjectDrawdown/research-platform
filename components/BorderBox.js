@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react"
 export default function Render(props) {
 
   const { children } = props
-  
+
   return(
     <Box
       boxShadow="base"
