@@ -8,8 +8,7 @@ import { Container } from "@chakra-ui/react"
 import Theme from "../components/Theme";
 
 import {
-  ChakraProvider,
-  extendTheme
+  ChakraProvider
 } from "@chakra-ui/react";
 
 function OpenCollaboratory({ Component, pageProps }) {
@@ -20,7 +19,7 @@ function OpenCollaboratory({ Component, pageProps }) {
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
       <ChakraProvider theme={Theme}>
-        <Container maxW={["container.sm", "container.xl"]}>
+        <Container maxW="container.xl" p="0" marginY="2rem">
           <Component {...pageProps} />
         </Container>
       </ChakraProvider>
