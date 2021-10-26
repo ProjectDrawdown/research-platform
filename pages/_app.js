@@ -19,7 +19,7 @@ function OpenCollaboratory({ Component, pageProps }) {
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
       <ChakraProvider theme={Theme}>
-        <Container maxW="container.xl" p="0" marginY="2rem">
+        <Container maxW="container.xl" p="0" mt="2rem">
           <Component {...pageProps} />
         </Container>
       </ChakraProvider>

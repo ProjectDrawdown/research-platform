@@ -2,20 +2,18 @@ import React from "react"
 import {
   extendTheme,
   Link,
-  Center,
-  Button,
   Heading,
   Text,
-  Stack,
   Image,
   Grid,
   GridItem,
-  Box
 } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
 import SubHeading from "../components/SubHeading";
 import RecentProject from "../components/RecentProject";
+import ContributionOption from "../components/ContributionOption";
+import BorderBox from "../components/BorderBox";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
@@ -140,125 +138,105 @@ const Partners = () =>{
 
 const Contribution = () => {
   return (
-    <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
-      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight="40px" objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize="24px" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
-        Are you Interested in Contributing?
-      </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
-        <Grid templateColumns="80px 1fr" gap={6}>
-          <Box display="flex" justifyContent="flex-start">
-            <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Have a Resource to Add?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
-          </Box>
-          <Box >
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Engergized by this but not sure how to contibute?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Propose your own project.
-            </Text>
-            <Button borderRadius="0px" fontSize="16px" lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
-          </Box>
-        </Grid>
-      </Stack>
-    </Center>
+    <>
+      <Grid
+        px="1rem"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+        mb={8}
+      >
+        <GridItem
+          colStart={[1, 3]}
+          colSpan={[5, 1]}>
+          <Image marginX="auto" src="img/assets/wavy2.png" />
+        </GridItem>
+        <GridItem
+          colStart={[1, 2]}
+          colSpan={[5, 3]}>
+            <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
+              Are you Interested in Contributing?
+            </Heading>
+        </GridItem>
+      </Grid>
+
+      <Grid
+        my="1rem"
+        templateColumns="repeat(3, 1fr)">
+          <ContributionOption
+            title="Have a Resource to Add?"
+            buttonTitle="GET STARTED"
+            image={<Image marginX="auto" src="img/assets/Linear2.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+          <ContributionOption
+            title="Engergized by this but not sure how to contibute?"
+            buttonTitle="CONNECT ON SLACK"
+            image={<Image marginX="auto" src="img/assets/Linear.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+          <ContributionOption
+            title="Propose your own project."
+            buttonTitle="CONTACT US"
+            image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+      </Grid>
+    </>
   )
 }
 
-const Body = ({ project_image }) =>{
+const AboutUs = ({ project_image }) => {
   return (
-    <Box paddingX="10px">
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]} marginBottom={["110px", "110px", "0px"]}>
-          <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
-            Who We Are
-          </Text>
-      </Box>
-      <Center>
-      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","700px"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage={ project_image ? "url('" + project_image+ "')" : ''} backgroundPosition="center" backgroundSize="cover">
-        <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
-          </Box>
-        </Stack>
-        <Center>
-          <Box width={["250px","250px","355px"]} height={["255px","255px","355px"]} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "-250px"]} marginBottom={["-30%", "-30%", "0px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Text paddingTop="10px" fontSize={["20px","20px","24px"]} fontWeight="700">
-              There could be a short description here with a bit more inspirational somethn’ somethn’
-            </Text>
-          </Box>
-        </Center>
+    <>
+      <SubHeading
+        title="Who We Are"
+      />
+      
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={[4, 64]}
+        mx={[0, "5rem"]}
+        mb={8}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize={["100%", "75% 75%"]}
+        backgroundImage={"url('" + project_image + "')"}>
+          <GridItem colSpan={[2, 1]}>
+            <Grid
+              templateRows="repeat(3, 1fr)"
+              gap={4}>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
+                  </BorderBox>
+                </GridItem>
+            </Grid>
+          </GridItem>
+          <GridItem colSpan={[2, 1]}>
+            <Grid
+              templateRows="repeat(2, 1fr)"
+              height="100%">
+                <GridItem>
+                  <BorderBox height="100%" padding="1rem" backgroundColor="#ffffff">
+                    <Text>
+                      There could be a short description here with a bit more inspirational somethn’ somethn’
+                    </Text>
+                  </BorderBox>
+                </GridItem>
+              </Grid>
+          </GridItem>
       </Grid>
-      </Center>
-      <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
-      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight="40px" objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize="24px" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
-        Are you Interested in Contributing?
-      </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
-        <Grid templateColumns="80px 1fr" gap={6}>
-          <Box display="flex" justifyContent="flex-start">
-            <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Have a Resource to Add?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
-          </Box>
-          <Box >
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Engergized by this but not sure how to contibute?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Propose your own project.
-            </Text>
-            <Button borderRadius="0px" fontSize="16px" lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
-          </Box>
-        </Grid>
-      </Stack>
-      </Center>
-    </Box>
+    </>
   )
 }
 
@@ -271,9 +249,8 @@ const Home = () => {
       <Partners />
       <FeaturedProjectsList />
       <Contribution />
-      {/*<Body project_image={project_image} />
-       */}
-      {/* <Footer bottom_image={bottom_image} ></Footer> */}
+      <AboutUs project_image={project_image} />
+      <Footer bottom_image={bottom_image} />
   </div>
   )
 }
