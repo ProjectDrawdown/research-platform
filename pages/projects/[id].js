@@ -68,11 +68,10 @@ function Project({
             <ul>
             {data.resources.map((resource, k) => (
               <li key={k}>
-                <b>{resource.name}</b>
                 <p>{resource.description}</p>
                 <div>
                   <Link marginLeft="1em" color="#2995F8" href={resource.file}>
-                    {resource.file}
+                    {resource.name}
                   </Link>
                 </div>
                 <div>
