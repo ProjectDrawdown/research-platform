@@ -35,7 +35,7 @@ function Project({
             <GridItem colSpan={3}>
               <Heading as="h1" textStyle="caps" fontSize={{base:"18px", sm:"25", md:"30px", "2xl":"98px"}} left="78px" top="93px" textAlign="left">
                 Project Detail
-                {data.active && <Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
+                {data.active ? <Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>:<Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Inactive</Button> }
               </Heading>
             </GridItem>
             <GridItem colSpan={1} />
