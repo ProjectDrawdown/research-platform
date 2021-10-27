@@ -2,7 +2,7 @@
 name: a test resource
 description: just testing the external PR flow
 file: img/projectdrawdown.png
-link: projectdrawdown.com
+link: http://projectdrawdown.com
 projects:
-  - adsdsasdsadasdasd
+  - this is a test project
 ---
