@@ -47,7 +47,7 @@ collections:
           search_fields: ["name"],
           multiple: true   
         }
-      - { label: "Video Link", name: "video", widget: "string" }
+      - { label: "Video Link", name: "video", widget: "string", required: false }
   - name: "resources"
     label: "Resources"
     folder: "resources"
