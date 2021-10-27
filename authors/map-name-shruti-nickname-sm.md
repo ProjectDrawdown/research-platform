@@ -1,4 +1,4 @@
 ---
-name: Shruti
-nickname: SM
+name: SMD
+nickname: SMD
 ---
