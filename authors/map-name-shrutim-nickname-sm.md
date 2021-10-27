@@ -1,4 +1,4 @@
 ---
 name: Shruti Mehta
-nickname: SM
+nickname: Sheen
 ---
