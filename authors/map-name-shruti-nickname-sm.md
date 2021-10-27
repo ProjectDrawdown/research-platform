@@ -1,4 +1,4 @@
 ---
-name: Shruti Dhingra
+name: Shruti
 nickname: SMD
 ---
