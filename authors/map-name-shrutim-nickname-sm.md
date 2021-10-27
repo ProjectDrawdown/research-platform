@@ -1,4 +1,4 @@
 ---
-name: ShrutiM
+name: Shruti Mehta
 nickname: SM
 ---
