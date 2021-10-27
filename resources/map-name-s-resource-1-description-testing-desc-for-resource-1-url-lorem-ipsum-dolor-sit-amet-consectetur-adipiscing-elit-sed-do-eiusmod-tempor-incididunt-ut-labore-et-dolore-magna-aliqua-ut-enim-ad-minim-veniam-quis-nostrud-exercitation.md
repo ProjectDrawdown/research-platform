@@ -1,10 +1,9 @@
 ---
 name: S Resource 1
-description: aaaa
+description: This is the resource Description. Checking if it displays
 file: https://drawdown.org/sites/default/files/1920x1080_drawdown_cs101_poster01_0.jpg
 link: http://stage.pdd.colab.coop
 projects:
-  - This is a test project Oct2021
   - SM Project 2022 Open Climate Research Fellowship@
   - Proj AAA
 ---
