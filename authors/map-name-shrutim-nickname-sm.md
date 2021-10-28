@@ -1,4 +1,4 @@
 ---
-name: ShrutiM
-nickname: SM
+name: Shruti Mehta
+nickname: Sheen
 ---

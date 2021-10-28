@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import Head from "next/head"
 import PropTypes from 'prop-types'
-import { ChakraProvider, extendTheme, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -108,8 +107,8 @@ const AddProject = ({projects, setProjects, setProjectsDefault}) =>{
 const BrowseList = ({projects}) => {
   return (
     <>
-      {projects.map(project => (
-        <Box minHeight="50px" w="70%" fontSize="12px" fontWeight="400"  paddingX="4px" marginX="30px" marginY="10px" color="black" key={project} borderLeft="solid #000000">
+      {projects.map((project, idx) => (
+        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={idx} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
@@ -122,7 +121,7 @@ const BrowseList = ({projects}) => {
           {
             project.resources.length !== 0 ?
               project.resources.map((resource, k) => (
-                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                   {resource.file && (
                     <a href={resource.file}>File</a>
                   )}
@@ -135,18 +134,17 @@ const BrowseList = ({projects}) => {
 
           {
             project.link &&
-              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                 <a href={project.link}>Link</a>
               </Button>
           }
 
           {
             project.video &&
-              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
                 <a href={project.video}>Video</a>
               </Button>
           }
-
         </Box>
       ))}
     </>
@@ -156,9 +154,9 @@ const BrowseList = ({projects}) => {
 
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
-    <HStack paddingTop="71px" position="relative" paddingBottom="31px" marginLeft="0px">
-      <SearchIcon fontSize="18px" position="absolute" left="16px" />
-      <Input placeholder="Search helper text" marginRight="60px" paddingLeft="30px" w="90%" h="32px" size="md" borderRadius="none" borderColor="black"
+    <HStack paddingTop="71px" position="relative" paddingBottom="0px" marginLeft="0px">
+      <SearchIcon fontSize={{base:"18px", "2xl":"46px"}} position="absolute" left={{base: "16px", "2xl":"30px"}}/>
+      <Input placeholder="Search helper text" fontSize={{base: "20px", "2xl":"50px"}} marginRight="60px" paddingY={{base: "5px", "2xl":"50px"}} paddingLeft={{base: "30px", "2xl":"75px"}} w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
   );
@@ -181,7 +179,6 @@ const browseProjects = ({ projects, resources }) => {
       projects,
       resources,
       filteredProjects: augmentedProjects.filter((project) => {
-
         const found = project.collaborators.find((collaborator) => {
           return collaborator.toLowerCase().indexOf(filter) !== -1
         })
@@ -198,34 +195,20 @@ const browseProjects = ({ projects, resources }) => {
   }
 
   return (
-    <>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
-      <ChakraProvider theme={Theme}>
-        <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-          <BorderBox
-            w={["100%", "90%", "70%"]} 
-            padding="2rem"
-            fontFamily="Sora">
-
-            <Stack align="left" marginTop="2rem" >
-              <Title paddingBottom="1rem">
-                Browse All Projects
-              </Title>
-              <BackButton />
-              <SearchBar onChange={handlekeydown} />
-            </Stack>
-
-            <BrowseList projects={value.filteredProjects} />
-
-          </BorderBox>
-          <Footer />
-        </Flex>
-
-      </ChakraProvider>
-    </>
-  )
+    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
+      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
+        <Stack align="left" marginTop="2rem" >
+          <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
+            Browse All Projects
+            <BackButton />
+            <SearchBar onChange={handlekeydown}/>
+          </Heading>
+        </Stack>
+          <BrowseList projects={value.filteredProjects} />
+      </Box>
+      <Footer />
+    </Flex>
+    )
 }
 
 AddForm.propTypes = {
