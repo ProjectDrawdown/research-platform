@@ -143,12 +143,13 @@ const Contribution = () => {
         px="1rem"
         templateColumns="repeat(5, 1fr)"
         gap={4}
+        mt={8}
         mb={8}
       >
         <GridItem
           colStart={[1, 3]}
           colSpan={[5, 1]}>
-          <Image marginX="auto" src="img/assets/wavy2.png" />
+          <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
         </GridItem>
         <GridItem
           colStart={[1, 2]}
@@ -176,6 +177,48 @@ const Contribution = () => {
             title="Propose your own project."
             buttonTitle="CONTACT US"
             image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+      </Grid>
+    </>
+  )
+}
+
+const SneakPeek = () => {
+  return (
+    <>
+      <Grid
+        px="1rem"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+        mt={8}
+        mb={8}
+      >
+        <GridItem
+          colStart={[1, 3]}
+          colSpan={[5, 1]}>
+          <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
+        </GridItem>
+        <GridItem
+          colStart={[1, 2]}
+          colSpan={[5, 3]}>
+            <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
+              See a sneak peek of software in development
+            </Heading>
+        </GridItem>
+      </Grid>
+
+      <Grid
+        my="1rem"
+        templateColumns="repeat(3, 1fr)">
+          <ContributionOption
+            title="Drawdown Global Research Platform Web UI repo"
+            buttonTitle="WEB UI PREVIEW"
+            image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
+            onClick={() => { console.log('web ui preview action') }}/>
+          <ContributionOption
+            title="Drawdown solutions in python repo"
+            buttonTitle="PYTHON PREVIEW"
+            image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
             onClick={() => { console.log('Add resource action') }}/>
       </Grid>
     </>
@@ -250,6 +293,7 @@ const Home = () => {
       <FeaturedProjectsList />
       <Contribution />
       <AboutUs project_image={project_image} />
+      <SneakPeek />
       <Footer bottom_image={bottom_image} />
   </div>
   )
