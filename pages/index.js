@@ -1,6 +1,5 @@
 import React from "react"
 import {
-  extendTheme,
   Link,
   Heading,
   Text,
@@ -17,7 +16,8 @@ import BorderBox from "../components/BorderBox";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
-import "@fontsource/work-sans/400.css"
+import "@fontsource/sora/500.css";
+import "@fontsource/sora/800.css";
 
 // This is the default breakpoint
 createBreakpoints({
@@ -25,14 +25,6 @@ createBreakpoints({
   md: "48em",
   lg: "62em"
 })
-
-const theme = extendTheme({
-  fonts: {
-    heading: "Sora",
-    body: "Sora",
-  },
-})
-
 
 const FeaturedProjectsList = () => {
   const { projects, bottom_image } = attributes;
