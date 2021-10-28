@@ -1,3 +1,4 @@
+import React from "react"
 import { GridItem, Box, Heading, Link } from "@chakra-ui/react"
 
 export default function Render({ project }) {

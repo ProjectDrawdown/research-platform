@@ -1,6 +1,5 @@
 import React from "react"
 import {
-  extendTheme,
   Link,
   Heading,
   Text,
@@ -26,14 +25,6 @@ createBreakpoints({
   md: "48em",
   lg: "62em"
 })
-
-const theme = extendTheme({
-  fonts: {
-    heading: "Sora",
-    body: "Sora",
-  },
-})
-
 
 const FeaturedProjectsList = () => {
   const { projects, bottom_image } = attributes;
