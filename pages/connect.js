@@ -22,7 +22,7 @@ const form = () => {
 
         <Center>
           <Text>
-            Please leave your information, and we will invite you to a community slack channel where you can work with other researchers.
+            Please share your information. We will invite you to a community slack channel where you can work with other researchers. 
           </Text>
         </Center>
 
