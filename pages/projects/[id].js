@@ -1,7 +1,8 @@
 import React from "react";
 import fs from "fs";
 import PropTypes from 'prop-types'
-import { Link, Heading, Text, Box, Avatar, Grid, GridItem, Button } from "@chakra-ui/react"
+import { extendTheme, Button, ChakraProvider, Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
 import matter from 'gray-matter';
 import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
