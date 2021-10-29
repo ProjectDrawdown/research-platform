@@ -3,7 +3,7 @@ import BackButton from "../components/BackButton"
 import StyledButton from "../components/StyledButton";
 import BorderBox from "../components/BorderBox";
 import Title from "../components/Title";
-import { Box, Center, Heading, Input, Text, Textarea} from "@chakra-ui/react"
+import { Box, Center, Input, Text, Textarea} from "@chakra-ui/react"
 
 const form = () => {
   return (

@@ -12,9 +12,6 @@ import {SearchIcon} from "@chakra-ui/icons"
 import Footer from "../../components/Footer";
 import StyledButton from "../../components/StyledButton";
 import BackButton from "../../components/BackButton"
-import Theme from "../../components/Theme"
-import BorderBox from "../../components/BorderBox";
-import Title from "../../components/Title";
 import getStaticFilesFrontMatter from '../../getStatic'
 
 export async function getStaticProps() {
