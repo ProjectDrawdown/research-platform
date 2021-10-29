@@ -1,8 +1,18 @@
 import React from "react"
-import Head from "next/head"
-import { ChakraProvider, extendTheme, Flex, Link, Center, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
+import {
+  Link,
+  Heading,
+  Text,
+  Image,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
+import SubHeading from "../components/SubHeading";
+import RecentProject from "../components/RecentProject";
+import ContributionOption from "../components/ContributionOption";
+import BorderBox from "../components/BorderBox";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
@@ -13,188 +23,212 @@ import "@fontsource/sora/800.css";
 createBreakpoints({
   sm: "30em",
   md: "48em",
-  lg: "62em",
-  xl: "80em",
-  "2xl": "96em",
+  lg: "62em"
 })
-
-const theme = extendTheme({
-  fonts: {
-    heading: "Sora",
-    body: "Sora",
-  },
-})
-
 
 const FeaturedProjectsList = () => {
   const { projects, bottom_image } = attributes;
   
   return (
-    <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
-      <Box paddingBottom={{base:"1em", sm:"1em", md:"1em", lg:"2em", xl:"2em", "2xl":"2em" }} paddingTop="3em" marginBottom={["350px", "350px", "0px"]} paddingLeft={{base:"4%", sm:"4%", md:"10%", lg:"5%", xl:"5%", "2xl":"10%"}}>
-        <Text fontSize={{base:"24px", sm:"24px", md:"24px", lg:"36px", xl:"36px", "2xl":"72px"}} fontWeight="bold" textStyle="caps" textAlign="left">
-          Recently Active Projects
-        </Text>
-      </Box>
-      <Center>
-      <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={{base:"375px", sm:"375px", md:"375px", lg:"800px", xl:"800px", "2xl":"1600px"}} height={{base:"375px",sm:"375px", md:"375px",lg:"800px", xl:"800px", "2xl":"1600px"}} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage={"url('" + bottom_image + "')"}>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"30px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
-          {projects.slice(0,2).map((project) => (
-          <Link key={project} href={`/projects/${project.split('__')[3]}`} >
-          <Box  boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto" border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={{base:"25px", sm:"25px", md:"25px", lg:"35px", xl:"35px", "2xl":"60px"}} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
-              <Link href={`/projects/${project.split('__')[3]}`} >
-                {project.split('_')[0]}
+    <>
+      <SubHeading
+        title="Recently Active Projects"
+      />
+
+      <Grid
+        mx={[0, "5rem"]}
+        templateColumns="repeat(7, 1fr)"
+        templateRows="repeat(5, 1fr)"
+        gap={6}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize={["100%", "75% 75%"]}
+        backgroundImage={"url('" + bottom_image + "')"}>
+
+        {projects.slice(0,2).map((project, index) => {
+            return (
+              <React.Fragment
+                key={`project_${index}`}>
+                {
+                  index % 2 != 0 &&
+                    <GridItem />
+                }
+                <RecentProject 
+                  project={project}
+                />
+              </React.Fragment>
+            )
+          })
+        }
+
+        <GridItem
+          colStart={[2,3]}
+          colSpan={3}>
+            <Heading as="h5" fontSize="18px" marginY="2rem" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
+              <Link href="browseProjects">
+                <StyledButton content={"Browse all projects"} />
               </Link>
-              </Heading>
-            </Text>
-            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-            <Text fontSize={{base:"15px", sm:"15px", md:"15px", lg:"15px", xl:"15px", "2xl":"30px"}}>
-              View
-            </Text>
-            </Link>
-          </Box>
-          </Link>
-          ))}
-        </Grid>
-        <Heading as="h5" fontSize="18px" marginY={{base:"20px", sm:"20px", md:"20px", lg:"0px", xl:"0px", "2xl":"-20px"}} fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
-          <Link href="projects">
-            <StyledButton content={"Browse all projects"} />
-          </Link>
-        </Heading>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={{base:"10px", sm:"10px", md:"30px", lg:"10%", xl:"10%", "2xl":"10%"}} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "0px"]}>
-          {projects.slice(2,4).map((project) => (
-          <Link key={project} href={`/projects/${project.split('__')[3]}`} >
-          <Box boxSizing="border-box" height={{base:"290px", sm:"290px", md:"290px", lg:"390px", xl:"390px", "2xl":"780px"}} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={{base:"25px", sm:"25px", md:"25px", lg:"35px", xl:"35px", "2xl":"60px"}} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"30px", xl:"30px", "2xl":"60px"}} color="#00C24E">
-              <Link href={`/projects/${project.split('__')[3]}`} >
-                {project.split('_')[0]}
-              </Link>
-              </Heading>
-            </Text>
-            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-            <Text fontSize={{base:"15px", sm:"15px", md:"15px", lg:"15px", xl:"15px", "2xl":"30px"}}>
-              View
-            </Text>
-            </Link>
-          </Box>
-          </Link>
-          ))}
-        </Grid>
+            </Heading>
+        </GridItem>
+
+        {projects.slice(2,4).map((project, index) => {
+            return (
+              <React.Fragment
+                key={`project_2_${index}`}>
+                {
+                  index % 2 != 0 &&
+                    <GridItem />
+                }
+                <RecentProject 
+                  project={project}
+                />
+              </React.Fragment>
+            )
+          })
+        }
       </Grid>
-      </Center>
-    </Box>
+    </>
   )
 }
 
 const Partners = () =>{
   return(
     <>
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]}>
-        <Text fontSize={{base:"24px", sm:"24px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontWeight="bold" textStyle="caps" textAlign="left">
-          Our Partners
-        </Text>
-      </Box>
-      <Center>
-      <SimpleGrid columns={[1,1,5]} justifyContent={["column-reverse", "row-reverse", "center"]} rowGap={{base:"20px",sm:"20px", md:"40px",lg:"80px", xl:"80px", "2xl":"160px"}} maxWidth="90%" paddingRight="10%" paddingLeft="3%" >
-      <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/Group 53.png" alt="Global Council for Science and Education"/>
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/image 3.png" alt="Climatebase" />
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/image 2.png" alt="Project Drawdown" />
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/Group 23.png" alt="Drawdown GA" />
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/drawdown.png" alt="Drawdown Europe" />
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/Ellipse 10.png" alt="ECOSIA" />
-        <div></div>
-        <Image marginX="auto" display="block" objectFit="cover" maxWidth={{base:"250px", sm:"250px", md:"250px", lg:"360px", xl:"360px", "2xl":"500px"}} maxBoxSize="370px" src="img/assets/Group 52.png" alt="One Project" />
-        <div></div>
-      </SimpleGrid>
-      </Center>
+      <SubHeading
+        title="Our Partners"
+      />
+      <Grid
+        px="1rem"
+        templateColumns="repeat(5, 1fr)"
+        gap={6}
+        >
+        <GridItem colSpan={[5, 2]} colStart={[1, 2]}>
+          <Image src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
+        </GridItem>
+        <GridItem colSpan={[5,2]}>
+          <Image src="img/assets/image 3.png" alt="Climatebase" />
+        </GridItem>
+        <GridItem colSpan={[5, 2]}>
+          <Image marginX={[0, "auto"]} src="img/assets/image 2.png" alt="Project Drawdown" />
+        </GridItem>
+        <GridItem colSpan={[5,1]}>
+          <Image marginX={[0, "auto"]} src="img/assets/Group 23.png" alt="Drawdown GA" />
+        </GridItem>
+        <GridItem colSpan={[5,2]}>
+          <Image marginX={[0, "auto"]} src="img/assets/drawdown.png" alt="Drawdown Europe" />
+        </GridItem>
+        <GridItem colSpan={[5, 2]} colStart={[1, 2]}>
+          <Image src="img/assets/Ellipse 10.png" alt="ECOSIA" />
+        </GridItem>
+        <GridItem colSpan={[5,2]}>
+          <Image src="img/assets/Group 52.png" alt="One Project" />
+        </GridItem>
+      </Grid>
     </>
   )
 }
 
-const Body = ({ project_image }) =>{
+const Contribution = () => {
   return (
-    <Box paddingX="10px">
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]} marginBottom={["110px", "110px", "0px"]}>
-          <Text fontSize={{base:"24px", sm:"24px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontWeight="bold" textStyle="caps" textAlign="left">
-            Who We Are
-          </Text>
-      </Box>
-      <Center>
-      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={{base:"90%", sm:"90%",md:"70%", lg:"70%",xl:"70%","2xl":"70%"}} height={{base:"375px", sm:"375px", md:"375px", lg:"700px", xl:"700px", "2xl":"1400px"}} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage={ project_image ? "url('" + project_image+ "')" : ''} backgroundPosition="center" backgroundSize="cover">
-        <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={{base:"162px", sm:"162px",md:"202px", lg:"202px", xl:"202px", "2xl":"404px"}} width={{base:"250px", sm:"250px", md:"250px", lg:"380px", xl:"380px","2xl":"760px"}} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={{base:"40px",sm:"40px", md:"40px",lg:"48px",xl:"48px", "2xl":"96px"}}> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize={{base:"36px", sm:"36px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontFamily="work-sans"> Countries </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={{base:"162px", sm:"162px",md:"202px", lg:"202px", xl:"202px", "2xl":"404px"}} width={{base:"250px", sm:"250px", md:"250px", lg:"380px", xl:"380px","2xl":"760px"}} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={{base:"40px",sm:"40px", md:"40px",lg:"48px",xl:"48px", "2xl":"96px"}}> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize={{base:"36px", sm:"36px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontFamily="work-sans"> Collaborators </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={{base:"162px", sm:"162px",md:"202px", lg:"202px", xl:"202px", "2xl":"404px"}} width={{base:"250px", sm:"250px", md:"250px", lg:"380px", xl:"380px","2xl":"760px"}} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={{base:"40px",sm:"40px", md:"40px",lg:"48px",xl:"48px", "2xl":"96px"}}> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize={{base:"36px", sm:"36px", md:"36px", lg:"36px", xl:"36px", "2xl":"72px"}} fontFamily="work-sans"> Projects </Heading>
-          </Box>
-        </Stack>
-        <Center>
-          <Box width={{base:"250px", sm:"250px", md:"250px", lg:"355px", xl:"355px", "2xl": "700px"}} height={{base:"255px",sm:"255px",md:"255px",lg:"355px",xl:"355px","2xl":"700px"}} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "-250px"]} marginBottom={{base:"-30%", sm:"-30%", md:"-30%", lg:"0px", xl:"0px", "2xl":"380px"}} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Text paddingTop="10px" fontSize={{base:"20px", sm:"20px", md:"20px", lg:"24px", xl:"24px", "2xl":"48"}} fontWeight="700">
-              There could be a short description here with a bit more inspirational somethn’ somethn’
-            </Text>
-          </Box>
-        </Center>
+    <>
+      <Grid
+        px="1rem"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+        mb={8}
+      >
+        <GridItem
+          colStart={[1, 3]}
+          colSpan={[5, 1]}>
+          <Image marginX="auto" src="img/assets/wavy2.png" />
+        </GridItem>
+        <GridItem
+          colStart={[1, 2]}
+          colSpan={[5, 3]}>
+            <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
+              Are you Interested in Contributing?
+            </Heading>
+        </GridItem>
       </Grid>
-      </Center>
-      <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
-      <Image src="img/assets/wavy2.png" width={{base:"80%", sm:"80%", md:"80%", lg:"25%", xl:"25%", "2xl":"55%"}} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight={{base:"40px", sm:"40px", md:"40px", lg:"40px", xl:"40px", "2xl":"70px"}} objectFit="contain" />
-      <Heading flex="1" textStyle="caps" fontSize={{base:"26px", sm:"26px", md:"26px", lg:"26px", xl:"26px", "2xl":"82px"}} marginBottom="30px" marginY="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
-        Are you Interested in Contributing?
-      </Heading>
-      <Stack spacing={{base:"10px", sm:"20px", md:"40px", lg:"50px", xl:"80px", "2xl":"120px"}} display="flex" flexDirection="column" alignItems="flex-start" marginLeft={{base:"10%", sm:"10%", md:"10%", lg:"-5%", xl:"-5%", "2xl":"5%"}}>
-        <Grid templateColumns="80px 1fr" gap={6}>
-          <Box display="flex" justifyContent="flex-start">
-            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain"  src="img/assets/Linear2.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
-              Have a Resource to Add?
-            </Text>
-            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain" src="img/assets/Linear.png" alt="Segun Adebayo" />
-          </Box>
-          <Box >
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
-              Engergized by this but not sure how to contibute?
-            </Text>
-            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} lineHeight="24px" fontSize={{base:"14px", sm:"14px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth={{base:"80px", sm:"80px", md:"80px", lg:"80px", "xl":"80px","2xl":"180px"}} objectFit="contain" src="img/assets/Linear3.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"56px"}} fontFamily="Sora" marginBottom="18px">
-              Propose your own project.
-            </Text>
-            <Button borderRadius="0px" marginY={{base:"5px",sm:"5px", md:"5px", lg:"5px", xl:"5px", "2xl":"25px"}} padding={{base:"10px", sm:"10px", md:"10px", lg:"10px", xl:"10px", "2xl":"25px"}} fontSize={{base:"18px", sm:"18px", md:"18px", lg:"18px", xl:"18px", "2xl":"36px"}} lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
-          </Box>
-        </Grid>
-      </Stack>
-      </Center>
-    </Box>
+
+      <Grid
+        my="1rem"
+        templateColumns="repeat(3, 1fr)">
+          <ContributionOption
+            title="Have a Resource to Add?"
+            buttonTitle="GET STARTED"
+            image={<Image marginX="auto" src="img/assets/Linear2.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+          <ContributionOption
+            title="Engergized by this but not sure how to contibute?"
+            buttonTitle="CONNECT ON SLACK"
+            image={<Image marginX="auto" src="img/assets/Linear.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+          <ContributionOption
+            title="Propose your own project."
+            buttonTitle="CONTACT US"
+            image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
+            onClick={() => { console.log('Add resource action') }}/>
+      </Grid>
+    </>
+  )
+}
+
+const AboutUs = ({ project_image }) => {
+  return (
+    <>
+      <SubHeading
+        title="Who We Are"
+      />
+      
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={[4, 64]}
+        mx={[0, "5rem"]}
+        mb={8}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize={["100%", "75% 75%"]}
+        backgroundImage={"url('" + project_image + "')"}>
+          <GridItem colSpan={[2, 1]}>
+            <Grid
+              templateRows="repeat(3, 1fr)"
+              gap={4}>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
+                  </BorderBox>
+                </GridItem>
+            </Grid>
+          </GridItem>
+          <GridItem colSpan={[2, 1]}>
+            <Grid
+              templateRows="repeat(2, 1fr)"
+              height="100%">
+                <GridItem>
+                  <BorderBox height="100%" padding="1rem" backgroundColor="#ffffff">
+                    <Text>
+                      There could be a short description here with a bit more inspirational somethn’ somethn’
+                    </Text>
+                  </BorderBox>
+                </GridItem>
+              </Grid>
+          </GridItem>
+      </Grid>
+    </>
   )
 }
 
@@ -202,21 +236,13 @@ const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
   
   return (
-    <div style={{marginX: '0px', marginBottom: '0px'}}>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
-      <ChakraProvider theme={theme}>
-        <Flex as="nav" flexWrap="wrap" direction="row">
-        <Header title={title} description={description} image={header_image} />
-        <Stack marginTop="2rem" width="100vw">
-        <Partners />
-        <Body project_image={project_image} />
-        <FeaturedProjectsList />
-        </Stack>
-        <Footer bottom_image={bottom_image} ></Footer>
-      </Flex>
-    </ChakraProvider>
+    <div style={{marginX: '20px', marginBottom: '0px'}}>
+      <Header title={title} description={description} image={header_image}/>
+      <Partners />
+      <FeaturedProjectsList />
+      <Contribution />
+      <AboutUs project_image={project_image} />
+      <Footer bottom_image={bottom_image} />
   </div>
   )
 }

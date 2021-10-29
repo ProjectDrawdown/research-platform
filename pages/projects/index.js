@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import Head from "next/head"
 import PropTypes from 'prop-types'
-import { ChakraProvider, extendTheme, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -24,14 +23,6 @@ import getStaticFilesFrontMatter from '../../getStatic'
     xl: "80em",
     "2xl": "96em",
   })
-
-  const theme = extendTheme({
-    fonts: {
-      heading: "Sora",
-      body: "Sora",
-    },
-  })
-  
 
 export async function getStaticProps() {
   const projects = await getStaticFilesFrontMatter("projects")
@@ -123,8 +114,8 @@ const AddProject = ({projects, setProjects, setProjectsDefault}) =>{
 const BrowseList = ({projects}) => {
   return (
     <>
-      {projects.map(project => (
-        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={project} borderLeft="solid #000000">
+      {projects.map((project, idx) => (
+        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={idx} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
@@ -195,7 +186,6 @@ const browseProjects = ({ projects, resources }) => {
       projects,
       resources,
       filteredProjects: augmentedProjects.filter((project) => {
-
         const found = project.collaborators.find((collaborator) => {
           return collaborator.toLowerCase().indexOf(filter) !== -1
         })
@@ -212,29 +202,19 @@ const browseProjects = ({ projects, resources }) => {
   }
 
   return (
-      <>
-        <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Head>
-        <ChakraProvider theme={theme}>
-          <Flex as="nav" flexWrap="wrap" alignItems="left" marginX="auto">
-            <Box background="#FFFFFF" border="4px solid #000000" padding={{base: "5px", "2xl":"50px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
-              <Stack align="left" marginTop="2rem">
-                <Heading as="h1" textStyle="caps" fontSize={{base:"48px",sm:"48px", md:"48px", lg:"48px", xl:"48px", "2xl":"96px"}} paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
-                  Browse All Projects
-                  <BackButton />
-                  <SearchBar onChange={handlekeydown} />
-                </Heading>
-              </Stack>
-
-              <BrowseList projects={value.filteredProjects} />
-
-            </Box>
-            <Footer />
-          </Flex>
-          
-        </ChakraProvider>
-      </>
+    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
+      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
+        <Stack align="left" marginTop="2rem" >
+          <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
+            Browse All Projects
+            <BackButton />
+            <SearchBar onChange={handlekeydown}/>
+          </Heading>
+        </Stack>
+          <BrowseList projects={value.filteredProjects} />
+      </Box>
+      <Footer />
+    </Flex>
     )
 }
 

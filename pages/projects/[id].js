@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { extendTheme, Button, ChakraProvider, Link, Heading, Text, Box, Avatar, Grid, GridItem } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import matter from 'gray-matter';
-import StyledButton from '../../components/StyledButton';
 import getStaticFilesFrontMatter from '../../getStatic';
 import Footer from "../../components/Footer";
 
@@ -40,7 +39,7 @@ function Project({
             </GridItem>
             <GridItem colSpan={1} />
             <GridItem colSpan={1}>
-              <StyledButton content="PROJECT LINK" href={data.link} />
+              <Button as={Link} href={data.link}>Project Link</Button>
             </GridItem>
           </Grid>
           <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
