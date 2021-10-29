@@ -119,7 +119,7 @@ const BrowseList = ({projects}) => {
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
-              project.active && <Button bg="#FAD546" marginX="10px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
+              project.active && <Button bg="#FAD546" marginX="10px" borderRadius="8px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
                 { project.active ? "ACTIVE" : "INACTIVE" }
               </Button>
             }
@@ -128,7 +128,7 @@ const BrowseList = ({projects}) => {
           {
             project.resources.length !== 0 ?
               project.resources.map((resource, k) => (
-                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
                   {resource.file && (
                     <a href={resource.file}>File</a>
                   )}
@@ -141,14 +141,14 @@ const BrowseList = ({projects}) => {
 
           {
             project.link &&
-              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
                 <a href={project.link}>Link</a>
               </Button>
           }
 
           {
             project.video &&
-              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px">
+              <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
                 <a href={project.video}>Video</a>
               </Button>
           }
