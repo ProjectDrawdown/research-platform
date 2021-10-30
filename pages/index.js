@@ -68,7 +68,7 @@ const FeaturedProjectsList = () => {
           colStart={[2,3]}
           colSpan={3}>
             <Heading as="h5" fontSize="18px" marginY="2rem" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
-              <Link href="browseProjects">
+              <Link href="projects">
                 <StyledButton content={"Browse all projects"} />
               </Link>
             </Heading>
