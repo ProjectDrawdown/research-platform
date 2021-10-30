@@ -9,20 +9,10 @@ import { Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Bo
   PopoverArrow,
   PopoverCloseButton,} from "@chakra-ui/react"
 import {SearchIcon} from "@chakra-ui/icons"
-import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Footer from "../../components/Footer";
 import StyledButton from "../../components/StyledButton";
 import BackButton from "../../components/BackButton"
 import getStaticFilesFrontMatter from '../../getStatic'
-
-  // This is the default breakpoint
-  createBreakpoints({
-    sm: "30em",
-    md: "48em",
-    lg: "62em",
-    xl: "80em",
-    "2xl": "96em",
-  })
 
 export async function getStaticProps() {
   const projects = await getStaticFilesFrontMatter("projects")
@@ -238,3 +228,4 @@ SearchBar.propTypes = {
   onChange: PropTypes.func,
 }
 export default browseProjects;
+
