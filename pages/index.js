@@ -1,5 +1,7 @@
 import React from "react"
 import {
+  Box,
+  Container,
   Link,
   Heading,
   Text,
@@ -51,7 +53,8 @@ const FeaturedProjectsList = () => {
                 key={`project_${index}`}>
                 {
                   index % 2 != 0 &&
-                    <GridItem />
+                    <GridItem
+                      display={["none", "block"]} />
                 }
                 <RecentProject 
                   project={project}
@@ -77,7 +80,8 @@ const FeaturedProjectsList = () => {
                 key={`project_2_${index}`}>
                 {
                   index % 2 != 0 &&
-                    <GridItem />
+                    <GridItem
+                      display={["none", "block"]} />
                 }
                 <RecentProject 
                   project={project}
@@ -102,25 +106,25 @@ const Partners = () =>{
         templateColumns="repeat(5, 1fr)"
         gap={6}
         >
-        <GridItem colSpan={[5, 2]} colStart={[1, 2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
           <Image src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
         </GridItem>
-        <GridItem colSpan={[5,2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5,2]}>
           <Image src="img/assets/image 3.png" alt="Climatebase" />
         </GridItem>
-        <GridItem colSpan={[5, 2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
           <Image marginX={[0, "auto"]} src="img/assets/image 2.png" alt="Project Drawdown" />
         </GridItem>
-        <GridItem colSpan={[5,1]}>
+        <GridItem mx={["auto", 0]} colSpan={[5,1]} display={["none", "block"]}>
           <Image marginX={[0, "auto"]} src="img/assets/Group 23.png" alt="Drawdown GA" />
         </GridItem>
-        <GridItem colSpan={[5,2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5,2]} display={["none", "block"]}>
           <Image marginX={[0, "auto"]} src="img/assets/drawdown.png" alt="Drawdown Europe" />
         </GridItem>
-        <GridItem colSpan={[5, 2]} colStart={[1, 2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
           <Image src="img/assets/Ellipse 10.png" alt="ECOSIA" />
         </GridItem>
-        <GridItem colSpan={[5,2]}>
+        <GridItem mx={["auto", 0]} colSpan={[5,2]} display={["none", "block"]}>
           <Image src="img/assets/Group 52.png" alt="One Project" />
         </GridItem>
       </Grid>
@@ -130,47 +134,52 @@ const Partners = () =>{
 
 const Contribution = () => {
   return (
-    <>
-      <Grid
-        px="1rem"
-        templateColumns="repeat(5, 1fr)"
-        gap={4}
-        mb={8}
-      >
-        <GridItem
-          colStart={[1, 3]}
-          colSpan={[5, 1]}>
-          <Image marginX="auto" src="img/assets/wavy2.png" />
-        </GridItem>
-        <GridItem
-          colStart={[1, 2]}
-          colSpan={[5, 3]}>
-            <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
-              Are you Interested in Contributing?
-            </Heading>
-        </GridItem>
-      </Grid>
+    <Container>
+      <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
 
-      <Grid
-        my="1rem"
-        templateColumns="repeat(3, 1fr)">
-          <ContributionOption
-            title="Have a Resource to Add?"
-            buttonTitle="GET STARTED"
-            image={<Image marginX="auto" src="img/assets/Linear2.png" alt="Segun Adebayo" />}
-            onClick={() => { console.log('Add resource action') }}/>
-          <ContributionOption
-            title="Engergized by this but not sure how to contibute?"
-            buttonTitle="CONNECT ON SLACK"
-            image={<Image marginX="auto" src="img/assets/Linear.png" alt="Segun Adebayo" />}
-            onClick={() => { console.log('Add resource action') }}/>
-          <ContributionOption
-            title="Propose your own project."
-            buttonTitle="CONTACT US"
-            image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
-            onClick={() => { console.log('Add resource action') }}/>
-      </Grid>
-    </>
+      <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
+        Are you Interested in Contributing?
+      </Heading>
+
+      <ContributionOption
+        title="Have a Resource to Add?"
+        buttonTitle="GET STARTED"
+        image={<Image marginX="auto" src="img/assets/Linear2.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+      <ContributionOption
+        title="Engergized by this but not sure how to contibute?"
+        buttonTitle="CONNECT ON SLACK"
+        image={<Image marginX="auto" src="img/assets/Linear.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+      <ContributionOption
+        title="Propose your own project."
+        buttonTitle="CONTACT US"
+        image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+    </Container>
+  )
+}
+
+const SneakPeek = () => {
+  return (
+    <Container>
+      <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
+      <Heading as="h4" fontSize={["2xl", "3xl"]} whiteSpace={["normal", "nowrap"]}>
+        See a sneak peek of software in development
+      </Heading>
+      <Box mt="2rem">
+        <ContributionOption
+          title="Drawdown Global Research Platform Web UI repo"
+          buttonTitle="WEB UI PREVIEW"
+          image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
+          onClick={() => { window.open("https://github.com/ProjectDrawdown/global-research-platform") }}/>
+        <ContributionOption
+          title="Drawdown solutions in python repo"
+          buttonTitle="PYTHON PREVIEW"
+          image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
+          onClick={() => { window.open("https://github.com/ProjectDrawdown/solutions") }}/>
+      </Box>
+    </Container>
   )
 }
 
@@ -193,6 +202,7 @@ const AboutUs = ({ project_image }) => {
           <GridItem colSpan={[2, 1]}>
             <Grid
               templateRows="repeat(3, 1fr)"
+              mx={["1rem", 0]}
               gap={4}>
                 <GridItem>
                   <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
@@ -214,7 +224,8 @@ const AboutUs = ({ project_image }) => {
                 </GridItem>
             </Grid>
           </GridItem>
-          <GridItem colSpan={[2, 1]}>
+          <GridItem colSpan={[2, 1]}
+              mx={["1rem", 0]}>
             <Grid
               templateRows="repeat(2, 1fr)"
               height="100%">
@@ -242,6 +253,7 @@ const Home = () => {
       <FeaturedProjectsList />
       <Contribution />
       <AboutUs project_image={project_image} />
+      <SneakPeek />
       <Footer bottom_image={bottom_image} />
   </div>
   )
