@@ -1,12 +1,12 @@
 ---
+header_image: img/pdd2.jpeg
+bottom_image: img/geran-de-klerk-qzgn45hsen0-unsplash-1-.jpg
+date: 2019-03-17T19:31:20.591Z
 title: Open Climate Solutions Collaboratory
 description: Can climate change be reversed? The Collaboratory is empowering
   global researchers to answer this question.
 link: http://colab.coop/
-header_image: img/pdd2.jpeg
-bottom_image: img/projectdrawdown.png
-date: 2019-03-17T19:31:20.591Z
-project_image: img/pdd2.jpeg
+project_image: img/istock-1311321908-1-.jpg
 projects:
   - Proj AAA__test
     desc__https://www.youtube.com/channel/UCaG_YK1zjJ1ZUb_xqIpb1TA__2021-10-20-map-name-proj-aaa-description-test-desc-video-https-www-youtube-com-embed-bkdoxfyb71y-collaborators-list-shrutim-colleen-skemp-link-https-www-youtube-com-channel-ucag_yk1zjj1zub_xqipb1ta
