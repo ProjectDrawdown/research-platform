@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from 'prop-types'
-import { Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Center, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -201,7 +201,11 @@ const browseProjects = ({ projects, resources }) => {
             <SearchBar onChange={handlekeydown}/>
           </Heading>
         </Stack>
-          <BrowseList projects={value.filteredProjects} />
+        <BrowseList projects={value.filteredProjects} />
+
+        <Center m={5}>
+          <StyledButton href="/connect" content={"Propose a Project"} />
+        </Center>
       </Box>
       <Footer />
     </Flex>

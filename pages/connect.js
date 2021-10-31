@@ -1,9 +1,8 @@
 import React from "react"
 import BackButton from "../components/BackButton"
-import StyledButton from "../components/StyledButton";
 import BorderBox from "../components/BorderBox";
 import Title from "../components/Title";
-import { Box, Center, Input, Text, Textarea} from "@chakra-ui/react"
+import { Button, Box, Center, Input, Text, Textarea} from "@chakra-ui/react"
 
 const form = () => {
   return (
@@ -54,7 +53,11 @@ const form = () => {
             </Box>
 
             <Box marginTop="1rem">
-              <StyledButton type="submit" content={"Send"} />
+              <Button bg="#F1FF51" borderRadius="0px" marginX="auto" border="2px solid #000000" padding={{base: "15px", "2xl":"50px"}} type="submit">
+                <Text fontSize={{base:"15px", sm:"15px", md:"15pxpx", lg:"15px", xl:"15px", "2xl":"50px"}}>
+                  SEND
+                </Text>
+              </Button>
             </Box>
           </form>
         </Box>
