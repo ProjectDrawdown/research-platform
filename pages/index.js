@@ -107,25 +107,16 @@ const Partners = () =>{
         gap={6}
         >
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
-          <Image src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
-        </GridItem>
-        <GridItem mx={["auto", 0]} colSpan={[5,2]}>
-          <Image src="img/assets/image 3.png" alt="Climatebase" />
+          <Image src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
-          <Image marginX={[0, "auto"]} src="img/assets/image 2.png" alt="Project Drawdown" />
-        </GridItem>
-        <GridItem mx={["auto", 0]} colSpan={[5,1]} display={["none", "block"]}>
-          <Image marginX={[0, "auto"]} src="img/assets/Group 23.png" alt="Drawdown GA" />
-        </GridItem>
-        <GridItem mx={["auto", 0]} colSpan={[5,2]} display={["none", "block"]}>
-          <Image marginX={[0, "auto"]} src="img/assets/drawdown.png" alt="Drawdown Europe" />
+          <Image src="img/assets/Colab.png" alt="CoLab Coop" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
-          <Image src="img/assets/Ellipse 10.png" alt="ECOSIA" />
+          <Image marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
         </GridItem>
-        <GridItem mx={["auto", 0]} colSpan={[5,2]} display={["none", "block"]}>
-          <Image src="img/assets/Group 52.png" alt="One Project" />
+        <GridItem mx={["auto", 0]} colSpan={[5, 1]}>
+          <Image marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" />
         </GridItem>
       </Grid>
     </>
