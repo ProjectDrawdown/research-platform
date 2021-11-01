@@ -45,7 +45,8 @@ const FeaturedProjectsList = () => {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize={["100%", "75% 75%"]}
-        backgroundImage={"url('" + bottom_image + "')"}>
+        backgroundImage={"url('" + bottom_image + "')"}
+        marginTop={9}>
 
         {projects.slice(0,2).map((project, index) => {
             return (
@@ -105,6 +106,8 @@ const Partners = () =>{
         px="1rem"
         templateColumns="repeat(5, 1fr)"
         gap={6}
+        marginBottom={9}
+        marginTop={9}
         >
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
           <Image src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
@@ -189,7 +192,9 @@ const AboutUs = ({ project_image }) => {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize={["100%", "75% 75%"]}
-        backgroundImage={"url('" + project_image + "')"}>
+        backgroundImage={"url('" + project_image + "')"}
+        marginTop={9}
+      >
           <GridItem colSpan={[2, 1]}>
             <Grid
               templateRows="repeat(3, 1fr)"
