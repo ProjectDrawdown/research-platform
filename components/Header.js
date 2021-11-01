@@ -28,7 +28,7 @@ export default function Header ({ title, description }) {
             <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
           </Box>
       </BorderBox>
-        <Box marginTop="5rem" marginBottom="2.5rem" marginX={["2.5rem", "5rem"]}>
+        <Box marginTop="8rem" marginBottom="2.5rem" marginX={["2.5rem", "8rem"]}>
           <Image src="img/assets/wavy.png" objectFit="contain" />
         </Box>
     </Box>
