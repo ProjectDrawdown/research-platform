@@ -27,6 +27,11 @@ const form = () => {
 
         <Box paddingTop="3rem">
           <form name="contact" method="POST" data-netlify="true">
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact"
+            />
             <Box marginTop="2rem">
               <label>Your Name:
                 <Input borderColor="black"
