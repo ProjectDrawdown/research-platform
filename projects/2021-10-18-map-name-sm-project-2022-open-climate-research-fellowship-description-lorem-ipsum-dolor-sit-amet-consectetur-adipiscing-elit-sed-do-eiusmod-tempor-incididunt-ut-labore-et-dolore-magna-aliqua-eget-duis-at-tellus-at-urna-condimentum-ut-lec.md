@@ -1,7 +1,7 @@
 ---
 name: SM Project 2022 Open Climate Research Fellowship@
 active: true
-description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+description: " Change ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at
   tellus at urna condimentum. Ut lectus arcu bibendum at varius vel. Laoreet
   suspendisse interdum consectetur libero. Egestas fringilla phasellus faucibus
@@ -16,5 +16,5 @@ collaborators:
   - Shruti
   - Colleen Skemp
   - ShrutiM
-video: https://www.youtube.com/embed/bkdOxFYb71Y
+video: ""
 ---

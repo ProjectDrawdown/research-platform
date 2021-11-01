@@ -5,13 +5,14 @@ import Title from "./Title";
 export default function Footer () {
     return (
       <>
-        <Box backgroundImage="url('/img/assets/Rectangle 1094.png')"
+        <Box backgroundImage="url('/img/assets/iStock-521263035.jpg')"
           h={{base:"300px", sm:"300px", md:"300px", lg:"400px", xl:"400px", "2xl":"800px"}}
           w={{base:"100%", sm:"100%", md : "80%", lg:"53%", xl:"53%", "2xl":"53%"}}
           zIndex="100"
           marginTop="200px"
           paddingBottom="0px"
           marginBottom="0px"
+          backgroundSize="cover"
           ></Box>
             <Box
             background="#000000"
