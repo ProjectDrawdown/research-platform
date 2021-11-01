@@ -105,7 +105,7 @@ const BrowseList = ({projects}) => {
   return (
     <>
       {projects.map((project, idx) => (
-        <Box minHeight="50px" w="70%" fontSize={{base:"12px", sm:"12px", md:"12px", lg:"12px", xl:"12px","2xl":"38px"}} fontWeight="400"  paddingX="4px" marginX="30px" marginY={{base:"24px", sm:"24px", md:"24px", lg:"48px",xl:"48px", "2xl":"48px"}} color="black" key={idx} borderLeft="solid #000000">
+        <Box minHeight="50px" w="70%" fontWeight="400" fontSize="1.5rem" paddingX="4px" marginX="2.5rem" marginY="2rem" color="black" key={idx} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
@@ -118,22 +118,20 @@ const BrowseList = ({projects}) => {
           {
             project.resources.length !== 0 ?
               project.resources.map((resource, k) => (
-                <Button key={k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
+                <>
                   {resource.file && (
-                    <a href={resource.file}>File</a>
+                    <Button key={"resource_file_" + k} bg="#FC5350" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
+                      <a href={resource.file}>File</a>
+                    </Button>
                   )}
-                  {resource.link && (
-                    <a href={resource.link}>Link</a>
-                  )}
-                </Button>
-              )) : ""
-          }
 
-          {
-            project.link &&
-              <Button bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
-                <a href={project.link}>Link</a>
-              </Button>
+                  {resource.link && (
+                    <Button key={"resource_link_" + k} bg="#09AF74" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
+                      <a href={resource.link}>Link</a>
+                    </Button>
+                  )}
+                </>
+              )) : ""
           }
 
           {
@@ -152,8 +150,8 @@ const BrowseList = ({projects}) => {
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
     <HStack paddingTop="71px" position="relative" paddingBottom="0px" marginLeft="0px">
-      <SearchIcon fontSize={{base:"18px", "2xl":"46px"}} position="absolute" left={{base: "16px", "2xl":"30px"}}/>
-      <Input placeholder="Search helper text" fontSize={{base: "20px", "2xl":"50px"}} marginRight="60px" paddingY={{base: "5px", "2xl":"50px"}} paddingLeft={{base: "30px", "2xl":"75px"}} w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
+      <SearchIcon fontSize="1.3rem" position="absolute" left="1rem" />
+      <Input placeholder="Search helper text" fontSize="1.5rem" marginRight="60px" paddingY="1rem" paddingLeft="3rem" w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
   );
