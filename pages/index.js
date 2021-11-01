@@ -7,8 +7,6 @@ import {
   Heading,
   Text,
   Image,
-  Input,
-  Textarea,
   Grid,
   GridItem,
 } from "@chakra-ui/react"
