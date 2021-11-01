@@ -2,7 +2,7 @@
 header_image: img/pdd2.jpeg
 bottom_image: img/geran-de-klerk-qzgn45hsen0-unsplash-1-.jpg
 date: 2019-03-17T19:31:20.591Z
-title: Open Climate Solutions Collaboratory
+title: Drawdown Research Platform
 description: Can climate change be reversed? The Collaboratory is empowering
   global researchers to answer this question.
 link: http://colab.coop/
