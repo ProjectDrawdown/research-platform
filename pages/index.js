@@ -2,7 +2,6 @@ import React from "react"
 import {
   Box,
   Container,
-  Link,
   Heading,
   Text,
   Image,
@@ -69,9 +68,7 @@ const FeaturedProjectsList = () => {
           colStart={[2,3]}
           colSpan={3}>
             <Heading as="h5" fontSize="18px" marginY="2rem" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
-              <Link href="projects">
-                <StyledButton content={"Browse all projects"} />
-              </Link>
+              <StyledButton href="projects" content={"Browse all projects"} />
             </Heading>
         </GridItem>
 
@@ -113,7 +110,7 @@ const Partners = () =>{
           <Image src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
-          <Image src="img/assets/Colab.png" alt="CoLab Coop" />
+          <Image src="img/assets/CoLab.png" alt="CoLab Coop" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
           <Image marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
@@ -203,19 +200,19 @@ const AboutUs = ({ project_image }) => {
                 <GridItem>
                   <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
                     <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
-                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Countries </Heading>
                   </BorderBox>
                 </GridItem>
                 <GridItem>
                   <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
                     <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
-                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Collaborators </Heading>
                   </BorderBox>
                 </GridItem>
                 <GridItem>
                   <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
                     <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
-                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Projects </Heading>
                   </BorderBox>
                 </GridItem>
             </Grid>

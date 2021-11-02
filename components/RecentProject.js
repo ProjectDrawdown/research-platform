@@ -4,14 +4,16 @@ import { GridItem, Box, Heading, Link } from "@chakra-ui/react"
 export default function Render({ project }) {
   return (
     <GridItem
-      px="1rem"
       colSpan={[7, 3]}
       rowSpan={2}>
       <Box
         background="#F5F5F5"
         border="4px solid #000000"
         borderRadius="5px"
-        padding="2rem"
+        paddingTop="2rem"
+        paddingRight="4rem"
+        paddingBottom="8rem"
+        paddingLeft="2rem"
         height="100%"
         position="relative"
         >

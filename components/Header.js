@@ -22,7 +22,7 @@ export default function Header ({ title, description }) {
           <Text fontSize={["2xl", "3xl"]} fontWeight="600px" paddingTop="2rem" paddingRight={["0px", "20px", "15%"]}  textAlign="left" >
             {description}
           </Text>
-          <Box marginLeft="10px" marginTop={["20px", "20px","40px"]}>
+          <Box marginLeft="10px" marginTop="6rem">
             <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["block", "block", "block"]} />
             <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
             <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
@@ -37,7 +37,7 @@ export default function Header ({ title, description }) {
 
 const Arrow = ({width, displayStyle}) => {
   return (
-    <Image src="img/assets/path.png" width={width} display={displayStyle} />
+    <Image src="img/assets/Path.png" width={width} display={displayStyle} />
   )
 }
 
