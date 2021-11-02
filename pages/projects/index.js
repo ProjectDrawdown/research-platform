@@ -109,8 +109,8 @@ const BrowseList = ({projects}) => {
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
-              project.active && <Button bg="#FAD546" marginX="10px" borderRadius="8px" padding="8px" fontSize="8px" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
-                { project.active ? "ACTIVE" : "INACTIVE" }
+              project.active && <Button bg="#FAD546" marginX="10px" borderRadius="8px" padding="0.7rem" fontSize="0.7rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
+                { project.active ? "ACTIVE" : "" }
               </Button>
             }
           </p>
