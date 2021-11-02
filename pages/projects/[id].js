@@ -46,9 +46,7 @@ function Project({
             </GridItem>
             <GridItem colSpan={1} />
             <GridItem colSpan={1}>
-              <Link href={data.link}>
-                <StyledButton content={"Project Link"} />
-              </Link>
+              <StyledButton href={"/connect"} content={"Collaborate on Slack"} />
             </GridItem>
           </Grid>
           <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
