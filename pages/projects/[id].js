@@ -39,9 +39,9 @@ function Project({
     <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
           <Grid templateColumns="repeat(5, 1fr)">
             <GridItem colSpan={3}>
-              <Heading as="h1" textStyle="caps" fontSize={{base:"18px", sm:"25", md:"30px", "2xl":"98px"}} left="78px" top="93px" textAlign="left" fontWeight="800">
+              <Heading as="h1" textStyle="caps" fontSize="4xl" left="78px" top="93px" textAlign="left" fontWeight="800">
                 Project Detail
-                {data.active && <Button bg="#FAD546" marginX="10px" padding={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"26px"}} fontSize={{base:"8px",sm:"8px",md:"8px",lg:"8px",xl:"8px","2xl":"30px"}} border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
+                {data.active && <Button bg="#FAD546" marginX="10px" padding="1rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
               </Heading>
             </GridItem>
             <GridItem colSpan={1} />
@@ -54,7 +54,7 @@ function Project({
           <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
             {"<< Back to project listing"}
           </Link>
-          <Text fontSize={{base:"15px", "2xl":"35px"}} marginTop="3vh" marginBottom="1vh">{data.name}</Text>
+          <Text fontSize="3xl" marginTop="3vh" marginBottom="1vh">{data.name}</Text>
           {data.video &&
             <iframe
               src={data.video}
@@ -65,7 +65,7 @@ function Project({
               style={{maxWidth: "640px", width: "90%", minHeight:"374px", maxHeight: "375px"}}
             />
           }
-          <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Description: </Heading>
+          <Heading as="h3" fontSize="xl" marginTop="6vh" marginBottom="1vh"> Description: </Heading>
           <Text fontSize={["md", "xl"]} fontWeight="400" paddingRight={["10%", "35%"]}  textAlign="left" >
             {data.description}
           </Text>
