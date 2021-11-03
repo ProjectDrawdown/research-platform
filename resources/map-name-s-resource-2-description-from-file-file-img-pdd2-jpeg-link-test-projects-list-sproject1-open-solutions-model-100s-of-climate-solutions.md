@@ -1,7 +1,7 @@
 ---
 name: S Resource 2
 description: from file
-file: img/pdd2.jpeg
+file: img/drawdown_rrs_model_v1.1d_master.xlsm
 link: TEST
 projects:
   - Proj AAA
