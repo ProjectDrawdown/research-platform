@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from 'prop-types'
-import { Center, Flex, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Text, Center, Flex, Spacer, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -29,7 +29,6 @@ export async function getStaticProps() {
   return {
     props: {
       projects: preloadedProjects,
-      resources: resources,
     },
   }
 }
@@ -105,7 +104,7 @@ const BrowseList = ({projects}) => {
   return (
     <>
       {projects.map((project, idx) => (
-        <Box minHeight="50px" w="70%" fontWeight="400" fontSize="1.5rem" paddingX="4px" marginX="2.5rem" marginY="2rem" color="black" key={idx} borderLeft="solid #000000">
+        <Box minHeight="50px" w="70%" fontSize={["12px", "20px"]} fontWeight="400"  paddingX="4px" marginX="30px" marginY={["24px", "35px"]} color="black" key={idx} borderLeft="solid #000000">
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
@@ -157,7 +156,9 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   );
 }
 
-const browseProjects = ({ projects, resources }) => {
+const RESULTS_PER_PAGE = 7
+
+const browseProjects = ({ projects }) => {
 
   const augmentedProjects = projects.map((project) => {
     return {
@@ -166,14 +167,42 @@ const browseProjects = ({ projects, resources }) => {
     }
   })
 
-  const [value, setValue] = useState({ augmentedProjects, resources, filteredProjects: augmentedProjects, filteredResources: resources })
+  const {paginatedProjects, numPages} = paginate(augmentedProjects, 0)
 
-  function handlekeydown (rawFilter) {
-    const filter = rawFilter.toLowerCase()
+  const [value, setValue] = useState({ augmentedProjects, results: augmentedProjects, paginatedResults: paginatedProjects, page: 0, numPages: numPages, filter: "" })
+
+  function handlePrev () {
+    const newPage = value.page <= 0 ? 0 : value.page - 1
+    const filteredProjects = filter(augmentedProjects, value.filter)
+    const {paginatedProjects, numPages} = paginate(filteredProjects, newPage)
     setValue({
-      projects,
-      resources,
-      filteredProjects: augmentedProjects.filter((project) => {
+      page: newPage,
+      numPages: numPages,
+      filter: value.filter,
+      projects: value.projects,
+      results: filteredProjects,
+      paginatedResults: paginatedProjects,
+    })
+  }
+
+  function handleNext () {
+    const maxPage = 100
+    const newPage = value.page >= maxPage ? maxPage : value.page + 1
+    const filteredProjects = filter(augmentedProjects, value.filter)
+    const {paginatedProjects, numPages} = paginate(filteredProjects, newPage)
+    setValue({
+      page: newPage,
+      numPages: numPages,
+      filter: value.filter,
+      projects: value.projects,
+      results: filteredProjects,
+      paginatedResults: paginatedProjects,
+    })
+  }
+
+  function filter(projects, filterQuery) {
+    const filter = filterQuery.toLowerCase()
+    const filteredProjects = augmentedProjects.filter((project) => {
         const found = project.collaborators.find((collaborator) => {
           return collaborator.toLowerCase().indexOf(filter) !== -1
         })
@@ -181,13 +210,31 @@ const browseProjects = ({ projects, resources }) => {
         return project.name.toLowerCase().indexOf(filter) !== -1 ||
           project.description.toLowerCase().indexOf(filter) !== -1 ||
           found
-      }),
-      filteredResources: resources.filter((resource) => {
-        return resource.name.toLowerCase().indexOf(filter) !== -1 ||
-          resource.description.toLowerCase().indexOf(filter) !== -1
       })
+    return filteredProjects
+  }
+
+  function paginate(projects, page) {
+    const numPages = Math.floor(projects.length / RESULTS_PER_PAGE)
+    const startSliceIdx = page * RESULTS_PER_PAGE
+    const endSliceIdx = startSliceIdx + RESULTS_PER_PAGE
+    const paginatedProjects = projects.slice(startSliceIdx, endSliceIdx)
+    return {paginatedProjects, numPages}
+  }
+
+  function handlekeydown (rawFilter) {
+    const filteredProjects = filter(augmentedProjects, rawFilter)
+    const {paginatedProjects, numPages} = paginate(filteredProjects, value.page)
+    setValue({
+      page: 0,
+      numPages: numPages,
+      filter: rawFilter,
+      projects,
+      results: filteredProjects,
+      paginatedResults: paginatedProjects,
     })
   }
+
 
   return (
     <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
@@ -199,7 +246,25 @@ const browseProjects = ({ projects, resources }) => {
             <SearchBar onChange={handlekeydown}/>
           </Heading>
         </Stack>
-        <BrowseList projects={value.filteredProjects} />
+          {
+            value.results.length > RESULTS_PER_PAGE ?
+              <>
+              <Text mx="2rem" my="1rem" align="right">Pages: {value.numPages + 1}</Text>
+              <Flex mx="2rem">
+                {
+                  value.page > 0 ?
+                  <Button onClick={handlePrev}>prev</Button> : ""
+                }
+                <Spacer />
+                {
+                  value.page < value.numPages ?
+                  <Button onClick={handleNext}>next</Button> : ""
+                }
+              </Flex>
+              </>
+            : ""
+          }
+          <BrowseList projects={value.paginatedResults || []} />
 
         <Center m={5}>
           <StyledButton href="/connect" content={"Propose a Project"} />
