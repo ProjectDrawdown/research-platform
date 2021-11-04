@@ -55,8 +55,8 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string"}
       - { label: "Description", name: "description", widget: "text"}
-      - { label: "File", name: "file", widget: "file", required: false}
-      - { label: "Link", name: "link", widget: "string", required: false}
+      - { label: "File", name: "file", widget: "file", required: false, required: false }
+      - { label: "Link", name: "link", widget: "string", required: false, required: false }
       - label: 'Related Projects'
         name: "projects"
         widget: relation
