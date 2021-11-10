@@ -6,4 +6,5 @@ link: http://stage.pdd.colab.coop
 projects:
   - Proj AAA
   - Proj CCC
+  - This is a test project Oct2021
 ---
