@@ -1,7 +1,7 @@
 ---
 name: S Resource 2 File
 description: from file
-file: img/drawdown_rrs_model_v1.1d_master.xlsm
+file: img/istock-521263035.jpg
 link: ""
 projects:
   - Proj AAA
