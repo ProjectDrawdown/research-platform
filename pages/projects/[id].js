@@ -68,7 +68,7 @@ function Project({
             {data.description}
           </Text>
           <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Collaborators: </Heading>
-          {data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" marginX="10px" key={collaboratorIndex}/>)}
+          {data.collaborators && data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" marginX="10px" key={collaboratorIndex}/>)}
           <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Hub resources: </Heading>
           <Text fontSize="20px" marginTop="2vh" fontWeight="400">
             <ul>

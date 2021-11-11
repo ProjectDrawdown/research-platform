@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from 'prop-types'
-import { Text, Center, Flex, Spacer, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Text, Center, Flex, FormControl,FormLabel, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
