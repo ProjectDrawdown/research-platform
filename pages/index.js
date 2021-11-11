@@ -37,7 +37,6 @@ const FeaturedProjectsList = () => {
       />
 
       <Grid
-        mx={[0, "5rem"]}
         templateColumns="repeat(7, 1fr)"
         templateRows="repeat(5, 1fr)"
         gap={6}
@@ -107,16 +106,16 @@ const Partners = () =>{
         marginTop="2rem"
         >
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
-          <Image src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
+          <Image h="90px" src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
-          <Image src="img/assets/CoLab.png" alt="CoLab Coop" />
+          <Image h="90px" src="img/assets/CoLab.png" alt="CoLab Coop" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
-          <Image marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
+          <Image h="90px" marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 1]}>
-          <Image marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" />
+          <Image h="90px" marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" />
         </GridItem>
       </Grid>
     </>
@@ -154,7 +153,7 @@ const Contribution = () => {
 const SneakPeek = () => {
   return (
     <Container>
-      <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
+      <Image mx="auto" mt={["0", "4rem"]} mb="4rem" src="img/assets/wavy2.png" />
       <Heading as="h4" fontSize={["2xl", "3xl"]} whiteSpace={["normal", "nowrap"]}>
         See a sneak peek of software in development
       </Heading>
@@ -185,7 +184,6 @@ const AboutUs = ({ project_image }) => {
         templateColumns="repeat(2, 1fr)"
         gap={[4, 64]}
         mx={[0, "5rem"]}
-        mb={8}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize={["100%", "75% 75%"]}

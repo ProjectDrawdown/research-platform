@@ -1,19 +1,19 @@
 import React from "react"
 import { GridItem, Box, Heading, Link } from "@chakra-ui/react"
+import BorderBox from "./BorderBox";
 
 export default function Render({ project }) {
   return (
     <GridItem
       colSpan={[7, 3]}
       rowSpan={2}>
-      <Box
+      <BorderBox
         background="#F5F5F5"
-        border="4px solid #000000"
-        borderRadius="5px"
         paddingTop="2rem"
         paddingRight="4rem"
         paddingBottom="8rem"
         paddingLeft="2rem"
+        mx={["1rem", "5rem"]}
         height="100%"
         position="relative"
         >
@@ -30,7 +30,7 @@ export default function Render({ project }) {
               View
             </Link>
           </Box>
-      </Box>
+      </BorderBox>
     </GridItem>
   )
 }
