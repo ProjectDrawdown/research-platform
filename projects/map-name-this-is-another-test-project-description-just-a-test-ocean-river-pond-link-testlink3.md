@@ -4,6 +4,5 @@ description: just a test ocean river pond
 link: https://mayfirst.coop/en/member-benefits/
 active: true
 collaborators:
-  - Tomaz
+  - Colleen Skemp
 ---
-
