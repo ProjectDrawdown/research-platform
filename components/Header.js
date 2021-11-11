@@ -23,9 +23,9 @@ export default function Header ({ title, description }) {
             {description}
           </Text>
           <Box marginLeft="10px" marginTop="3rem">
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["block", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
+            <Arrow width={["2rem", "4rem"]} />
+            <Arrow width={["2rem", "4rem"]} />
+            <Arrow width={["2rem", "4rem"]} />
           </Box>
       </BorderBox>
         <Box marginTop="8rem" marginBottom="2.5rem" marginX={["2.5rem", "8rem"]}>
@@ -37,7 +37,7 @@ export default function Header ({ title, description }) {
 
 const Arrow = ({width, displayStyle}) => {
   return (
-    <Image mt={["0", "3rem"]} src="img/assets/Path.png" width={width} display={displayStyle} />
+    <Image mt={["0", "1rem"]} src="img/assets/Path.png" width={width} display={displayStyle} />
   )
 }
 
