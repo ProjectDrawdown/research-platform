@@ -28,6 +28,7 @@ collections:
           collection: "projects"
           value_field: "{{fields.name}}__{{fields.description}}__{{fields.link}}__{{slug}}"
           search_fields: ["name"]
+          display_fields: ["name"]
           multiple: true
   - name: "projects"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
