@@ -38,14 +38,14 @@ function Project({
     <ChakraProvider theme={theme}>
     <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
           <Grid templateColumns="repeat(5, 1fr)">
-            <GridItem colSpan={3}>
+            <GridItem colSpan={[5, 3]}>
               <Heading as="h1" textStyle="caps" fontSize="4xl" left="78px" top="93px" textAlign="left" fontWeight="800">
                 Project Detail
                 {data.active && <Button bg="#FAD546" marginX="10px" padding="1rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
               </Heading>
             </GridItem>
-            <GridItem colSpan={1} />
-            <GridItem colSpan={1}>
+            <GridItem colSpan={[0,1]} />
+            <GridItem colSpan={[5,1]}>
               <StyledButton href={"/connect"} content={"Collaborate on Slack"} />
             </GridItem>
           </Grid>
