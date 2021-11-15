@@ -9,7 +9,7 @@ export default function Footer () {
           h={{base:"300px", sm:"300px", md:"300px", lg:"400px", xl:"400px", "2xl":"800px"}}
           w={{base:"100%", sm:"100%", md : "80%", lg:"53%", xl:"53%", "2xl":"53%"}}
           zIndex="100"
-          marginTop="200px"
+          marginTop={["4rem", "8rem"]}
           paddingBottom="0px"
           marginBottom="0px"
           backgroundSize="cover"
@@ -30,11 +30,6 @@ export default function Footer () {
             Open Solutions Collaboratory
           </Title>
           <Box flex="1" display="flex" flexDirection="column" justifyContent="space-between" >
-          <Link href={`/connect`}>
-            <Text textStyle="caps" fontSize={{base:"12px", sm:"12px", md:"14px", lg:"18px", xl:"18px", "2xl":"36px"}} fontWeight="600" lineHeight="28px" fontFamily="Sora" textAlign="left" paddingRight="15%" color="#FFF">
-              Contact Us
-            </Text>
-          </Link>
           <Text textStyle="caps" fontSize={{base:"14px", sm:"14px", md:"14px", lg:"14px",xl:"14px","2xl":"28px"}} fontFamily="Sora" lineHeight="20px" fontWeight="800" textAlign="left" marginTop={["10px", "20px", "36px"]} paddingRight="15%" color="#FFF">
             ©2021
           </Text>

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from 'prop-types'
-import { Text, Center, Flex, Spacer, FormControl,FormLabel, Heading, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
+import { Text, Center, Flex, FormControl,FormLabel, Button, Stack, VStack, HStack, Box, Input, Popover, Portal,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
@@ -12,6 +12,7 @@ import {SearchIcon} from "@chakra-ui/icons"
 import Footer from "../../components/Footer";
 import StyledButton from "../../components/StyledButton";
 import BackButton from "../../components/BackButton"
+import Title from "../../components/Title"
 import getStaticFilesFrontMatter from '../../getStatic'
 
 export async function getStaticProps() {
@@ -108,7 +109,7 @@ const BrowseList = ({projects}) => {
           <p style={{ display: 'flex', justifyContent: 'space-between', width:"100%" }}>
             <a href={"/projects/" + project.path}>{project.name}</a>
             {
-              project.active && <Button bg="#FAD546" marginX="10px" borderRadius="8px" padding="0.7rem" fontSize="0.7rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">
+              project.active && <Button bg="#FAD546" marginX="10px" borderRadius="8px" padding="0.7rem" fontSize="0.7rem" color="#000" textTransform="uppercase" h="18px" border="none">
                 { project.active ? "ACTIVE" : "" }
               </Button>
             }
@@ -148,7 +149,7 @@ const BrowseList = ({projects}) => {
 
 const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
-    <HStack paddingTop="71px" position="relative" paddingBottom="0px" marginLeft="0px">
+    <HStack paddingTop="1rem" position="relative" paddingBottom="0px" marginLeft="0px">
       <SearchIcon fontSize="1.3rem" position="absolute" left="1rem" />
       <Input placeholder="Search helper text" fontSize="1.5rem" marginRight="60px" paddingY="1rem" paddingLeft="3rem" w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
@@ -203,7 +204,7 @@ const browseProjects = ({ projects }) => {
   function filter(projects, filterQuery) {
     const filter = filterQuery.toLowerCase()
     const filteredProjects = augmentedProjects.filter((project) => {
-        const found = project.collaborators.find((collaborator) => {
+        const found = project.collaborators && project.collaborators.find((collaborator) => {
           return collaborator.toLowerCase().indexOf(filter) !== -1
         })
 
@@ -237,38 +238,44 @@ const browseProjects = ({ projects }) => {
 
 
   return (
-    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft="5%">
-      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="30px">
-        <Stack align="left" marginTop="2rem" >
-          <Heading as="h1" textStyle="caps" fontSize="48px" paddingLeft="30px" paddingBottom="20px"  textAlign="left" >
-            Browse All Projects
-            <BackButton />
-            <SearchBar onChange={handlekeydown}/>
-          </Heading>
-        </Stack>
-          {
-            value.results.length > RESULTS_PER_PAGE ?
-              <>
-              <Text mx="2rem" my="1rem" align="right">Pages: {value.numPages + 1}</Text>
-              <Flex mx="2rem">
-                {
-                  value.page > 0 ?
-                  <Button onClick={handlePrev}>prev</Button> : ""
-                }
-                <Spacer />
-                {
-                  value.page < value.numPages ?
-                  <Button onClick={handleNext}>next</Button> : ""
-                }
-              </Flex>
-              </>
-            : ""
-          }
-          <BrowseList projects={value.paginatedResults || []} />
+    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft={["1rem", "5%"]} marginRight={["1rem", "5%"]}>
+      <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop={["0px", "1em"]} marginLeft={["0px","30px"]}>
+        <Stack align="left" marginTop="2rem" marginX={["1rem", "2rem"]}>
 
-        <Center m={5}>
+          <Title fontSize={["3xl", "5xl"]} paddingRight={["10px", "30px", "15%"]} fontWeight="800px">
+            Browse All Projects
+          </Title>
+
+          <BackButton />
+
+          <SearchBar onChange={handlekeydown}/>
+
+        </Stack>
+
+        <BrowseList projects={value.paginatedResults || []} />
+
+        <Center m={8} mb={16}>
           <StyledButton href="/connect" content={"Propose a Project"} />
         </Center>
+
+        {
+          value.results.length > RESULTS_PER_PAGE ?
+            <>
+            <Flex mx="2rem">
+              {
+                value.page > 0 ?
+                <Button onClick={handlePrev}>prev</Button> : ""
+              }
+              <Center flex="1"><Text mx="2rem" my="1rem" align="right">Pages: {value.page} of {value.numPages + 1}</Text></Center>
+              {
+                value.page < value.numPages ?
+                <Button onClick={handleNext}>next</Button> : ""
+              }
+            </Flex>
+            </>
+          : ""
+        }
+
       </Box>
       <Footer />
     </Flex>

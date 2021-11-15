@@ -19,13 +19,13 @@ export default function Header ({ title, description }) {
           <Title fontSize={["3xl", "5xl"]} paddingRight={["10px", "30px", "15%"]} fontWeight="800px">
             {title}
           </Title>
-          <Text fontSize={["2xl", "3xl"]} fontWeight="600px" paddingTop="2rem" paddingRight={["0px", "20px", "15%"]}  textAlign="left" >
+          <Text fontSize={["xl", "3xl"]} fontWeight="600px" paddingTop="2rem" paddingRight={["0px", "20px", "15%"]}  textAlign="left" >
             {description}
           </Text>
-          <Box marginLeft="10px" marginTop="6rem">
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["block", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
-            <Arrow width={{base:"10%", sm:"10%", md:"10%",lg:"15%", xl:"8%", "2xl":"8%"}} displayStyle={["none", "block", "block"]} />
+          <Box marginLeft="10px" marginTop="3rem">
+            <Arrow width={["2rem", "4rem"]} />
+            <Arrow width={["2rem", "4rem"]} />
+            <Arrow width={["2rem", "4rem"]} />
           </Box>
       </BorderBox>
         <Box marginTop="8rem" marginBottom="2.5rem" marginX={["2.5rem", "8rem"]}>
@@ -37,7 +37,7 @@ export default function Header ({ title, description }) {
 
 const Arrow = ({width, displayStyle}) => {
   return (
-    <Image src="img/assets/Path.png" width={width} display={displayStyle} />
+    <Image mt={["0", "1rem"]} src="img/assets/Path.png" width={width} display={displayStyle} />
   )
 }
 

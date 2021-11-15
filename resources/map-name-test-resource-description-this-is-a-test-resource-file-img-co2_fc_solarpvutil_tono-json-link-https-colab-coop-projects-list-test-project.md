@@ -1,8 +1,8 @@
 ---
-name: test resource
+name: resource 4 link
 description: this is a test resource
-file: img/co2_fc_solarpvutil_tono.json
+file: ""
 link: https://colab.coop
 projects:
-  - Test project
+  - Proj CCC
 ---
