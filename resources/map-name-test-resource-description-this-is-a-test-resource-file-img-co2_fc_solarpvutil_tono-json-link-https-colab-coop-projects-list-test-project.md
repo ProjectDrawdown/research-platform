@@ -1,6 +1,6 @@
 ---
 name: resource 4 link
-description: this is a test resource
+description: test resource 4 Desc
 file: ""
 link: https://colab.coop
 projects:
