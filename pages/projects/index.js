@@ -134,6 +134,14 @@ const BrowseList = ({projects}) => {
               )) : ""
           }
 
+          { project.tags &&
+              project.tags.map((tag) => {
+                <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">
+                  <a>{tag}</a>
+                </Button>
+              })
+          }
+
           {
             project.video &&
               <Button bg="#006ED3" padding="5px 10px" h="18px" marginY="5px" marginX="2.5px" color="#FFFFFF" borderRadius="8px" fontSize="10px" borderWidth="0px">

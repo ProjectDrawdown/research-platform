@@ -49,6 +49,9 @@ collections:
           required: false
         }
       - { label: "Video Link", name: "video", widget: "string", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
   - name: "resources"
     label: "Resources"
     folder: "resources"
