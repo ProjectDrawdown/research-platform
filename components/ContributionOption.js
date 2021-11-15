@@ -12,7 +12,7 @@ export default function Render ({
       templateColumns="repeat(5, 1fr)"
       templateRows="repeat(2, 1fr)"
       gap={[4, 2]}
-      p="0.5rem"
+      p="0.1rem"
       my="4rem">
         <GridItem rowSpan={2}>
           {image}
