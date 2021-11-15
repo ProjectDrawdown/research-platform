@@ -5,6 +5,6 @@ file: https://docs.google.com/spreadsheets/d/1GZabywFS5OsgtNKgPAvIMdxoiQxSNYlz/e
 link: ""
 projects:
   - Proj AAA
-  - created on 27oct
   - Proj CCC
+  - NameDesc No Collaborators
 ---
