@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import StyledButton from "../../components/StyledButton";
 import getStaticFilesFrontMatter from '../../getStatic';
 import Footer from "../../components/Footer";
+import Menu from "../../components/Menu";
 import "@fontsource/sora/400.css";
 import "@fontsource/sora/600.css";
 import "@fontsource/sora/800.css";
@@ -36,6 +37,7 @@ function Project({
 }) {
   return (
     <ChakraProvider theme={theme}>
+      <Menu />
     <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
           <Grid templateColumns="repeat(5, 1fr)">
             <GridItem colSpan={3}>

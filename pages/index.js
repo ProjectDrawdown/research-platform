@@ -113,10 +113,10 @@ const Partners = () =>{
           <Image src="img/assets/CoLab.png" alt="CoLab Coop" />
         </GridItem>
         <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
-          <Image marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
+          <Image marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" w="100%" />
         </GridItem>
-        <GridItem mx={["auto", 0]} colSpan={[5, 1]}>
-          <Image marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" />
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
+          <Image marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" w="100%" />
         </GridItem>
       </Grid>
     </>
@@ -238,7 +238,7 @@ const AboutUs = ({ project_image }) => {
 
 const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
-  
+
   return (
     <div style={{marginX: '20px', marginBottom: '0px'}}>
       <Header title={title} description={description} image={header_image}/>
