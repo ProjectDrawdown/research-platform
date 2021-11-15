@@ -23,7 +23,7 @@ export default function Render({ project }) {
             </Link>
           </Heading>
           <Box
-            position={["relative", "absolute"]}
+            position="absolute"
             bottom="0"
             paddingBottom="2rem">
             <Link href={`/projects/${project.split('__')[3]}`}>
