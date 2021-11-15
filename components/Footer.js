@@ -9,7 +9,7 @@ export default function Footer () {
           h={{base:"300px", sm:"300px", md:"300px", lg:"400px", xl:"400px", "2xl":"800px"}}
           w={{base:"100%", sm:"100%", md : "80%", lg:"53%", xl:"53%", "2xl":"53%"}}
           zIndex="100"
-          marginTop="200px"
+          marginTop={["4rem", "8rem"]}
           paddingBottom="0px"
           marginBottom="0px"
           backgroundSize="cover"
