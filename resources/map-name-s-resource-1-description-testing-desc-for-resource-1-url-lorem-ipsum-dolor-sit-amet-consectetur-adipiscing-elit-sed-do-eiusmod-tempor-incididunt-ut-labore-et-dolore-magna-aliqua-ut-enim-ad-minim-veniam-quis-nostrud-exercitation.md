@@ -6,7 +6,7 @@ description: |-
 file: https://drawdown.org/sites/default/files/1920x1080_drawdown_cs101_poster01_0.jpg
 link: http://stage.pdd.colab.coop
 projects:
-  - Proj AAA
   - Proj CCC
   - Proj BBB
+  - Example Project
 ---
