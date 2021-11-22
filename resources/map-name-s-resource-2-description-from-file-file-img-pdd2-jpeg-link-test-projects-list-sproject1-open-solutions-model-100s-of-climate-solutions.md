@@ -1,7 +1,7 @@
 ---
 name: S Resource 2 File
 description: from file
-file: https://docs.google.com/spreadsheets/d/1GZabywFS5OsgtNKgPAvIMdxoiQxSNYlz/edit?rtpof=true
+file: img/drawdown_rrs_model_v1.1d_master.xlsm
 link: ""
 projects:
   - Proj AAA

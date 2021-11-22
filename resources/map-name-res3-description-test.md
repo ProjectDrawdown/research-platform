@@ -1,6 +1,6 @@
 ---
 name: Resource 3 No file or Link
-description: test related pro ccc
+description: Resource has no link or File . This is Desc
 file: ""
 link: ""
 projects:
