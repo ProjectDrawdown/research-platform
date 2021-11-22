@@ -14,3 +14,5 @@ To get the site and CMS running locally, just follow these steps:
 6. When trying to log in to the admin panel, you may need to create an account via email and password at the Netlify App domain: `https://modest-roentgen-e63e0e.netlify.app/admin/index.html`. Once you've confirmed your account via email, you should be able to log in with the same credentials locally.
 
 Enjoy!
+
+test
