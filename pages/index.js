@@ -96,7 +96,7 @@ const Partners = () =>{
   return(
     <>
       <SubHeading
-        title="Our Partners"
+        title="Our Partners... just a test"
       />
       <Grid
         px="1rem"
