@@ -238,7 +238,7 @@ const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
   
   return (
-    <div style={{marginX: '20px', marginBottom: '0px'}}>
+    <div style={{margin: 'auto', position: 'relative'}}>
       <Header title={title} description={description} image={header_image}/>
       <Partners />
       <FeaturedProjectsList />
@@ -246,7 +246,7 @@ const Home = () => {
       <AboutUs project_image={project_image} />
       <SneakPeek />
       <Footer bottom_image={bottom_image} />
-  </div>
+    </div>
   )
 }
 
