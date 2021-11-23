@@ -76,7 +76,7 @@ function Project({
               <li key={k}>
                 <p>{resource.description}</p>
                 <div>
-                  <Link marginLeft="1em" color="#2995F8" href={resource.file}>
+                  <Link marginLeft="1em" color="#2995F8" href={"/" + resource.file}>
                     {resource.name}
                   </Link>
                 </div>
