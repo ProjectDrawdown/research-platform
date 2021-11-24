@@ -236,7 +236,7 @@ const AboutUs = ({ project_image }) => {
 
 const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
-  
+
   return (
     <div style={{margin: 'auto', position: 'relative'}}>
       <Header title={title} description={description} image={header_image}/>
