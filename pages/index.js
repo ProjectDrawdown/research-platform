@@ -1,212 +1,252 @@
 import React from "react"
-import Head from "next/head"
-import { ChakraProvider, extendTheme, Flex, Link, Center, Button, Heading, Text, Stack, Image, Grid, SimpleGrid, Box} from "@chakra-ui/react"
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Image,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import Header from "../components/Header";
+import SubHeading from "../components/SubHeading";
+import RecentProject from "../components/RecentProject";
+import ContributionOption from "../components/ContributionOption";
+import BorderBox from "../components/BorderBox";
 import Footer from "../components/Footer";
 import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
-import "@fontsource/work-sans/400.css"
+import "@fontsource/sora/500.css";
+import "@fontsource/sora/800.css";
 
 // This is the default breakpoint
 createBreakpoints({
-sm: "30em",
-md: "48em",
-lg: "62em"
+  sm: "30em",
+  md: "48em",
+  lg: "62em"
 })
-
-const theme = extendTheme({
-  fonts: {
-    heading: "Sora",
-    body: "Sora",
-  },
-})
-
 
 const FeaturedProjectsList = () => {
   const { projects, bottom_image } = attributes;
   
   return (
-    <Box display="flex" justifyContent="center" flexDirection="column" padding="70px">
-      <Box paddingBottom="1em" paddingTop="3em" marginBottom={["350px", "350px", "0px"]} >
-        <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
-          Recently Active Projects
-        </Text>
-      </Box>
-      <Center>
-      <Grid marginTop="6em" marginBottom={["250px", "250px", "0px"]} templateColumns="1fr" width={["375px", "375px","800px"]} height={["375px","375px","800px"]} marginX="auto" backgroundPosition="center" backgroundSize="cover" backgroundImage={"url('" + bottom_image + "')"}>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginTop={["-430px", "-430px", "-100px"]}>
-          {projects.slice(0,2).map((project) => (
-          <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-              <Link href={`/projects/${project.split('__')[3]}`} >
-                {project.split('_')[0]}
-              </Link>
-              </Heading>
-            </Text>
-            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-              View
-            </Link>
-          </Box>
-          ))}
-        </Grid>
-        <Heading as="h5" fontSize="18px" marginY={["20px", "20px", "0px"]} fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
-          <Link href="browseProjects">
-            <StyledButton content={"Browse all projects"} />
-          </Link>
-        </Heading>
-        <Grid templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]} gap={["10px", "10px", "10%"]} marginX={["0px", "0px", "-70px"]} marginBottom={["0px", "0px", "-100px"]} marginTop={["0px", "0px", "-100px"]}>
-          {projects.slice(2,4).map((project) => (
-          <Box boxSizing="border-box" height={["290px", "290px","390px"]} padding="45px 10px" position="relative" background="#F5F5F5" margin="auto"  key={project} border="4px solid #000000" borderRadius="5px">
-            <Text boxSize="85%" paddingLeft={["25px","35px","60px"]} >
-              <Heading as="h2" fontFamily="Sora" fontWeight="600" size="md" textStyle="caps" fontSize={["20px", "20px", "30px"]} color="#00C24E">
-              <Link href={`/projects/${project.split('__')[3]}`} >
-                {project.split('_')[0]}
-              </Link>
-              </Heading>
-            </Text>
-            <Link href={`/projects/${project.split('__')[3]}`} paddingLeft={["20px","40px","60px"]} textAlign="left" textTransform="uppercase" padding="1rem" fontWeight="bold" position="absolute" bottom="0px" backgroundColor="transparent">
-              View
-            </Link>
-          </Box>
-          ))}
-        </Grid>
+    <>
+      <SubHeading
+        title="Recently Active Projects"
+      />
+
+      <Grid
+        templateColumns="repeat(7, 1fr)"
+        templateRows="repeat(5, 1fr)"
+        gap={6}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize={["100%", "75% 75%"]}
+        backgroundImage={"url('" + bottom_image + "')"}
+        marginTop="2rem">
+
+        {projects.slice(0,2).map((project, index) => {
+            return (
+              <React.Fragment
+                key={`project_${index}`}>
+                {
+                  index % 2 != 0 &&
+                    <GridItem
+                      display={["none", "block"]} />
+                }
+                <RecentProject 
+                  project={project}
+                />
+              </React.Fragment>
+            )
+          })
+        }
+
+        <GridItem
+          colStart={[2,3]}
+          colSpan={3}>
+            <Heading as="h5" fontSize="18px" marginY="2rem" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
+              <StyledButton href="projects" content={"Browse all projects"} />
+            </Heading>
+        </GridItem>
+
+        {projects.slice(2,4).map((project, index) => {
+            return (
+              <React.Fragment
+                key={`project_2_${index}`}>
+                {
+                  index % 2 != 0 &&
+                    <GridItem
+                      display={["none", "block"]} />
+                }
+                <RecentProject 
+                  project={project}
+                />
+              </React.Fragment>
+            )
+          })
+        }
       </Grid>
-      </Center>
-    </Box>
+    </>
   )
 }
 
 const Partners = () =>{
   return(
     <>
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]}>
-        <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
-          Our Partners
-        </Text>
-      </Box>
-      <Center>
-      <SimpleGrid columns={[1,1,5]} justifyContent={["column-reverse", "row-reverse", "center"]} rowGap={["20px", "40px", "80px"]} maxWidth="90%" paddingRight="10%" paddingLeft="3%" >
-      <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 53.png" alt="Global Council for Science and Education" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 3.png" alt="Climatebase" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/image 2.png" alt="Project Drawdown" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 23.png" alt="Drawdown GA" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/drawdown.png" alt="Drawdown Europe" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/Ellipse 10.png" alt="ECOSIA" />
-        <div></div>
-        <Image marginX="auto" display="block" maxWidth={["250px", "250px", "360px"]} src="img/assets/Group 52.png" alt="One Project" />
-        <div></div>
-      </SimpleGrid>
-      </Center>
+      <SubHeading
+        title="Our Partners"
+      />
+      <Grid
+        px="1rem"
+        templateColumns="repeat(5, 1fr)"
+        gap={6}
+        marginBottom={9}
+        marginTop="2rem"
+        >
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
+          <Image h="90px" src="img/assets/drawdown_europe.png" alt="DrawDown Europe" />
+        </GridItem>
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]}>
+          <Image h="90px" src="img/assets/CoLab.png" alt="CoLab Coop" />
+        </GridItem>
+        <GridItem mx={["auto", 0]} colSpan={[5, 2]} colStart={[1, 2]}>
+          <Image h="90px" marginX={[0, "auto"]} src="img/assets/drawdown_us.png" alt="Project Drawdown" />
+        </GridItem>
+        <GridItem mx={["auto", 0]} colSpan={[5, 1]}>
+          <Image h="90px" marginX={[0, "auto"]} src="img/assets/projectdrawdown.png" alt="Drawdown GA" />
+        </GridItem>
+      </Grid>
     </>
   )
 }
 
-const Body = ({ project_image }) =>{
+const Contribution = () => {
   return (
-    <Box paddingX="10px">
-      <Box paddingBottom="3em" paddingTop="3em" paddingLeft={["17%", "10%", "10%"]} marginBottom={["110px", "110px", "0px"]}>
-          <Text fontSize={["24px", "24px", "36px"]} fontWeight="bold" textStyle="caps" textAlign="left">
-            Who We Are
-          </Text>
-      </Box>
-      <Center>
-      <Grid templateColumns={["1fr", "1fr", "1fr 1.5fr"]} width={["90%", "70%", "50%"]} height={["375px","375px","700px"]} marginX="auto"  padding={["0px", "0px", "40px"]} backgroundImage={ project_image ? "url('" + project_image+ "')" : ''} backgroundPosition="center" backgroundSize="cover">
-        <Stack marginLeft={["auto", "auto", "-40%"]} marginX={["auto"]} marginTop={["-30%", "-30%", "0px"]} gap={6}>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Countries </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Collaborators </Heading>
-          </Box>
-          <Box textAlign="center" padding="20px" paddingTop="1rem" height={["162px","202px","202px"]} width={["250px","250px","380px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
-            <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px" fontFamily="work-sans"> Projects </Heading>
-          </Box>
-        </Stack>
-        <Center>
-          <Box width={["250px","250px","355px"]} height={["255px","255px","355px"]} padding={["15px", "20px", "25px"]} marginTop={["6px", "6px", "-250px"]} marginBottom={["-30%", "-30%", "0px"]} border="2px solid #000000" borderRadius="5px" background="#FFFFFF">
-            <Text paddingTop="10px" fontSize={["20px","20px","24px"]} fontWeight="700">
-              There could be a short description here with a bit more inspirational somethn’ somethn’
-            </Text>
-          </Box>
-        </Center>
-      </Grid>
-      </Center>
-      <Center flexDirection="column" alignItems="center" marginTop={["90px", "90px", "0px"]}>
-      <Image src="img/assets/wavy2.png" width={["80%", "80%","25%"]} marginLeft={["10%", "10%", "-120px"]} marginTop={["310px","360px","134px"]} maxHeight="40px" objectFit="contain" />
-      <Heading as="h4" mt="5" size="md" flex="1" textStyle="caps" fontSize="24px" marginBottom="30px" marginTop="72px" marginLeft={["17%", "10%", "-120px"]} textAlign={["left", "left", "center"]}>
+    <Container>
+      <Image mx="auto" my="4rem" src="img/assets/wavy2.png" />
+
+      <Heading as="h4" textAlign="center" fontSize={["2xl", "3xl"]}>
         Are you Interested in Contributing?
       </Heading>
-      <Stack spacing="50px" display="flex" flexDirection="column" alignItems="flex-start">
-        <Grid templateColumns="80px 1fr" gap={6}>
-          <Box display="flex" justifyContent="flex-start">
-            <Image maxWidth="80px" src="img/assets/Linear2.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Have a Resource to Add?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">GET STARTED</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear.png" alt="Segun Adebayo" />
-          </Box>
-          <Box >
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Engergized by this but not sure how to contibute?
-            </Text>
-            <Button borderRadius="0px" lineHeight="24px" fontSize="16px" fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora"> CONNECT ON SLACK</Button>
-          </Box>
-        </Grid>
-        <Grid templateColumns="80px 1fr" gap={6} >
-          <Box display="flex" justifyContent="flex-end">
-            <Image maxWidth="80px" src="img/assets/Linear3.png" alt="Segun Adebayo" />
-          </Box>
-          <Box>
-            <Text fontWeight="600" lineHeight="28px" fontFamily="Sora" marginBottom="18px">
-              Propose your own project.
-            </Text>
-            <Button borderRadius="0px" fontSize="16px" lineHeight="24px"  fontWeight="800" border="2px solid #000000" background="#ffffff" fontFamily="Sora">CONTACT US</Button>
-          </Box>
-        </Grid>
-      </Stack>
-      </Center>
-    </Box>
+
+      <ContributionOption
+        title="Have a Resource to Add?"
+        buttonTitle="GET STARTED"
+        image={<Image marginX="auto" src="img/assets/Linear2.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+      <ContributionOption
+        title="Engergized by this but not sure how to contibute?"
+        buttonTitle="CONNECT ON SLACK"
+        image={<Image marginX="auto" src="img/assets/Linear.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+      <ContributionOption
+        title="Propose your own project."
+        buttonTitle="CONTACT US"
+        image={<Image marginX="auto" src="img/assets/Linear3.png" alt="Segun Adebayo" />}
+        onClick={() => { window.open("/connect") }}/>
+    </Container>
+  )
+}
+
+const SneakPeek = () => {
+  return (
+    <Container>
+      <Image mx="auto" mt={["0", "4rem"]} mb="4rem" src="img/assets/wavy2.png" />
+      <Heading as="h4" fontSize={["2xl", "3xl"]} whiteSpace={["normal", "nowrap"]}>
+        See a sneak peek of software in development
+      </Heading>
+      <Box mt="2rem">
+        <ContributionOption
+          title="Drawdown Global Research Platform Web UI repo"
+          buttonTitle="WEB UI PREVIEW"
+          image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
+          onClick={() => { window.open("https://github.com/ProjectDrawdown/global-research-platform") }}/>
+        <ContributionOption
+          title="Drawdown solutions in python repo"
+          buttonTitle="PYTHON PREVIEW"
+          image={<Image marginX="auto" src="img/assets/git_logo.png" alt="Web UI Preview" />}
+          onClick={() => { window.open("https://github.com/ProjectDrawdown/solutions") }}/>
+      </Box>
+    </Container>
+  )
+}
+
+const AboutUs = ({ project_image }) => {
+  return (
+    <>
+      <SubHeading
+        title="Who We Are"
+      />
+      
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={[4, 64]}
+        mx={[0, "5rem"]}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize={["100%", "75% 75%"]}
+        backgroundImage={"url('" + project_image + "')"}
+        marginTop={9}
+      >
+          <GridItem colSpan={[2, 1]}>
+            <Grid
+              templateRows="repeat(3, 1fr)"
+              mx={["1rem", 0]}
+              gap={4}>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 12 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Countries </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 300 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Collaborators </Heading>
+                  </BorderBox>
+                </GridItem>
+                <GridItem>
+                  <BorderBox textAlign="center" padding="1rem" backgroundColor="#ffffff">
+                    <Heading as="h2" mt="5" size="md" fontWeight="700" fontStyle="normal" fontSize={["40px","40px","48px"]}> 500 </Heading>
+                    <Heading as="h4" mt="5" size="md" color="blue" fontWeight="400" fontSize="36px"> Projects </Heading>
+                  </BorderBox>
+                </GridItem>
+            </Grid>
+          </GridItem>
+          <GridItem colSpan={[2, 1]}
+              mx={["1rem", 0]}>
+            <Grid
+              templateRows="repeat(2, 1fr)"
+              height="100%">
+                <GridItem>
+                  <BorderBox height="100%" padding="1rem" backgroundColor="#ffffff">
+                    <Text>
+                      There could be a short description here with a bit more inspirational somethn’ somethn’
+                    </Text>
+                  </BorderBox>
+                </GridItem>
+              </Grid>
+          </GridItem>
+      </Grid>
+    </>
   )
 }
 
 const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
-  
+
   return (
-    <div style={{marginX: '20px', marginBottom: '0px'}}>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
-      <ChakraProvider theme={theme}>
-        <Flex as="nav" flexWrap="wrap" direction="row">
-        <Header title={title} description={description} image={header_image}/>
-        <Stack marginTop="2rem" width="100vw">
-        <Partners />
-        <Body project_image={project_image} />
-        <FeaturedProjectsList />
-        </Stack>
-        <Footer bottom_image={bottom_image} ></Footer>
-      </Flex>
-    </ChakraProvider>
-  </div>
+    <div style={{margin: 'auto', position: 'relative'}}>
+      <Header title={title} description={description} image={header_image}/>
+      <Partners />
+      <FeaturedProjectsList />
+      <Contribution />
+      <AboutUs project_image={project_image} />
+      <SneakPeek />
+      <Footer bottom_image={bottom_image} />
+    </div>
   )
 }
 

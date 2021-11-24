@@ -28,6 +28,7 @@ collections:
           collection: "projects"
           value_field: "{{fields.name}}__{{fields.description}}__{{fields.link}}__{{slug}}"
           search_fields: ["name"]
+          display_fields: ["name"]
           multiple: true
   - name: "projects"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -36,18 +37,21 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string"}
-      - { label: "Active", name: "active", widget: "boolean", required: false}
-      - { label: "Description", name: "description", widget: "text"}
-      - { label: "Link", name: "link", widget: "string"}
+      - { label: "Active", name: "active", widget: "boolean", required: false }
+      - { label: "Description", name: "description", widget: "text" }
       - { label: "Collaborators", 
           name: "collaborators", 
           widget: "relation", 
           collection: "authors", 
           value_field: "name", 
           search_fields: ["name"],
-          multiple: true   
+          multiple: true,
+          required: false
         }
-      - { label: "Video Link", name: "video", widget: "string" }
+      - { label: "Video Link", name: "video", widget: "string", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
   - name: "resources"
     label: "Resources"
     folder: "resources"
@@ -55,8 +59,8 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string"}
       - { label: "Description", name: "description", widget: "text"}
-      - { label: "File", name: "file", widget: "file"}
-      - { label: "Link", name: "link", widget: "string"}
+      - { label: "File", name: "file", widget: "file", required: false }
+      - { label: "Link", name: "link", widget: "string", required: false }
       - label: 'Related Projects'
         name: "projects"
         widget: relation
@@ -64,6 +68,7 @@ collections:
         value_field: "name"
         search_fields: ["name"]
         multiple: true
+        required: false
   - name: "authors"
     label: "Authors"
     folder: "authors"

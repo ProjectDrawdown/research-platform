@@ -1,8 +1,10 @@
 ---
-name: S Resource 2
+name: S Resource 2 File
 description: from file
-file: img/pdd2.jpeg
-link: TEST
+file: img/drawdown_rrs_model_v1.1d_master.xlsm
+link: ""
 projects:
-  - "SProject1 Open Solutions Model: 100s of climate solutions@@"
+  - Proj AAA
+  - Proj CCC
+  - NameDesc No Collaborators
 ---
