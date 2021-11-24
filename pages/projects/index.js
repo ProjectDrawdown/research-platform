@@ -15,6 +15,8 @@ import BackButton from "../../components/BackButton"
 import Title from "../../components/Title"
 import getStaticFilesFrontMatter from '../../getStatic'
 
+const RESULTS_PER_PAGE = 10
+
 export async function getStaticProps() {
   const projects = await getStaticFilesFrontMatter("projects")
   const resources = await getStaticFilesFrontMatter("resources")
@@ -165,8 +167,6 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   );
 }
 
-const RESULTS_PER_PAGE = 7
-
 const browseProjects = ({ projects }) => {
 
   const augmentedProjects = projects.map((project) => {
@@ -274,9 +274,9 @@ const browseProjects = ({ projects }) => {
                 value.page > 0 ?
                 <Button onClick={handlePrev}>prev</Button> : ""
               }
-              <Center flex="1"><Text mx="2rem" my="1rem" align="right">Pages: {value.page} of {value.numPages + 1}</Text></Center>
+              <Center flex="1"><Text mx="2rem" my="1rem" align="right">Pages: {value.page + 1} of {value.numPages}</Text></Center>
               {
-                value.page < value.numPages ?
+                value.page + 1 < value.numPages ?
                 <Button onClick={handleNext}>next</Button> : ""
               }
             </Flex>
