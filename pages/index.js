@@ -40,7 +40,7 @@ const FeaturedProjectsList = () => {
         templateColumns="repeat(7, 1fr)"
         templateRows="repeat(5, 1fr)"
         gap={6}
-        backgroundPosition="center"
+        backgroundPosition={["100% 58%", "center"]}
         backgroundRepeat="no-repeat"
         backgroundSize={["100%", "75% 75%"]}
         backgroundImage={"url('" + bottom_image + "')"}
@@ -64,8 +64,8 @@ const FeaturedProjectsList = () => {
         }
 
         <GridItem
-          colStart={[2,3]}
-          colSpan={3}>
+          colStart={[1,3]}
+          colSpan={[7, 3]}>
             <Heading as="h5" fontSize="18px" marginY="2rem" fontWeight="800" size="md" textStyle="caps" textTransform="uppercase" textAlign="center">
               <StyledButton href="projects" content={"Browse all projects"} />
             </Heading>
