@@ -9,4 +9,5 @@ collaborators:
   - Kevin Bayuk
   - Chad Frischmann
   - "Phil Metz "
+  - Ryan Allard
 ---
