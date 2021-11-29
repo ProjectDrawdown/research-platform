@@ -7,4 +7,9 @@ description: Project Drawdown defines reduced food waste as minimizing food loss
   region.
 collaborators:
   - Amanda Hong
+  - Mihir Mathur
+  - "Susan Miller Davis "
+  - Jon Schroeder
+  - "Claire Fitzgerald "
+  - Chad Frischmann
 ---
