@@ -8,27 +8,27 @@ project_image: img/istock-1311321908-1-.jpg
 bottom_image: img/geran-de-klerk-qzgn45hsen0-unsplash-1-.jpg
 date: 2019-03-17T19:31:20.591Z
 projects:
-  - Proj
-    CCC__ccc__https://www.youtube.com/embed/PD65E9XFFC4__2021-10-20-map-name-proj-ccc-description-ccc-video-https-www-youtube-com-embed-pd65e9xffc4-link-https-www-youtube-com-embed-pd65e9xffc4-collaborators-list-shruti
-  - SM Project 2022 Open Climate Research Fellowship@__ Change ipsum dolor sit
-    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua. Eget duis at tellus at urna condimentum. Ut
-    lectus arcu bibendum at varius vel. Laoreet suspendisse interdum consectetur
-    libero. Egestas fringilla phasellus faucibus scelerisque eleifend donec
-    pretium vulputate sapien. A diam maecenas sed enim ut sem viverra aliquet
-    eget. Facilisi cras fermentum odio eu feugiat. Massa sed elementum tempus
-    egestas sed sed risus pretium. Facilisi nullam vehicula ipsum a arcu cursus
-    vitae congue. Mi in nulla posuere sollicitudin aliquam ultrices sagittis
-    orci a. Id ornare arcu odio ut sem nulla pharetra diam. Eu facilisis sed
-    odio
-    morbi.test__http://stage.pdd.colab.coop__2021-10-18-map-name-sm-project-2022-open-climate-research-fellowship-description-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-eget-duis-at-tellus-at-urna-condimentum-ut-lec
-  - Proj BBB__required. October
-    2021__https://github.com/ProjectDrawdown/open-collaboratory/issues/29__2021-10-20-map-name-proj-bbb-active-true-link-https-github-com-projectdrawdown-open-collaboratory-issues-29-collaborators-list-shrutim-shruti-dsadsadsadsadsasdasdadadsa-colleen-skemp-video-https-www-youtube-com-embed-pd65
   - Reduced Food Waste__Project Drawdown defines reduced food waste as
     minimizing food loss and wastage from all stages of production,
     distribution, retail, and consumption. This solution replaces current
     reported trends in food waste by
     region.____2021-11-04-map-name-reduced-food-waste-active-true-description-project-drawdown-defines-reduced-food-waste-as-minimizing-food-loss-and-wastage-from-all-stages-of-production-distribution-retail-and-consumption-this-solution-replaces-current-report
+  - Building Retrofitting__Project Drawdown defines building retrofitting as the
+    renovation of building components (including building envelope, appliances,
+    and controls) to include high-efficiency solutions. This replaces the
+    conventional practice of retrofitting buildings with conventional solutions.
+    ____2021-11-24-map-name-building-retrofitting-description-project-drawdown-defines-building-retrofitting-as-the-renovation-of-building-components-including-building-envelope-appliances-and-controls-to-include-high-efficiency-solutions-this-replaces-the
+  - Green & Cool Roofs__Project Drawdown defines cool roofs as building roofs
+    that use light reflecting materials or paints. We also define green roofs as
+    building roofs with natural vegetation. This replaces the conventional
+    practice of building traditional, dark-colored roofs not covered with
+    vegetation.____2021-11-24-map-name-green-cool-roofs-description-project-drawdown-defines-cool-roofs-as-building-roofs-that-use-light-reflecting-materials-or-paints-we-also-define-green-roofs-as-building-roofs-with-natural-vegetation-this-replaces-the-conventional-p
+  - Refrigerant Management__Project Drawdown defines refrigerant management as
+    controlling leakages of refrigerants from existing appliances through better
+    management practices and recovery, recycling, and destruction of
+    refrigerants at the end of life. This solution replaces conventional
+    refrigerant management
+    practices.____2021-11-29-map-name-refrigerant-management-active-true-description-project-drawdown-defines-refrigerant-management-as-controlling-leakages-of-refrigerants-from-existing-appliances-through-better-management-practices-and-recovery-recycling-and-destr
 cats:
   - description: Maru is a Scottish Fold from Japan, and he loves boxes.
     name: Maru (まる)
