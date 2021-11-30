@@ -161,7 +161,7 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
   return (
     <HStack paddingTop="1rem" position="relative" paddingBottom="0px" marginLeft="0px">
       <SearchIcon fontSize="1.3rem" position="absolute" left="1rem" />
-      <Input placeholder="Search helper text" fontSize="1.5rem" marginRight="60px" paddingY="1rem" paddingLeft="3rem" w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
+      <Input fontSize="1.5rem" marginRight="60px" paddingY="1rem" paddingLeft="3rem" w="90%" h="48px" size="md" borderRadius="none" borderColor="black"
          key="random1" value={keyword} onChange={(e) => setKeyword(e.target.value) }/>
     </HStack>
   );
