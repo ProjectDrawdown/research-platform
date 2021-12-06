@@ -37,68 +37,70 @@ function Project({
 }) {
   return (
     <ChakraProvider theme={theme}>
-      <Menu />
-    <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
-          <Grid templateColumns="repeat(5, 1fr)">
-            <GridItem colSpan={3}>
-              <Heading as="h1" textStyle="caps" fontSize="4xl" left="78px" top="93px" textAlign="left" fontWeight="800">
-                Project Detail
-                {data.active && <Button bg="#FAD546" marginX="10px" padding="1rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
-              </Heading>
-            </GridItem>
-            <GridItem colSpan={1} />
-            <GridItem colSpan={1} visibility={["hidden", "visible"]}>
+      <Box position="relative">
+        <Menu />
+      <Box background="#FFFFFF" border="4px solid #000000" fontWeight="bold" padding={{base: "25px", "2xl":"70px"}} w={{base:"100%", sm:"100%", md:"90%", lg:"80%", xl:"80%", "2xl":"90%"}} boxSizing="border-box" borderRadius="10px" marginTop="1em" marginLeft="10px">
+            <Grid templateColumns="repeat(5, 1fr)">
+              <GridItem colSpan={3}>
+                <Heading as="h1" textStyle="caps" fontSize="4xl" left="78px" top="93px" textAlign="left" fontWeight="800">
+                  Project Detail
+                  {data.active && <Button bg="#FAD546" marginX="10px" padding="1rem" border="1px solid #000" color="#000" textTransform="uppercase" h="18px">Active</Button>}
+                </Heading>
+              </GridItem>
+              <GridItem colSpan={1} />
+              <GridItem colSpan={1} visibility={["hidden", "visible"]}>
+                <StyledButton href={"/connect"} content={"Collaborate on Slack"} />
+              </GridItem>
+            </Grid>
+            <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
+              {"<< Back to project listing"}
+            </Link>
+            <Text fontSize="3xl" marginTop="3vh" marginBottom="1vh">{data.name}</Text>
+            {data.video &&
+              <iframe
+                src={data.video}
+                frameBorder='0'
+                allow='autoplay; encrypted-media'
+                allowFullScreen
+                title='video'
+                style={{maxWidth: "640px", width: "90%", minHeight:"374px", maxHeight: "375px"}}
+              />
+            }
+            <Heading as="h3" fontSize="xl" marginTop="6vh" marginBottom="1vh"> Description: </Heading>
+            <Text fontSize={["md", "xl"]} fontWeight="400" paddingRight={["10%", "35%"]}  textAlign="left" >
+              {data.description}
+            </Text>
+            <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Collaborators: </Heading>
+            {data.collaborators && data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" marginX="10px" key={collaboratorIndex}/>)}
+            {data.resources && data.resources.length > 0 && (
+              <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Hub resources: </Heading>
+            )}
+            <Text fontSize="20px"marginLeft="1.5rem" marginTop="2vh" fontWeight="400">
+              <ul>
+              {data.resources.map((resource, k) => (
+                <li key={k}>
+                  <p>{resource.description}</p>
+                  <div>
+                    <Link marginLeft="1em" color="#2995F8" href={"/" + resource.file}>
+                      {resource.name}
+                    </Link>
+                  </div>
+                  <div>
+                    <Link marginLeft="1em" color="#2995F8" href={resource.link}>
+                      {resource.link}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+              </ul>
+            </Text>
+            <Box visibility={["visible", "hidden"]}>
               <StyledButton href={"/connect"} content={"Collaborate on Slack"} />
-            </GridItem>
-          </Grid>
-          <Link fontSize={{base:"15px", "2xl":"40px"}} paddingRight={["10%", "35%"]} textAlign="left" href="/projects" >
-            {"<< Back to project listing"}
-          </Link>
-          <Text fontSize="3xl" marginTop="3vh" marginBottom="1vh">{data.name}</Text>
-          {data.video &&
-            <iframe
-              src={data.video}
-              frameBorder='0'
-              allow='autoplay; encrypted-media'
-              allowFullScreen
-              title='video'
-              style={{maxWidth: "640px", width: "90%", minHeight:"374px", maxHeight: "375px"}}
-            />
-          }
-          <Heading as="h3" fontSize="xl" marginTop="6vh" marginBottom="1vh"> Description: </Heading>
-          <Text fontSize={["md", "xl"]} fontWeight="400" paddingRight={["10%", "35%"]}  textAlign="left" >
-            {data.description}
-          </Text>
-          <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Collaborators: </Heading>
-          {data.collaborators && data.collaborators.map((collaborator, collaboratorIndex) => <Avatar name={collaborator} src="https://bit.ly/broken-link" marginTop="2vh" marginX="10px" key={collaboratorIndex}/>)}
-          {data.resources && data.resources.length > 0 && (
-            <Heading as="h3" fontSize={{base:"20px", "2xl":"40px"}} marginTop="2vh" marginBottom="1vh"> Hub resources: </Heading>
-          )}
-          <Text fontSize="20px"marginLeft="1.5rem" marginTop="2vh" fontWeight="400">
-            <ul>
-            {data.resources.map((resource, k) => (
-              <li key={k}>
-                <p>{resource.description}</p>
-                <div>
-                  <Link marginLeft="1em" color="#2995F8" href={"/" + resource.file}>
-                    {resource.name}
-                  </Link>
-                </div>
-                <div>
-                  <Link marginLeft="1em" color="#2995F8" href={resource.link}>
-                    {resource.link}
-                  </Link>
-                </div>
-              </li>
-            ))}
-            </ul>
-          </Text>
-          <Box visibility={["visible", "hidden"]}>
-            <StyledButton href={"/connect"} content={"Collaborate on Slack"} />
+            </Box>
           </Box>
-        </Box>
-        <Footer />
-      </ChakraProvider>
+          <Footer />
+      </Box>
+    </ChakraProvider>
 )
 }
 

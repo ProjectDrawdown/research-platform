@@ -246,7 +246,7 @@ const browseProjects = ({ projects }) => {
 
 
   return (
-    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft={["1rem", "5%"]} marginRight={["1rem", "5%"]}>
+    <Flex as="nav" flexWrap="wrap" alignItems="left" marginLeft={["1rem", "5%"]} marginRight={["1rem", "5%"]} position="relative">
       <Box background="#FFFFFF" border="4px solid #000000" w={["100%", "90%", "70%"]} boxSizing="border-box" borderRadius="10px" marginTop={["0px", "1em"]} marginLeft={["0px","30px"]}>
         <Stack align="left" marginTop="2rem" marginX={["1rem", "2rem"]}>
 
