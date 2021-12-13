@@ -223,7 +223,7 @@ const AboutUs = ({ project_image }) => {
                 <GridItem>
                   <BorderBox height="100%" padding="1rem" backgroundColor="#ffffff">
                     <Text>
-                      There could be a short description here with a bit more inspirational somethn’ somethn’
+                      Drawdown Solutions aims to determine when and how reaching drawdown is possible, using existing, well-proven, and scalable climate solutions. To uncover that answer, the team reviews and evaluates the potential performance of technologies and practices that reduce greenhouse gas emissions and/or enhance carbon sequestration while providing many co-benefits to human society.
                     </Text>
                   </BorderBox>
                 </GridItem>
