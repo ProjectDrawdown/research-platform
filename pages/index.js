@@ -237,6 +237,12 @@ const AboutUs = ({ project_image }) => {
 const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
 
+  React.useEffect(() => {
+    if (window.location.search === "?formsuccess=true") {
+      alert("Thank you for reaching out, someone will get in touch with you soon!")
+    }
+  }, [title])
+
   return (
     <div style={{margin: 'auto', position: 'relative'}}>
       <Header title={title} description={description} image={header_image}/>
