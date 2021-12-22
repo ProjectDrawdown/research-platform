@@ -240,11 +240,9 @@ const Home = () => {
 
   const router = useRouter()
 
-  React.useEffect(() => {
-    if (router.query.formsuccess === "true") {
-      alert("Thank you for reaching out, someone will get in touch with you soon!")
-    }
-  }, [title])
+  if (router.query.formsuccess === "true") {
+    alert("Thank you for reaching out, someone will get in touch with you soon!")
+  }
 
   return (
     <div style={{margin: 'auto', position: 'relative'}}>
