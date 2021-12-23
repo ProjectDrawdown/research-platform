@@ -41,7 +41,7 @@ export default function Footer() {
           paddingRight="25%"
           color="#FFF"
         >
-          Open Solutions Collaboratory
+          Drawdown Research Platform
         </Title>
         <Box
           flex="1"
