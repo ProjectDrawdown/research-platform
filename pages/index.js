@@ -19,6 +19,7 @@ import StyledButton from "../components/StyledButton";
 import { attributes } from '../content/home.md';
 import "@fontsource/sora/500.css";
 import "@fontsource/sora/800.css";
+import { useRouter } from "next/router";
 
 // This is the default breakpoint
 createBreakpoints({
@@ -236,6 +237,12 @@ const AboutUs = ({ project_image }) => {
 
 const Home = () => {
   let { title, description, header_image, project_image, bottom_image } = attributes;
+
+  const router = useRouter()
+
+  if (router.query.formsuccess === "true") {
+    alert("Thank you for reaching out, someone will get in touch with you soon!")
+  }
 
   return (
     <div style={{margin: 'auto', position: 'relative'}}>
