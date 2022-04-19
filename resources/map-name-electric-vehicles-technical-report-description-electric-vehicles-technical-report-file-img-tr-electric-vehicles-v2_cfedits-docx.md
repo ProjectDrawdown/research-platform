@@ -1,5 +1,5 @@
 ---
 name: Electric Vehicles - Technical Report
 description: Electric Vehicles - Technical Report
-file: img/tr-electric-vehicles-v2_cfedits.docx
+file: img/electric-vehicles-project-drawdown-2022.pdf
 ---
