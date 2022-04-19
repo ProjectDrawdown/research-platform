@@ -1,5 +1,5 @@
 ---
 name: High-Efficiency Heat Pumps - Technical Report
 description: Technical Report
-file: img/tr-hehp_buildings_june2020.docx
+file: img/high-efficiency-heat-pumps-project-drawdown-2022.pdf
 ---
