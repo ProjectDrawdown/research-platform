@@ -1,5 +1,5 @@
 ---
 name: Efficient Trucks - Technical Report
 description: Technical Report
-file: img/tr-efficienttrucks-business-oct21.docx
+file: img/efficient-trucks-project-drawdown-2022.pdf
 ---
