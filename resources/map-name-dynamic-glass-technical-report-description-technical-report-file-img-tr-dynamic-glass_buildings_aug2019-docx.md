@@ -1,5 +1,5 @@
 ---
 name: Dynamic Glass - Technical Report
 description: Technical Report
-file: img/tr-dynamic-glass_buildings_aug2019.docx
+file: img/dynamic-glass-project-drawdown-2022.pdf
 ---
