@@ -1,5 +1,5 @@
 ---
 name: Geothermal Power - Technical Report
 description: Technical Report
-file: img/1_pd-technicalreport_geothermal-21may2020-.docx
+file: img/geothermal-power-project-drawdown-2022.pdf
 ---
