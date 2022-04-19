@@ -1,5 +1,5 @@
 ---
 name: District Heating - Technical Report
 description: Technical Report
-file: img/tr-districtheat_buildings_aug2019.docx
+file: img/district-heating-project-drawdown-2022.pdf
 ---
