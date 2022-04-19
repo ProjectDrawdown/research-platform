@@ -1,5 +1,5 @@
 ---
 name: Alternative Cements - Technical Report
 description: Technical Report
-file: img/tr-alternative-concrete_june2020.docx
+file: img/alternative-cement-project-drawdown-2022.pdf
 ---
