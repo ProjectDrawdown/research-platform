@@ -1,5 +1,5 @@
 ---
 name: High-Performance Glass - Technical Report
 description: Technical Report
-file: img/tr-hps-glass_buildings_june2020.docx
+file: img/high-performance-glass-project-drawdown-2022.pdf
 ---
