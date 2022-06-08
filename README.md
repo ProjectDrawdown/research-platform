@@ -1,6 +1,6 @@
-# Open Collaboratory
+# Drawdown Research Platform
 
-Welcome to the codebase for the online Climate Solutions Collaboratory (official name TBD).
+Welcome to the codebase for the online Drawdown Research Platform.
 
 This site uses the [Netlify CMS](https://www.netlifycms.org/) to manage content that is stored in this repository.
 
