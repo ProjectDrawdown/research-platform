@@ -1,3 +1,5 @@
+### This repo is no longer being used or maintained and has been archived. Please visit [drawdown.org](https://www.drawdown.org/) for more information on our work.
+
 # Drawdown Research Platform
 
 Welcome to the codebase for the online Drawdown Research Platform.
